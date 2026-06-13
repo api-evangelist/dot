@@ -1,0 +1,110 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: US Department of Transportation
+providerId: dot
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Rate Limiting
+  - Government
+  - Transportation
+description: >-
+  DOT agency APIs do not publish hard per-minute or per-hour rate limits in
+  their public documentation. FMCSA QCMobile and SaferBus APIs are protected
+  by a webkey requirement; result sets are capped at 50 carriers per response
+  page. NHTSA vPIC implements an automated traffic rate control mechanism to
+  ensure optimal performance but does not specify numeric thresholds publicly.
+  NHTSA vPIC batch VIN decode supports up to 50 VINs per request and paginates
+  at 100 items per page. The DOT Open Data Portal is governed by Socrata/Tyler
+  platform rate controls. Reasonable use and exponential backoff on 429/503
+  responses are expected across all services.
+sources:
+  - https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
+  - https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+  - https://vpic.nhtsa.dot.gov/api/
+  - https://data.transportation.gov/
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  unauthorized: 401
+  badRequest: 400
+  notFound: 404
+  serverError: 500
+  serviceUnavailable: 503
+headers:
+  retryAfter: Retry-After
+limits:
+  - name: FMCSA QCMobile — results per page
+    scope: request
+    metric: carriers_per_response
+    limit: 50
+    notes: >-
+      When the API returns data on more than one carrier, results are limited to
+      the first 50 carriers. Use the start and size query parameters to paginate.
+    applies:
+      - FMCSA QCMobile API
+  - name: NHTSA vPIC — batch VIN decode
+    scope: request
+    metric: vins_per_batch_request
+    limit: 50
+    notes: >-
+      The DecodeVINValuesBatch endpoint accepts a maximum of 50 VINs per POST
+      request.
+    applies:
+      - NHTSA vPIC Vehicle API
+  - name: NHTSA vPIC — pagination page size
+    scope: query
+    metric: items_per_page
+    limit: 100
+    notes: >-
+      Paginated NHTSA vPIC endpoints return up to 100 items per page. Use the
+      page query parameter to retrieve subsequent pages.
+    applies:
+      - NHTSA vPIC Vehicle API
+  - name: NHTSA vPIC — traffic rate control
+    scope: IP
+    metric: requests_per_minute
+    limit: not publicly documented
+    notes: >-
+      NHTSA vPIC states that users will be controlled by an automated traffic
+      rate control mechanism. Specific thresholds are not published; implement
+      exponential backoff on 429 responses.
+    applies:
+      - NHTSA vPIC Vehicle API
+  - name: FMCSA — general fair use
+    scope: account/key
+    metric: requests_per_minute
+    limit: not publicly documented
+    notes: >-
+      FMCSA does not publish explicit numeric rate limits. API webkey
+      authentication is enforced; authentication failures return a 401
+      JSON error. Reasonable fair-use limits apply.
+    applies:
+      - FMCSA QCMobile API
+      - FMCSA SaferBus API
+policies:
+  - name: WebkeyAuthentication
+    description: >-
+      FMCSA APIs require a webkey query parameter on every request. Register
+      for a free developer account at mobile.fmcsa.dot.gov and authenticate
+      via Login.gov to obtain a webkey. Do not share or expose your webkey
+      in public repositories.
+  - name: ExponentialBackoff
+    description: >-
+      On 429 or 503 responses, retry with exponential backoff and jitter.
+      Honor any Retry-After header when present.
+  - name: Pagination
+    description: >-
+      FMCSA endpoints accept start and size parameters for pagination. NHTSA
+      vPIC uses the page parameter. Always page large result sets rather than
+      relying on a single oversize query.
+  - name: BulkDownloads
+    description: >-
+      For large data extracts, prefer bulk download files from the DOT Open
+      Data Portal (data.transportation.gov) over repeated API calls against
+      the live query endpoints.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

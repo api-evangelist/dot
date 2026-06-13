@@ -1,0 +1,93 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: US Department of Transportation
+providerId: dot
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Government
+  - Transportation
+  - FinOps
+  - FOCUS
+  - Free
+description: >-
+  FOCUS-aligned FinOps profile for the U.S. Department of Transportation public
+  API portfolio. All DOT agency APIs (FMCSA QCMobile, FMCSA SaferBus, NHTSA
+  vPIC, and the DOT Open Data Portal) are free public government services with
+  no direct monetary charges to API consumers. Cost exposure is limited to
+  internal engineering time, infrastructure for key management, and any
+  third-party integrations built on top of the data.
+notes: >-
+  DOT APIs are federally funded. There is no metered billing, no overage fees,
+  and no subscription cost. Operational risk is availability risk (government
+  shutdown, appropriations lapse, or agency IT outages) rather than spend risk.
+sources:
+  - https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+  - https://vpic.nhtsa.dot.gov/api/
+  - https://www.transportation.gov/developer
+  - https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: US Department of Transportation
+serviceCategory: Government / Public Safety Data
+billingModel:
+  pricingCategory: Free (Government Funded)
+  billingFrequency: N/A
+  billingCurrency: N/A
+  chargeCategories:
+    - No direct charge to API consumer
+focusColumns:
+  ServiceName: DOT Public APIs
+  ServiceCategory: Government Data Services
+  ProviderName: US Department of Transportation
+  PublisherName: US Department of Transportation
+  InvoiceIssuerName: N/A
+  BillingCurrency: N/A
+  ChargeCategory: No Charge
+meters:
+  - name: api_requests
+    description: Total API requests made to FMCSA or NHTSA endpoints.
+    unit: requests
+    aggregation: count
+    dimensions: [api_surface, endpoint, date]
+  - name: data_records_returned
+    description: Count of records/carriers returned by FMCSA queries.
+    unit: records
+    aggregation: sum
+    dimensions: [api_surface, endpoint, date]
+principles:
+  - name: Visibility
+    description: >-
+      Track API request volumes and error rates per endpoint using application
+      logs or API gateway metrics. Monitor FMCSA webkey usage to detect
+      anomalies or unauthorized use.
+  - name: Allocation
+    description: >-
+      Assign separate FMCSA webkeys per application or team to attribute usage
+      and enable key rotation without disrupting all consumers.
+  - name: Optimization
+    description: >-
+      Cache FMCSA carrier data locally where permitted to reduce redundant
+      API calls. Use NHTSA vPIC batch decode (up to 50 VINs per request)
+      to minimize request count. Prefer bulk downloads from data.transportation.gov
+      for large data extracts over repeated live API calls.
+  - name: Accountability
+    description: >-
+      Monitor transportation.gov/status and FMCSA developer portal announcements
+      for planned maintenance or service disruptions. Implement graceful
+      degradation in applications that depend on DOT APIs, as availability
+      is subject to federal appropriations and agency IT operations.
+  - name: AvailabilityRisk
+    description: >-
+      The primary FinOps risk for DOT APIs is availability, not spend. Build
+      retry logic, local caching, and fallback data sources to handle government
+      shutdown scenarios or unplanned outages.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

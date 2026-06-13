@@ -1,0 +1,87 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: US Department of Transportation
+providerId: dot
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Government
+  - Transportation
+  - Free
+  - Public APIs
+description: >-
+  All public DOT agency APIs (FMCSA QCMobile, FMCSA SaferBus, NHTSA vPIC, and
+  the DOT Open Data Portal) are free public government services funded by
+  federal appropriations. There is no commercial pricing tier. FMCSA APIs
+  require a free developer account and API webkey obtained through Login.gov.
+  NHTSA vPIC requires no authentication. The DOT Open Data Portal is publicly
+  accessible. No rate limit fees, overages, or usage-based charges apply.
+notes: >-
+  DOT API availability and funding are subject to congressional appropriations
+  and agency operational status. During government shutdowns or lapses in
+  appropriations, services may be unavailable.
+sources:
+  - https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+  - https://vpic.nhtsa.dot.gov/api/
+  - https://www.transportation.gov/developer
+  - https://data.transportation.gov/
+plans:
+  - id: dot-free-public
+    name: Free Public Access
+    type: free
+    description: >-
+      All DOT public APIs are free to access. FMCSA APIs require a free
+      developer account registration via Login.gov to obtain an API webkey.
+      NHTSA vPIC is fully open with no registration required.
+    entries:
+      - label: FMCSA QCMobile API Access
+        name: fmcsa_qcmobile_access
+        type: free
+        metric: requests
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: FMCSA SaferBus API Access
+        name: fmcsa_saferbus_access
+        type: free
+        metric: requests
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: NHTSA vPIC API Access
+        name: nhtsa_vpic_access
+        type: free
+        metric: requests
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: DOT Open Data Portal Access
+        name: dot_open_data_access
+        type: free
+        metric: requests
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: FMCSA QCMobile API (webkey required)
+      - name: FMCSA SaferBus API (webkey required)
+      - name: NHTSA vPIC Vehicle API (no auth required)
+      - name: NHTSA Datasets and APIs
+      - name: DOT Open Data Portal
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

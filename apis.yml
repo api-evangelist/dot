@@ -1,0 +1,153 @@
+aid: dot
+name: US Department of Transportation
+description: >-
+  The U.S. Department of Transportation (DOT) oversees federal transportation
+  policy and operates multiple agencies that publish public REST APIs covering
+  trucking and motor carrier safety (FMCSA), vehicle product information and
+  safety recalls (NHTSA), aviation safety and airspace data (FAA), transit
+  statistics, and transportation data portals. DOT APIs are free public
+  government services requiring API key registration via Login.gov or the
+  relevant agency developer portal.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/dot/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Government
+  - Transportation
+  - Trucking
+  - Aviation
+  - VehicleSafety
+  - Transit
+  - OpenData
+apis:
+  - aid: dot:fmcsa-qcmobile-api
+    name: FMCSA QCMobile API
+    description: >-
+      The FMCSA QCMobile API provides safety performance data for U.S.
+      Department of Transportation registered motor carriers. Developers can
+      query carrier registration information, licensing, insurance, operating
+      authority, and BASIC safety scores by U.S. DOT number, MC docket number,
+      or carrier name. All responses are returned in JSON format. Access
+      requires a developer account and API webkey obtained through Login.gov.
+    humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
+    baseURL: https://mobile.fmcsa.dot.gov/qc/services
+    tags:
+      - Trucking
+      - Motor Carriers
+      - Safety
+      - FMCSA
+    properties:
+      - type: Documentation
+        url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
+      - type: Authentication
+        url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/apiAccess
+
+  - aid: dot:fmcsa-saferbus-api
+    name: FMCSA SaferBus API
+    description: >-
+      The FMCSA SaferBus API is a RESTful service making available safety
+      performance data for U.S. DOT-registered bus companies. It enables
+      developers to build consumer-facing products that help travelers check the
+      safety record of motorcoach operators before booking travel. Access
+      requires a developer account and API webkey obtained through Login.gov.
+    humanURL: https://www.fmcsa.dot.gov/application-programming-interface-data-behind-saferbus
+    baseURL: https://mobile.fmcsa.dot.gov/qc/services
+    tags:
+      - Bus Safety
+      - Motorcoach
+      - FMCSA
+      - Consumer Safety
+    properties:
+      - type: Documentation
+        url: https://www.fmcsa.dot.gov/application-programming-interface-data-behind-saferbus
+      - type: Documentation
+        url: https://data.transportation.gov/Trucking-and-Motorcoaches/SaferBus-API-Documentation/edyh-n3ic
+
+  - aid: dot:nhtsa-vpic-api
+    name: NHTSA vPIC Vehicle API
+    description: >-
+      The NHTSA Vehicle Product Information Catalog (vPIC) API provides
+      programmatic access to vehicle make, model, manufacturer, and type data
+      compiled by NHTSA. Key capabilities include VIN decoding (single and
+      batch up to 50 VINs), World Manufacturer Identifier (WMI) lookup,
+      manufacturer details, vehicle variables, plant codes, and Canadian vehicle
+      specifications. No authentication required; responses available in JSON,
+      XML, or CSV.
+    humanURL: https://vpic.nhtsa.dot.gov/api/
+    baseURL: https://vpic.nhtsa.dot.gov/api/vehicles
+    tags:
+      - Vehicle Safety
+      - VIN
+      - NHTSA
+      - Recalls
+      - Manufacturers
+    properties:
+      - type: Documentation
+        url: https://vpic.nhtsa.dot.gov/api/
+
+  - aid: dot:nhtsa-datasets-api
+    name: NHTSA Datasets and APIs
+    description: >-
+      NHTSA provides public datasets and APIs covering vehicle safety complaints,
+      recalls, safety ratings (NCAP), and defect investigations. Complaint data
+      entered into NHTSA's Office of Defects Investigation database is
+      searchable by make, model, and year, providing safety defect details,
+      crash/fire/injury records, and recall campaign remedies.
+    humanURL: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+    baseURL: https://api.nhtsa.gov
+    tags:
+      - Vehicle Safety
+      - Recalls
+      - Complaints
+      - NHTSA
+      - Crash Data
+    properties:
+      - type: Documentation
+        url: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+
+  - aid: dot:dot-data-portal
+    name: DOT Open Data Portal
+    description: >-
+      The U.S. Department of Transportation Open Data Portal provides access to
+      transportation datasets published by DOT agencies including FMCSA, NHTSA,
+      FTA, BTS, FAA, PHMSA, and more. The portal supports REST API access to
+      tabular datasets enabling programmatic retrieval, filtering, and export of
+      transportation statistics.
+    humanURL: https://data.transportation.gov/
+    baseURL: https://data.transportation.gov/api
+    tags:
+      - OpenData
+      - Transportation Statistics
+      - Government
+      - BTS
+    properties:
+      - type: Documentation
+        url: https://data.transportation.gov/
+
+common:
+  - type: Website
+    url: https://www.transportation.gov/
+  - type: Documentation
+    url: https://www.transportation.gov/developer
+  - type: GitHubOrg
+    url: https://github.com/usdot-jpo-ode
+  - type: Blog
+    url: https://www.transportation.gov/newsroom
+  - type: StatusPage
+    url: https://www.transportation.gov/status
+  - type: X
+    url: https://twitter.com/USDOT
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/us-department-of-transportation
+  - type: Plans
+    url: plans/dot-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/dot-rate-limits.yml
+  - type: FinOps
+    url: finops/dot-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
