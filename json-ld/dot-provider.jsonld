@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "dot": "https://www.transportation.gov/ontology/",
+    "hydra": "http://www.w3.org/ns/hydra/core#"
+  },
+  "@type": "schema:GovernmentOrganization",
+  "@id": "https://www.transportation.gov/",
+  "schema:name": "US Department of Transportation",
+  "schema:description": "The U.S. Department of Transportation oversees federal transportation policy and operates multiple agencies that publish public REST APIs.",
+  "schema:url": "https://www.transportation.gov/",
+  "schema:sameAs": [
+    "https://twitter.com/USDOT",
+    "https://www.linkedin.com/company/us-department-of-transportation"
+  ],
+  "schema:subOrganization": [
+    {
+      "@type": "schema:GovernmentOrganization",
+      "@id": "https://www.fmcsa.dot.gov/",
+      "schema:name": "Federal Motor Carrier Safety Administration",
+      "schema:abbreviation": "FMCSA",
+      "hydra:apiDocumentation": "https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi"
+    },
+    {
+      "@type": "schema:GovernmentOrganization",
+      "@id": "https://www.nhtsa.gov/",
+      "schema:name": "National Highway Traffic Safety Administration",
+      "schema:abbreviation": "NHTSA",
+      "hydra:apiDocumentation": "https://api.nhtsa.gov/swagger.json"
+    }
+  ],
+  "dot:dataPortal": "https://data.transportation.gov/"
+}

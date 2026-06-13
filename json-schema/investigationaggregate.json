@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/InvestigationAggregate.json",
+  "title": "InvestigationAggregate",
+  "description": "NHTSA InvestigationAggregate schema",
+  "properties": {
+    "components": {
+      "items": {
+        "$ref": "#/definitions/Components"
+      },
+      "type": "array"
+    },
+    "dateClosed": {
+      "type": "string"
+    },
+    "dateOpened": {
+      "type": "string"
+    },
+    "nhtsaCampaignNumber": {
+      "type": "string"
+    },
+    "recalls": {
+      "items": {
+        "$ref": "#/definitions/Recalls"
+      },
+      "type": "array"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

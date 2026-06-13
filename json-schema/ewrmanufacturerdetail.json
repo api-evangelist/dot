@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRManufacturerDetail.json",
+  "title": "EWRManufacturerDetail",
+  "description": "NHTSA EWRManufacturerDetail schema",
+  "properties": {
+    "damages": {
+      "items": {
+        "$ref": "#/definitions/EWRReportPeriod"
+      },
+      "type": "array"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "injuries": {
+      "items": {
+        "$ref": "#/definitions/EWRReportPeriod"
+      },
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "productions": {
+      "items": {
+        "$ref": "#/definitions/EWRReportPeriod"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "injuries",
+    "productions",
+    "damages"
+  ],
+  "type": "object"
+}

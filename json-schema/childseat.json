@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Childseat.json",
+  "title": "Childseat",
+  "description": "NHTSA Childseat schema",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "manufactureDate": {
+      "type": "string"
+    },
+    "modelNumber": {
+      "type": "string"
+    },
+    "modes": {
+      "items": {
+        "$ref": "#/definitions/ChildSeatMode"
+      },
+      "type": "array"
+    },
+    "productModel": {
+      "type": "string"
+    },
+    "safetyIssues": {
+      "$ref": "#/definitions/SafetyIssueAggregate"
+    },
+    "seatType": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

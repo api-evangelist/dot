@@ -1,0 +1,1071 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NHTSA Datasets API Vocabulary",
+  "description": "Domain vocabulary and data model terms extracted from the NHTSA Datasets and APIs (v1.6.0)",
+  "source": "https://api.nhtsa.gov/swagger.json",
+  "terms": {
+    "childSeats": {
+      "type": "domain",
+      "description": "NHTSA API domain: childSeats",
+      "paths": [
+        "GET /childSeats",
+        "GET /childSeats/bySearch",
+        "GET /childSeats/inspectionStations",
+        "GET /childSeats/inspectionStations/states",
+        "GET /childSeats/manufacturers",
+        "GET /childSeats/modes",
+        "GET /childSeats/{id}"
+      ]
+    },
+    "equipment": {
+      "type": "domain",
+      "description": "NHTSA API domain: equipment",
+      "paths": [
+        "GET /equipment",
+        "GET /equipment/brands",
+        "GET /equipment/bySearch",
+        "GET /equipment/{id}"
+      ]
+    },
+    "ewr": {
+      "type": "domain",
+      "description": "NHTSA API domain: ewr",
+      "paths": [
+        "GET /ewr/damages",
+        "GET /ewr/injuries",
+        "GET /ewr/manufacturers",
+        "GET /ewr/manufacturers/{id}",
+        "GET /ewr/productions"
+      ]
+    },
+    "foreignCampaigns": {
+      "type": "domain",
+      "description": "NHTSA API domain: foreignCampaigns",
+      "paths": [
+        "GET /foreignCampaigns",
+        "GET /foreignCampaigns/manufacturers",
+        "GET /foreignCampaigns/{id}"
+      ]
+    },
+    "safetyIssues": {
+      "type": "domain",
+      "description": "NHTSA API domain: safetyIssues",
+      "paths": [
+        "GET /safetyIssues",
+        "GET /safetyIssues/byDate",
+        "GET /safetyIssues/byKeywords",
+        "GET /safetyIssues/byNhtsaId"
+      ]
+    },
+    "tires": {
+      "type": "domain",
+      "description": "NHTSA API domain: tires",
+      "paths": [
+        "GET /tires",
+        "GET /tires/brands",
+        "GET /tires/bySearch",
+        "GET /tires/{id}"
+      ]
+    },
+    "vehicles": {
+      "type": "domain",
+      "description": "NHTSA API domain: vehicles",
+      "paths": [
+        "GET /vehicles",
+        "GET /vehicles/byArtemisId",
+        "GET /vehicles/byMultipleArtemisIds",
+        "GET /vehicles/byClass",
+        "GET /vehicles/byIds",
+        "GET /vehicles/byManufacturer",
+        "GET /vehicles/byNcapId",
+        "GET /vehicles/bySearch",
+        "GET /vehicles/byVin",
+        "GET /vehicles/byYmmt",
+        "GET /vehicles/classes",
+        "GET /vehicles/makes",
+        "GET /vehicles/manufacturers",
+        "GET /vehicles/modelYears",
+        "GET /vehicles/models",
+        "GET /vehicles/trims",
+        "GET /vehicles/{id}/details"
+      ]
+    },
+    "AssociatedProduct": {
+      "type": "schema",
+      "description": "Data model for AssociatedProduct",
+      "properties": [
+        "beginningManufactureDate",
+        "endManufactureDate",
+        "id",
+        "make",
+        "manufacturer",
+        "model",
+        "productYear",
+        "tireSize",
+        "typeCode"
+      ]
+    },
+    "Attributes": {
+      "type": "schema",
+      "description": "Data model for Attributes",
+      "properties": [
+        "name",
+        "value"
+      ]
+    },
+    "ChildSeatMode": {
+      "type": "schema",
+      "description": "Data model for ChildSeatMode",
+      "properties": [
+        "harnessType",
+        "maxChildHeight",
+        "maxChildHeightFinal",
+        "maxChildWeightFinal",
+        "maxUsingLowerAnchors",
+        "maxUsingLowerAnchorsFinal",
+        "maxUsingSeatBelts",
+        "minChildHeight",
+        "minUsingLowerAnchors",
+        "minUsingSeatBelts",
+        "mode",
+        "modeWeight",
+        "ratings",
+        "recommendedAge",
+        "weightHeightRange"
+      ]
+    },
+    "ChildSeatModeRating": {
+      "type": "schema",
+      "description": "Data model for ChildSeatModeRating",
+      "properties": [
+        "label",
+        "notes",
+        "rating",
+        "ratingType"
+      ]
+    },
+    "Childseat": {
+      "type": "schema",
+      "description": "Data model for Childseat",
+      "properties": [
+        "id",
+        "make",
+        "manufactureDate",
+        "modelNumber",
+        "modes",
+        "productModel",
+        "safetyIssues",
+        "seatType"
+      ]
+    },
+    "Complaint": {
+      "type": "schema",
+      "description": "Data model for Complaint",
+      "properties": [
+        "artemisId",
+        "childSeat",
+        "city",
+        "consumerLocation",
+        "crash",
+        "createDate",
+        "description",
+        "equipment",
+        "fire",
+        "id",
+        "incidentDate",
+        "issueYear",
+        "numberInjured",
+        "numberOfDeaths",
+        "odiId",
+        "receivedDate",
+        "stateAbbreviation",
+        "subject",
+        "tire",
+        "updateDate",
+        "vehicle",
+        "vin"
+      ]
+    },
+    "ComplaintAggregate": {
+      "type": "schema",
+      "description": "Data model for ComplaintAggregate",
+      "properties": [
+        "city",
+        "components",
+        "crash",
+        "dateFiled",
+        "dateOfIncident",
+        "description",
+        "fire",
+        "nhtsaIdNumber",
+        "numberOfDeaths",
+        "numberOfInjuries",
+        "stateAbbreviation",
+        "vin"
+      ]
+    },
+    "ComplaintComponent": {
+      "type": "schema",
+      "description": "Data model for ComplaintComponent",
+      "properties": [
+        "complaint",
+        "component",
+        "id",
+        "originalPart"
+      ]
+    },
+    "Component": {
+      "type": "schema",
+      "description": "Data model for Component",
+      "properties": [
+        "artemisId",
+        "description",
+        "id",
+        "name"
+      ]
+    },
+    "Components": {
+      "type": "schema",
+      "description": "Data model for Components",
+      "properties": [
+        "name"
+      ]
+    },
+    "CrashTestRating": {
+      "type": "schema",
+      "description": "Data model for CrashTestRating",
+      "properties": [
+        "curbWeight",
+        "display",
+        "media",
+        "mmy",
+        "ncapVehicleId",
+        "ratings",
+        "reports",
+        "testNo",
+        "testedWith",
+        "type"
+      ]
+    },
+    "Document": {
+      "type": "schema",
+      "description": "Data model for Document",
+      "properties": [
+        "foreignCampaign",
+        "id",
+        "ncapRating",
+        "safetyIssue",
+        "summary",
+        "url"
+      ]
+    },
+    "Documents": {
+      "type": "schema",
+      "description": "Data model for Documents",
+      "properties": [
+        "description",
+        "name",
+        "size",
+        "type",
+        "url"
+      ]
+    },
+    "EWRManufacturer": {
+      "type": "schema",
+      "description": "Data model for EWRManufacturer",
+      "properties": [
+        "id",
+        "name",
+        "reportTypes"
+      ]
+    },
+    "EWRManufacturerDetail": {
+      "type": "schema",
+      "description": "Data model for EWRManufacturerDetail",
+      "properties": [
+        "damages",
+        "id",
+        "injuries",
+        "name",
+        "productions"
+      ]
+    },
+    "EWRReportPeriod": {
+      "type": "schema",
+      "description": "Data model for EWRReportPeriod",
+      "properties": [
+        "quarter",
+        "reports",
+        "year"
+      ]
+    },
+    "EWRReportPeriodCategory": {
+      "type": "schema",
+      "description": "Data model for EWRReportPeriodCategory",
+      "properties": [
+        "category",
+        "categoryCode",
+        "count",
+        "reportId",
+        "reportUrl"
+      ]
+    },
+    "EWRInjury": {
+      "type": "schema",
+      "description": "Data model for EWRInjury",
+      "properties": [
+        "sequenceId",
+        "year",
+        "incidentDate",
+        "deaths",
+        "injuries",
+        "stateOrCountryCode",
+        "components",
+        "make",
+        "model",
+        "vin",
+        "productIdentifier",
+        "tin",
+        "vehicleMake",
+        "vehicleModel",
+        "vehicleYear"
+      ]
+    },
+    "EWRProduction": {
+      "type": "schema",
+      "description": "Data model for EWRProduction",
+      "properties": [
+        "make",
+        "model",
+        "modelYear",
+        "fuelSystem",
+        "brakeSystem",
+        "typeCode",
+        "platform",
+        "totalProduction",
+        "fuelPropulsionSystem"
+      ]
+    },
+    "EWRPropertyDamage": {
+      "type": "schema",
+      "description": "Data model for EWRPropertyDamage",
+      "properties": [
+        "year",
+        "make",
+        "model",
+        "typeCode",
+        "fuelPropulsionSystem",
+        "steering",
+        "suspension",
+        "serviceBrake",
+        "serviceBrakeAir",
+        "parkingBrake",
+        "engAndEngCooling",
+        "fuelSystem",
+        "fuelSystemDiesel",
+        "fuelSystemOther",
+        "powerTrain",
+        "electrical",
+        "extLighting",
+        "visibility",
+        "airbags",
+        "seatbelts",
+        "structure",
+        "latch",
+        "speedControl",
+        "tiresRelated",
+        "wheels",
+        "trailerHitch",
+        "seats",
+        "fireRelated",
+        "rollover",
+        "buckle",
+        "seatShell",
+        "handle",
+        "base",
+        "electronicStabilityCtrl",
+        "forwardCollision",
+        "laneDeparture",
+        "backoverPrevention",
+        "tireLine",
+        "tireSize",
+        "sku",
+        "plantCode",
+        "tread",
+        "sidewall",
+        "bead",
+        "other"
+      ]
+    },
+    "Equipment": {
+      "type": "schema",
+      "description": "Data model for Equipment",
+      "properties": [
+        "brand",
+        "productName",
+        "safetyIssues"
+      ]
+    },
+    "Feature": {
+      "type": "schema",
+      "description": "Data model for Feature",
+      "properties": [
+        "label",
+        "notes",
+        "value"
+      ]
+    },
+    "ForeignCampaign": {
+      "type": "schema",
+      "description": "Data model for ForeignCampaign",
+      "properties": [
+        "associatedDocuments",
+        "dateReceived",
+        "foreignRecallNumber",
+        "id",
+        "manufacturer",
+        "recallTypeCode"
+      ]
+    },
+    "InspectionStationDetails": {
+      "type": "schema",
+      "description": "Data model for InspectionStationDetails",
+      "properties": [
+        "city",
+        "contact",
+        "hasEvent",
+        "hours",
+        "latitude",
+        "longitude",
+        "name",
+        "note",
+        "phone",
+        "spanishSpeaking",
+        "state",
+        "stateAbbr",
+        "streetAddress",
+        "zip"
+      ]
+    },
+    "Investigation": {
+      "type": "schema",
+      "description": "Data model for Investigation",
+      "properties": [
+        "artemisId",
+        "closeDate",
+        "createDate",
+        "description",
+        "id",
+        "investigationNumber",
+        "investigationType",
+        "issueYear",
+        "latestActivityDate",
+        "nhtsaId",
+        "openDate",
+        "status",
+        "subject",
+        "updateDate"
+      ]
+    },
+    "InvestigationAggregate": {
+      "type": "schema",
+      "description": "Data model for InvestigationAggregate",
+      "properties": [
+        "components",
+        "dateClosed",
+        "dateOpened",
+        "nhtsaCampaignNumber",
+        "recalls",
+        "subject",
+        "summary",
+        "type"
+      ]
+    },
+    "InvestigationComponent": {
+      "type": "schema",
+      "description": "Data model for InvestigationComponent",
+      "properties": [
+        "component",
+        "description",
+        "id",
+        "investigation"
+      ]
+    },
+    "Investigations": {
+      "type": "schema",
+      "description": "Data model for Investigations",
+      "properties": [
+        "nhtsaActionNumber",
+        "subject"
+      ]
+    },
+    "MFRCommunicationAggregate": {
+      "type": "schema",
+      "description": "Data model for MFRCommunicationAggregate",
+      "properties": [
+        "communicationDate",
+        "components",
+        "manufacturerCommunicationNumber",
+        "nhtsaIdNumber",
+        "subject",
+        "summary"
+      ]
+    },
+    "Makes": {
+      "type": "schema",
+      "description": "Data model for Makes",
+      "properties": [
+        "make",
+        "modelYear"
+      ]
+    },
+    "Manufacturer": {
+      "type": "schema",
+      "description": "Data model for Manufacturer",
+      "properties": [
+        "artemisId",
+        "displayName",
+        "id",
+        "name",
+        "ncapId",
+        "products"
+      ]
+    },
+    "ManufacturerCommunication": {
+      "type": "schema",
+      "description": "Data model for ManufacturerCommunication",
+      "properties": [
+        "artemisId",
+        "communicationDate",
+        "createDate",
+        "description",
+        "externalManufacturerId",
+        "id",
+        "issueYear",
+        "microfisheId",
+        "replacedTsbsId",
+        "subject",
+        "updateDate"
+      ]
+    },
+    "ManufacturerCommunicationComponent": {
+      "type": "schema",
+      "description": "Data model for ManufacturerCommunicationComponent",
+      "properties": [
+        "component",
+        "id",
+        "manufacturerCommunication"
+      ]
+    },
+    "Media": {
+      "type": "schema",
+      "description": "Data model for Media",
+      "properties": [
+        "type",
+        "url"
+      ]
+    },
+    "Message": {
+      "type": "schema",
+      "description": "Data model for Message",
+      "properties": [
+        "errorCode",
+        "errorDetail",
+        "errorMessage",
+        "userMessage"
+      ]
+    },
+    "Meta": {
+      "type": "schema",
+      "description": "Data model for Meta",
+      "properties": [
+        "messages",
+        "pagination",
+        "status"
+      ]
+    },
+    "ModelYears": {
+      "type": "schema",
+      "description": "Data model for ModelYears",
+      "properties": [
+        "modelYear"
+      ]
+    },
+    "Models": {
+      "type": "schema",
+      "description": "Data model for Models",
+      "properties": [
+        "make",
+        "model",
+        "modelYear"
+      ]
+    },
+    "NCAPRating": {
+      "type": "schema",
+      "description": "Data model for NCAPRating",
+      "properties": [
+        "additionalAirbags",
+        "ars",
+        "arsLocDescription",
+        "backupCamera",
+        "chestSabType",
+        "combinedFrontRating",
+        "combinedRearRating",
+        "crashImminentBraking",
+        "curbWeight",
+        "dynamicBrakeSupport",
+        "dynamicHeadRestraintDescr",
+        "electronicStabilityControl",
+        "frontCollisionWarning",
+        "frontCrashDriversideRating",
+        "frontCrashPassengersideRating",
+        "frontCrashPicture",
+        "frontCrashVideo",
+        "frontDriverConcern",
+        "frontDriverNotes",
+        "frontPassengerConcern",
+        "frontPassengerNotes",
+        "frontTestNo",
+        "frontTestedWith",
+        "headRestraintDescr",
+        "headSabDescription",
+        "headSabMeetRequirements",
+        "headSabType",
+        "id",
+        "kneeLocDescription",
+        "laneDepartureWarning",
+        "latchPositionDescr",
+        "loadLimiters",
+        "seatBeltPretensionerLoc",
+        "loadLimitersLoc",
+        "nhtsaFootNotes",
+        "overallFrontCrashRating",
+        "overallRating",
+        "overallSideCrashRating",
+        "pelvisSabDescription",
+        "pelvisSabType",
+        "poleTestNo",
+        "regBackupCamera",
+        "rollNotes",
+        "rollSafetyConcern",
+        "rollTip",
+        "rollTip2",
+        "rolloverPossibility",
+        "rolloverPossibility2",
+        "rolloverRating",
+        "rolloverRating2",
+        "seatBeltReminder",
+        "sideBarrierRating",
+        "sideCrashDriversideRating",
+        "sideCrashPassengersideRating",
+        "sideCrashPicture",
+        "sideCrashVideo",
+        "sideDriverConcern",
+        "sideDriverNotes",
+        "sidePassengerConcern",
+        "sidePassengerNotes",
+        "sidePoleConcern",
+        "sidePoleCrashRating",
+        "sidePoleNotes",
+        "sidePolePicture",
+        "sidePoleTestedWith",
+        "sidePoleVideo",
+        "sideTestNo",
+        "sideTestedWith",
+        "torsoSabDescription",
+        "upperBeltAnchorageDescr",
+        "vehicle",
+        "vehiclePicture"
+      ]
+    },
+    "Note": {
+      "type": "schema",
+      "description": "Data model for Note",
+      "properties": [
+        "label",
+        "note",
+        "position"
+      ]
+    },
+    "Pagination": {
+      "type": "schema",
+      "description": "Data model for Pagination",
+      "properties": [
+        "count",
+        "currentUrl",
+        "max",
+        "nextUrl",
+        "offset",
+        "order",
+        "previousUrl",
+        "sort",
+        "total"
+      ]
+    },
+    "PartialChildSeat": {
+      "type": "schema",
+      "description": "Data model for PartialChildSeat",
+      "properties": [
+        "childSeatMode",
+        "manufacturerName",
+        "maximumChildAge",
+        "minimumChildAge"
+      ]
+    },
+    "PartialVehicle": {
+      "type": "schema",
+      "description": "Data model for PartialVehicle",
+      "properties": [
+        "id",
+        "make",
+        "manufacturerName",
+        "model",
+        "productYear",
+        "vehicleClass",
+        "vehicleTrim"
+      ]
+    },
+    "Product": {
+      "type": "schema",
+      "description": "Data model for Product",
+      "properties": [
+        "artemisCreateDate",
+        "artemisId",
+        "artemisUpdateDate",
+        "id",
+        "make",
+        "manufacturer",
+        "model",
+        "productCategory",
+        "productType",
+        "productValidation",
+        "productYear",
+        "source"
+      ]
+    },
+    "ProductComplaint": {
+      "type": "schema",
+      "description": "Data model for ProductComplaint",
+      "properties": [
+        "complaint",
+        "id",
+        "product",
+        "productType"
+      ]
+    },
+    "ProductManfacturerCommunication": {
+      "type": "schema",
+      "description": "Data model for ProductManfacturerCommunication",
+      "properties": [
+        "id",
+        "manufacturerCommunication",
+        "product"
+      ]
+    },
+    "Products": {
+      "type": "schema",
+      "description": "Data model for Products",
+      "properties": [
+        "id",
+        "make",
+        "model",
+        "modelYear",
+        "type"
+      ]
+    },
+    "Rating": {
+      "type": "schema",
+      "description": "Data model for Rating",
+      "properties": [
+        "display",
+        "notes",
+        "position",
+        "possibility",
+        "rating",
+        "ratings",
+        "safetyConcerns",
+        "tip"
+      ]
+    },
+    "Recall": {
+      "type": "schema",
+      "description": "Data model for Recall",
+      "properties": [
+        "artemisId",
+        "campaignId",
+        "consequence",
+        "correctiveAction",
+        "createDate",
+        "description",
+        "id",
+        "issueYear",
+        "major",
+        "manufacturerName",
+        "mfrRecallNumber",
+        "mfrTollFreeNumber",
+        "notes",
+        "ownerNotificationDate",
+        "potaff",
+        "potdef",
+        "recall573Date",
+        "recall573ReceivedDate",
+        "recallType",
+        "significantChangeDate",
+        "statusUpdateDate",
+        "sub",
+        "subject",
+        "synopsis",
+        "typeCode",
+        "updateDate"
+      ]
+    },
+    "RecallAggregate": {
+      "type": "schema",
+      "description": "Data model for RecallAggregate",
+      "properties": [
+        "components",
+        "consequence",
+        "correctiveAction",
+        "investigations",
+        "manufacturer",
+        "nhtsaCampaignNumber",
+        "notes",
+        "potentialNumberOfUnitsAffected",
+        "reportsReceivedDate",
+        "subject",
+        "summary"
+      ]
+    },
+    "RecallInvestigation": {
+      "type": "schema",
+      "description": "Data model for RecallInvestigation",
+      "properties": [
+        "id",
+        "investigation",
+        "recall"
+      ]
+    },
+    "Recalls": {
+      "type": "schema",
+      "description": "Data model for Recalls",
+      "properties": [
+        "nhtsaCampaignNumber",
+        "subject"
+      ]
+    },
+    "RecommendedFeature": {
+      "type": "schema",
+      "description": "Data model for RecommendedFeature",
+      "properties": [
+        "description",
+        "icon",
+        "installed",
+        "key",
+        "label",
+        "note",
+        "type",
+        "video"
+      ]
+    },
+    "SafetyConcern": {
+      "type": "schema",
+      "description": "Data model for SafetyConcern",
+      "properties": [
+        "concern",
+        "position"
+      ]
+    },
+    "SafetyFeature": {
+      "type": "schema",
+      "description": "Data model for SafetyFeature",
+      "properties": [
+        "category",
+        "features",
+        "notes"
+      ]
+    },
+    "SafetyIssue": {
+      "type": "schema",
+      "description": "Data model for SafetyIssue",
+      "properties": [
+        "artemisId",
+        "createDate",
+        "description",
+        "id",
+        "issueYear",
+        "subject",
+        "updateDate"
+      ]
+    },
+    "SafetyIssueAggregate": {
+      "type": "schema",
+      "description": "Data model for SafetyIssueAggregate",
+      "properties": [
+        "complaints",
+        "investigation",
+        "manufacturerCommunications",
+        "recalls"
+      ]
+    },
+    "SafetyRatingAggregate": {
+      "type": "schema",
+      "description": "Data model for SafetyRatingAggregate",
+      "properties": [
+        "crashTestRatings",
+        "recommendedFeatures",
+        "safetyFeatures"
+      ]
+    },
+    "SafetyRatingFullAggregate": {
+      "type": "schema",
+      "description": "Data model for SafetyRatingFullAggregate",
+      "properties": [
+        "crashTestRatings"
+      ]
+    },
+    "Tire": {
+      "type": "schema",
+      "description": "Data model for Tire",
+      "properties": [
+        "brand",
+        "const",
+        "productName",
+        "safetyIssues",
+        "size",
+        "temp",
+        "tireline",
+        "trac",
+        "wear"
+      ]
+    },
+    "TireBrand": {
+      "type": "schema",
+      "description": "Data model for TireBrand",
+      "properties": [
+        "brand"
+      ]
+    },
+    "Trims": {
+      "type": "schema",
+      "description": "Data model for Trims",
+      "properties": [
+        "id",
+        "make",
+        "model",
+        "modelYear",
+        "trim"
+      ]
+    },
+    "Vehicle": {
+      "type": "schema",
+      "description": "Data model for Vehicle",
+      "properties": [
+        "artemisCreateDate",
+        "artemisId",
+        "artemisUpdateDate",
+        "id",
+        "make",
+        "manufacturer",
+        "mmy",
+        "model",
+        "ncapRating",
+        "ncapVehicleId",
+        "productCategory",
+        "productType",
+        "productValidation",
+        "productYear",
+        "series",
+        "source",
+        "vehicleClass",
+        "vehicleTrim",
+        "vehicleType"
+      ]
+    },
+    "VehicleBasic": {
+      "type": "schema",
+      "description": "Data model for VehicleBasic",
+      "properties": [
+        "class",
+        "complaintsCount",
+        "investigationsCount",
+        "make",
+        "manufacturer",
+        "manufacturerCommunicationsCount",
+        "model",
+        "modelYear",
+        "ncapRated",
+        "recallsCount",
+        "series",
+        "trim",
+        "vehicleDescription",
+        "vehicleId",
+        "vehiclePicture"
+      ]
+    },
+    "VehicleDetails": {
+      "type": "schema",
+      "description": "Data model for VehicleDetails",
+      "properties": [
+        "class",
+        "complaintsCount",
+        "investigationsCount",
+        "make",
+        "manufacturer",
+        "manufacturerCommunicationsCount",
+        "model",
+        "modelYear",
+        "ncapRated",
+        "recallsCount",
+        "safetyIssues",
+        "safetyRatings",
+        "series",
+        "trim",
+        "vehicleDescription",
+        "vehicleId",
+        "vehiclePicture"
+      ]
+    },
+    "VehicleFull": {
+      "type": "schema",
+      "description": "Data model for VehicleFull",
+      "properties": [
+        "class",
+        "complaintsCount",
+        "investigationsCount",
+        "make",
+        "manufacturer",
+        "manufacturerCommunicationsCount",
+        "model",
+        "modelYear",
+        "ncapRated",
+        "recallsCount",
+        "safetyRatings",
+        "series",
+        "trim",
+        "vehicleDescription",
+        "vehicleId",
+        "vehiclePicture"
+      ]
+    },
+    "VehicleMinimal": {
+      "type": "schema",
+      "description": "Data model for VehicleMinimal",
+      "properties": [
+        "class",
+        "make",
+        "model",
+        "modelYear",
+        "safetyIssues",
+        "safetyRatings",
+        "series",
+        "trim",
+        "vehicleId"
+      ]
+    },
+    "test": {
+      "type": "schema",
+      "description": "Data model for test",
+      "properties": []
+    }
+  }
+}

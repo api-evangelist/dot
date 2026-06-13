@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/SafetyRatingAggregate.json",
+  "title": "SafetyRatingAggregate",
+  "description": "NHTSA SafetyRatingAggregate schema",
+  "properties": {
+    "crashTestRatings": {
+      "items": {
+        "$ref": "#/definitions/CrashTestRating"
+      },
+      "type": "array"
+    },
+    "recommendedFeatures": {
+      "items": {
+        "$ref": "#/definitions/RecommendedFeature"
+      },
+      "type": "array"
+    },
+    "safetyFeatures": {
+      "items": {
+        "$ref": "#/definitions/SafetyFeature"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

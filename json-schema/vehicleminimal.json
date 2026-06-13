@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/VehicleMinimal.json",
+  "title": "VehicleMinimal",
+  "description": "NHTSA VehicleMinimal schema",
+  "properties": {
+    "class": {
+      "type": "string"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "modelYear": {
+      "type": "string"
+    },
+    "safetyIssues": {
+      "$ref": "#/definitions/SafetyIssueAggregate"
+    },
+    "safetyRatings": {
+      "$ref": "#/definitions/SafetyRatingAggregate"
+    },
+    "series": {
+      "type": "string"
+    },
+    "trim": {
+      "type": "string"
+    },
+    "vehicleId": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

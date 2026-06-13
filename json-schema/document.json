@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Document.json",
+  "title": "Document",
+  "description": "NHTSA Document schema",
+  "properties": {
+    "foreignCampaign": {
+      "$ref": "#/definitions/ForeignCampaign"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "ncapRating": {
+      "$ref": "#/definitions/NCAPRating"
+    },
+    "safetyIssue": {
+      "$ref": "#/definitions/SafetyIssue"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

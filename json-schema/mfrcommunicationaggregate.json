@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/MFRCommunicationAggregate.json",
+  "title": "MFRCommunicationAggregate",
+  "description": "NHTSA MFRCommunicationAggregate schema",
+  "properties": {
+    "communicationDate": {
+      "type": "string"
+    },
+    "components": {
+      "items": {
+        "$ref": "#/definitions/Components"
+      },
+      "type": "array"
+    },
+    "manufacturerCommunicationNumber": {
+      "type": "string"
+    },
+    "nhtsaIdNumber": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

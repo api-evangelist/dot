@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/SafetyIssueAggregate.json",
+  "title": "SafetyIssueAggregate",
+  "description": "NHTSA SafetyIssueAggregate schema",
+  "properties": {
+    "complaints": {
+      "items": {
+        "$ref": "#/definitions/ComplaintAggregate"
+      },
+      "type": "array"
+    },
+    "investigation": {
+      "items": {
+        "$ref": "#/definitions/InvestigationAggregate"
+      },
+      "type": "array"
+    },
+    "manufacturerCommunications": {
+      "items": {
+        "$ref": "#/definitions/MFRCommunicationAggregate"
+      },
+      "type": "array"
+    },
+    "recalls": {
+      "items": {
+        "$ref": "#/definitions/RecallAggregate"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

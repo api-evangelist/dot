@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/RecommendedFeature.json",
+  "title": "RecommendedFeature",
+  "description": "NHTSA RecommendedFeature schema",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "installed": {
+      "type": "boolean"
+    },
+    "key": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "video": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

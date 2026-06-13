@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Manufacturer.json",
+  "title": "Manufacturer",
+  "description": "NHTSA Manufacturer schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "ncapId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "products": {
+      "items": {
+        "$ref": "#/definitions/Product"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ComplaintComponent.json",
+  "title": "ComplaintComponent",
+  "description": "NHTSA ComplaintComponent schema",
+  "properties": {
+    "complaint": {
+      "$ref": "#/definitions/Complaint"
+    },
+    "component": {
+      "$ref": "#/definitions/Component"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "originalPart": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

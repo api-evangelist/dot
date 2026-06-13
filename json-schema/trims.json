@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Trims.json",
+  "title": "Trims",
+  "description": "NHTSA Trims schema",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "modelYear": {
+      "type": "string"
+    },
+    "trim": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

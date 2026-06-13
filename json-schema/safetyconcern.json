@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/SafetyConcern.json",
+  "title": "SafetyConcern",
+  "description": "NHTSA SafetyConcern schema",
+  "properties": {
+    "concern": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

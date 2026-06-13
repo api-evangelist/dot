@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/SafetyFeature.json",
+  "title": "SafetyFeature",
+  "description": "NHTSA SafetyFeature schema",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "features": {
+      "items": {
+        "$ref": "#/definitions/Feature"
+      },
+      "type": "array"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

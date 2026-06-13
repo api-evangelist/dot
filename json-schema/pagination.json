@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Pagination.json",
+  "title": "Pagination",
+  "description": "NHTSA Pagination schema",
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "currentUrl": {
+      "type": "string"
+    },
+    "max": {
+      "type": "integer"
+    },
+    "nextUrl": {
+      "type": "string"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "string"
+    },
+    "previousUrl": {
+      "type": "string"
+    },
+    "sort": {
+      "type": "string"
+    },
+    "total": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

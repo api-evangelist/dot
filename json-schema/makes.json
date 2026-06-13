@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Makes.json",
+  "title": "Makes",
+  "description": "NHTSA Makes schema",
+  "properties": {
+    "make": {
+      "type": "string"
+    },
+    "modelYear": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

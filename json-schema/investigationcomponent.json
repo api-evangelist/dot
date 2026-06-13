@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/InvestigationComponent.json",
+  "title": "InvestigationComponent",
+  "description": "NHTSA InvestigationComponent schema",
+  "properties": {
+    "component": {
+      "$ref": "#/definitions/Component"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "investigation": {
+      "$ref": "#/definitions/Investigation"
+    }
+  },
+  "type": "object"
+}

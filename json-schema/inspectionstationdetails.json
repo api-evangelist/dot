@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/InspectionStationDetails.json",
+  "title": "InspectionStationDetails",
+  "description": "NHTSA InspectionStationDetails schema",
+  "properties": {
+    "city": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "hasEvent": {
+      "type": "boolean"
+    },
+    "hours": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "note": {
+      "description": "a list of dates.",
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "spanishSpeaking": {
+      "type": "boolean"
+    },
+    "state": {
+      "type": "string"
+    },
+    "stateAbbr": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

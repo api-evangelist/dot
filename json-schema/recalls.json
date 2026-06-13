@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Recalls.json",
+  "title": "Recalls",
+  "description": "NHTSA Recalls schema",
+  "properties": {
+    "nhtsaCampaignNumber": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

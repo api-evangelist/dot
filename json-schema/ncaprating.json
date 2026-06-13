@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/NCAPRating.json",
+  "title": "NCAPRating",
+  "description": "NHTSA NCAPRating schema",
+  "properties": {
+    "additionalAirbags": {
+      "type": "string"
+    },
+    "ars": {
+      "type": "string"
+    },
+    "arsLocDescription": {
+      "type": "string"
+    },
+    "backupCamera": {
+      "type": "string"
+    },
+    "chestSabType": {
+      "type": "string"
+    },
+    "combinedFrontRating": {
+      "type": "string"
+    },
+    "combinedRearRating": {
+      "type": "string"
+    },
+    "crashImminentBraking": {
+      "type": "string"
+    },
+    "curbWeight": {
+      "type": "string"
+    },
+    "dynamicBrakeSupport": {
+      "type": "string"
+    },
+    "dynamicHeadRestraintDescr": {
+      "type": "string"
+    },
+    "electronicStabilityControl": {
+      "type": "string"
+    },
+    "frontCollisionWarning": {
+      "type": "string"
+    },
+    "frontCrashDriversideRating": {
+      "type": "integer"
+    },
+    "frontCrashPassengersideRating": {
+      "type": "integer"
+    },
+    "frontCrashPicture": {
+      "type": "string"
+    },
+    "frontCrashVideo": {
+      "type": "string"
+    },
+    "frontDriverConcern": {
+      "type": "string"
+    },
+    "frontDriverNotes": {
+      "type": "string"
+    },
+    "frontPassengerConcern": {
+      "type": "string"
+    },
+    "frontPassengerNotes": {
+      "type": "string"
+    },
+    "frontTestNo": {
+      "type": "integer"
+    },
+    "frontTestedWith": {
+      "type": "string"
+    },
+    "headRestraintDescr": {
+      "type": "string"
+    },
+    "headSabDescription": {
+      "type": "string"
+    },
+    "headSabMeetRequirements": {
+      "type": "string"
+    },
+    "headSabType": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "kneeLocDescription": {
+      "type": "string"
+    },
+    "laneDepartureWarning": {
+      "type": "string"
+    },
+    "latchPositionDescr": {
+      "type": "string"
+    },
+    "loadLimiters": {
+      "type": "string"
+    },
+    "seatBeltPretensionerLoc": {
+      "type": "string"
+    },
+    "loadLimitersLoc": {
+      "type": "string"
+    },
+    "nhtsaFootNotes": {
+      "type": "string"
+    },
+    "overallFrontCrashRating": {
+      "type": "integer"
+    },
+    "overallRating": {
+      "type": "integer"
+    },
+    "overallSideCrashRating": {
+      "type": "integer"
+    },
+    "pelvisSabDescription": {
+      "type": "string"
+    },
+    "pelvisSabType": {
+      "type": "string"
+    },
+    "poleTestNo": {
+      "type": "integer"
+    },
+    "regBackupCamera": {
+      "type": "string"
+    },
+    "rollNotes": {
+      "type": "string"
+    },
+    "rollSafetyConcern": {
+      "type": "string"
+    },
+    "rollTip": {
+      "type": "string"
+    },
+    "rollTip2": {
+      "type": "string"
+    },
+    "rolloverPossibility": {
+      "type": "string"
+    },
+    "rolloverPossibility2": {
+      "type": "string"
+    },
+    "rolloverRating": {
+      "type": "string"
+    },
+    "rolloverRating2": {
+      "type": "string"
+    },
+    "seatBeltReminder": {
+      "type": "string"
+    },
+    "sideBarrierRating": {
+      "type": "string"
+    },
+    "sideCrashDriversideRating": {
+      "type": "integer"
+    },
+    "sideCrashPassengersideRating": {
+      "type": "integer"
+    },
+    "sideCrashPicture": {
+      "type": "string"
+    },
+    "sideCrashVideo": {
+      "type": "string"
+    },
+    "sideDriverConcern": {
+      "type": "string"
+    },
+    "sideDriverNotes": {
+      "type": "string"
+    },
+    "sidePassengerConcern": {
+      "type": "string"
+    },
+    "sidePassengerNotes": {
+      "type": "string"
+    },
+    "sidePoleConcern": {
+      "type": "string"
+    },
+    "sidePoleCrashRating": {
+      "type": "string"
+    },
+    "sidePoleNotes": {
+      "type": "string"
+    },
+    "sidePolePicture": {
+      "type": "string"
+    },
+    "sidePoleTestedWith": {
+      "type": "string"
+    },
+    "sidePoleVideo": {
+      "type": "string"
+    },
+    "sideTestNo": {
+      "type": "integer"
+    },
+    "sideTestedWith": {
+      "type": "string"
+    },
+    "torsoSabDescription": {
+      "type": "string"
+    },
+    "upperBeltAnchorageDescr": {
+      "type": "string"
+    },
+    "vehicle": {
+      "$ref": "#/definitions/Vehicle"
+    },
+    "vehiclePicture": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

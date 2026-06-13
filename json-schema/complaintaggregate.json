@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ComplaintAggregate.json",
+  "title": "ComplaintAggregate",
+  "description": "NHTSA ComplaintAggregate schema",
+  "properties": {
+    "city": {
+      "type": "string"
+    },
+    "components": {
+      "items": {
+        "$ref": "#/definitions/Components"
+      },
+      "type": "array"
+    },
+    "crash": {
+      "type": "integer"
+    },
+    "dateFiled": {
+      "type": "string"
+    },
+    "dateOfIncident": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "fire": {
+      "type": "integer"
+    },
+    "nhtsaIdNumber": {
+      "type": "string"
+    },
+    "numberOfDeaths": {
+      "type": "integer"
+    },
+    "numberOfInjuries": {
+      "type": "integer"
+    },
+    "stateAbbreviation": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

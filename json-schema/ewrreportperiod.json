@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRReportPeriod.json",
+  "title": "EWRReportPeriod",
+  "description": "NHTSA EWRReportPeriod schema",
+  "properties": {
+    "quarter": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "reports": {
+      "items": {
+        "$ref": "#/definitions/EWRReportPeriodCategory"
+      },
+      "type": "array"
+    },
+    "year": {
+      "format": "int32",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "year",
+    "quarter",
+    "reports"
+  ],
+  "type": "object"
+}

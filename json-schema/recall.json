@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Recall.json",
+  "title": "Recall",
+  "description": "NHTSA Recall schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "campaignId": {
+      "type": "string"
+    },
+    "consequence": {
+      "type": "string"
+    },
+    "correctiveAction": {
+      "type": "string"
+    },
+    "createDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "issueYear": {
+      "type": "string"
+    },
+    "major": {
+      "type": "string"
+    },
+    "manufacturerName": {
+      "type": "string"
+    },
+    "mfrRecallNumber": {
+      "type": "string"
+    },
+    "mfrTollFreeNumber": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "ownerNotificationDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "potaff": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "potdef": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "recall573Date": {
+      "format": "date",
+      "type": "string"
+    },
+    "recall573ReceivedDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "recallType": {
+      "enum": [
+        "D",
+        "C",
+        "S"
+      ],
+      "type": "string"
+    },
+    "significantChangeDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "statusUpdateDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "sub": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "synopsis": {
+      "type": "string"
+    },
+    "typeCode": {
+      "enum": [
+        "V",
+        "I",
+        "C",
+        "T",
+        "X",
+        "E"
+      ],
+      "type": "string"
+    },
+    "updateDate": {
+      "format": "date",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

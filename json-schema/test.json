@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/test.json",
+  "title": "test",
+  "description": "NHTSA test schema"
+}

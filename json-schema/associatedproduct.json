@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/AssociatedProduct.json",
+  "title": "AssociatedProduct",
+  "description": "NHTSA AssociatedProduct schema",
+  "properties": {
+    "beginningManufactureDate": {
+      "type": "string"
+    },
+    "endManufactureDate": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "productYear": {
+      "type": "string"
+    },
+    "tireSize": {
+      "type": "string"
+    },
+    "typeCode": {
+      "enum": [
+        "V",
+        "C",
+        "T",
+        "E"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

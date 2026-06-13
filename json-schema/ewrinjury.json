@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRInjury.json",
+  "title": "EWRInjury",
+  "description": "NHTSA EWRInjury schema",
+  "properties": {
+    "sequenceId": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "year": {
+      "type": "string"
+    },
+    "incidentDate": {
+      "type": "string"
+    },
+    "deaths": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "injuries": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "stateOrCountryCode": {
+      "type": "string"
+    },
+    "components": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "vin": {
+      "type": "string"
+    },
+    "productIdentifier": {
+      "type": "string"
+    },
+    "tin": {
+      "type": "string"
+    },
+    "vehicleMake": {
+      "type": "string"
+    },
+    "vehicleModel": {
+      "type": "string"
+    },
+    "vehicleYear": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "sequenceId",
+    "year",
+    "incidentDate",
+    "deaths",
+    "injuries",
+    "stateOrCountryCode",
+    "components"
+  ]
+}

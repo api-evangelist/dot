@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ManufacturerCommunicationComponent.json",
+  "title": "ManufacturerCommunicationComponent",
+  "description": "NHTSA ManufacturerCommunicationComponent schema",
+  "properties": {
+    "component": {
+      "$ref": "#/definitions/Component"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "manufacturerCommunication": {
+      "$ref": "#/definitions/ManufacturerCommunication"
+    }
+  },
+  "type": "object"
+}

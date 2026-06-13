@@ -1,0 +1,2602 @@
+{
+  "get-childSeats": {
+    "operationId": "get-childSeats",
+    "method": "GET",
+    "path": "/childSeats",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturerCommunications).",
+        "type": "string"
+      },
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+        "type": "string"
+      },
+      {
+        "name": "weight",
+        "in": "query",
+        "required": false,
+        "description": "Child weight for any childSeat mode",
+        "type": "string"
+      },
+      {
+        "name": "height",
+        "in": "query",
+        "required": false,
+        "description": "Child height for any childSeat mode",
+        "type": "string"
+      },
+      {
+        "name": "age",
+        "in": "query",
+        "required": false,
+        "description": "Child age for any childSeat mode",
+        "type": "string"
+      },
+      {
+        "name": "modelName",
+        "in": "query",
+        "required": false,
+        "description": "Child height for any childSeat mode",
+        "type": "string"
+      },
+      {
+        "name": "manufacturerName",
+        "in": "query",
+        "required": false,
+        "description": "Returns child seats based on model",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns zero or more childSeats",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/ChildseatWrapped"
+          },
+          "title": "ArrayOfChildSeats",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-bySearch": {
+    "operationId": "get-childSeats-bySearch",
+    "method": "GET",
+    "path": "/childSeats/bySearch",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "query",
+        "in": "query",
+        "required": true,
+        "description": "returns zero or more child seats based on search query",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).",
+        "type": "string"
+      },
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Fuzzy search for a child seat based on make, productModel, and modelNumber",
+        "schema": {
+          "$ref": "#/definitions/ChildseatWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-inspectionStations": {
+    "operationId": "get-childSeats-inspectionStations",
+    "method": "GET",
+    "path": "/childSeats/inspectionStations",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "usState",
+        "in": "query",
+        "required": false,
+        "description": "returns inspections stations within provided usState; use states provided by /carseats",
+        "type": "string"
+      },
+      {
+        "name": "latitude",
+        "in": "query",
+        "required": false,
+        "description": "latitude of the child seat inspection stations overrides usState query param",
+        "type": "string"
+      },
+      {
+        "name": "longitude",
+        "in": "query",
+        "required": false,
+        "description": "longtiude of the child seat inspection stations overrides usState query param",
+        "type": "string"
+      },
+      {
+        "name": "distance",
+        "in": "query",
+        "required": false,
+        "description": "maximum distance to search for an inspection station",
+        "type": "number"
+      },
+      {
+        "name": "onlySpanishSpeaking",
+        "in": "query",
+        "required": false,
+        "description": "only return inspection stations that have spanish speaking contacts",
+        "type": "boolean"
+      },
+      {
+        "name": "onlyWithEvent",
+        "in": "query",
+        "required": false,
+        "description": "only return inspection statings that have an event associated with them",
+        "type": "boolean"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns zero or more inspections stations based on queries provided",
+        "schema": {
+          "$ref": "#/definitions/InspectionStationDetailsWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-inspectionStations-states": {
+    "operationId": "get-childSeats-inspectionStations-states",
+    "method": "GET",
+    "path": "/childSeats/inspectionStations/states",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns all states with inspection stations",
+        "schema": {
+          "$ref": "#/definitions/PartialChildSeatWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-manufacturers": {
+    "operationId": "get-childSeats-manufacturers",
+    "method": "GET",
+    "path": "/childSeats/manufacturers",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns all available child seat manufacturers",
+        "schema": {
+          "$ref": "#/definitions/PartialChildSeatWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-modes": {
+    "operationId": "get-childSeats-modes",
+    "method": "GET",
+    "path": "/childSeats/modes",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [],
+    "responses": {
+      "200": {
+        "description": "Returns list of child seat modes and their recommended age range in years",
+        "schema": {
+          "$ref": "#/definitions/PartialChildSeatWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-childSeats-{id}": {
+    "operationId": "get-childSeats-{id}",
+    "method": "GET",
+    "path": "/childSeats/{id}",
+    "summary": "",
+    "tags": [
+      "childSeats"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of the child seat",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns a single child seat with the specified ID",
+        "schema": {
+          "$ref": "#/definitions/ChildseatWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-equipment": {
+    "operationId": "get-equipment",
+    "method": "GET",
+    "path": "/equipment",
+    "summary": "",
+    "tags": [
+      "equipment"
+    ],
+    "parameters": [
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "brand",
+        "in": "query",
+        "required": false,
+        "description": "brand of equipment",
+        "type": "string"
+      },
+      {
+        "name": "modelName",
+        "in": "query",
+        "required": false,
+        "description": "model of the equipment",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns zero or more equipment",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/EquipmentWrapped"
+          },
+          "title": "ArrayOfEquipment",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-equipment-brands": {
+    "operationId": "get-equipment-brands",
+    "method": "GET",
+    "path": "/equipment/brands",
+    "summary": "",
+    "tags": [
+      "equipment"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns all available equipment brands",
+        "schema": {}
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-equipment-bySearch": {
+    "operationId": "get-equipment-bySearch",
+    "method": "GET",
+    "path": "/equipment/bySearch",
+    "summary": "",
+    "tags": [
+      "equipment"
+    ],
+    "parameters": [
+      {
+        "name": "query",
+        "in": "query",
+        "required": true,
+        "description": "returns zero or more tires based on search query",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return, upper bound: 50.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Fuzzy search for a equipment based on manufacturer and mode",
+        "schema": {
+          "$ref": "#/definitions/EquipmentWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-equipment-{id}": {
+    "operationId": "get-equipment-{id}",
+    "method": "GET",
+    "path": "/equipment/{id}",
+    "summary": "",
+    "tags": [
+      "equipment"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of the equipmentDetails",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns a single equipmentDetails with the specified ID",
+        "schema": {
+          "$ref": "#/definitions/EquipmentWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-ewr-damages": {
+    "operationId": "get-ewr-damages",
+    "method": "GET",
+    "path": "/ewr/damages",
+    "summary": "",
+    "tags": [
+      "ewr"
+    ],
+    "parameters": [
+      {
+        "name": "year",
+        "in": "query",
+        "required": true,
+        "description": "The year of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "quarter",
+        "in": "query",
+        "required": true,
+        "description": "The quarter of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "reportCategory",
+        "in": "query",
+        "required": true,
+        "description": "The category of the property damage reports",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "The list of property damage reports",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/EWRPropertyDamageWrapped"
+          },
+          "title": "ArrayOfEWRPropertyDamages",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-ewr-injuries": {
+    "operationId": "get-ewr-injuries",
+    "method": "GET",
+    "path": "/ewr/injuries",
+    "summary": "",
+    "tags": [
+      "ewr"
+    ],
+    "parameters": [
+      {
+        "name": "year",
+        "in": "query",
+        "required": true,
+        "description": "The year of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "quarter",
+        "in": "query",
+        "required": true,
+        "description": "The quarter of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "reportCategory",
+        "in": "query",
+        "required": true,
+        "description": "The category of the injury reports",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "The list of injuries for the given report period and category",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/EWRInjuryWrapped"
+          },
+          "title": "ArrayOfEWRInjuries",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-ewr-manufacturers": {
+    "operationId": "get-ewr-manufacturers",
+    "method": "GET",
+    "path": "/ewr/manufacturers",
+    "summary": "",
+    "tags": [
+      "ewr"
+    ],
+    "parameters": [],
+    "responses": {
+      "200": {
+        "description": "The list of EWR manufacturers",
+        "schema": {
+          "$ref": "#/definitions/EWRManufacturersWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-ewr-manufacturers-{id}": {
+    "operationId": "get-ewr-manufacturers-{id}",
+    "method": "GET",
+    "path": "/ewr/manufacturers/{id}",
+    "summary": "",
+    "tags": [
+      "ewr"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of manufacturer",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Details for a specific manufacturer",
+        "schema": {
+          "$ref": "#/definitions/EWRManufacturerDetailWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-ewr-productions": {
+    "operationId": "get-ewr-productions",
+    "method": "GET",
+    "path": "/ewr/productions",
+    "summary": "",
+    "tags": [
+      "ewr"
+    ],
+    "parameters": [
+      {
+        "name": "year",
+        "in": "query",
+        "required": true,
+        "description": "The year of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "quarter",
+        "in": "query",
+        "required": true,
+        "description": "The quarter of the reporting period",
+        "type": "integer"
+      },
+      {
+        "name": "reportCategory",
+        "in": "query",
+        "required": true,
+        "description": "The category of the light vehicle production reports",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "The list of light vehicle productions",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/EWRProductionWrapped"
+          },
+          "title": "ArrayOfEWRProductions",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-foreignCampaigns": {
+    "operationId": "get-foreignCampaigns",
+    "method": "GET",
+    "path": "/foreignCampaigns",
+    "summary": "",
+    "tags": [
+      "foreignCampaigns"
+    ],
+    "parameters": [
+      {
+        "name": "manufacturer",
+        "in": "query",
+        "required": false,
+        "description": "manufacturer associated with the foreign campaign",
+        "type": "string"
+      },
+      {
+        "name": "dateStart",
+        "in": "query",
+        "required": false,
+        "description": "The date to restrict the search to. Format: yyyy-MM-dd",
+        "type": "integer"
+      },
+      {
+        "name": "dateEnd",
+        "in": "query",
+        "required": false,
+        "description": "The date to restrict the search to. Format: yyyy-MM-dd",
+        "type": "integer"
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns zero or more Foreign Campaigns",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/ForeignCampaignWrapped"
+          },
+          "title": "ArrayOfForeignCampaign",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-foreignCampaigns-manufacturers": {
+    "operationId": "get-foreignCampaigns-manufacturers",
+    "method": "GET",
+    "path": "/foreignCampaigns/manufacturers",
+    "summary": "",
+    "tags": [
+      "foreignCampaigns"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns all available Foreign Campaign manufacturers",
+        "schema": {
+          "$ref": "#/definitions/ApiResponse"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-foreignCampaigns-{id}": {
+    "operationId": "get-foreignCampaigns-{id}",
+    "method": "GET",
+    "path": "/foreignCampaigns/{id}",
+    "summary": "",
+    "tags": [
+      "foreignCampaigns"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of the Foreign Campaign",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns a single Foreign Campaign with the specified ID",
+        "schema": {
+          "$ref": "#/definitions/ForeignCampaignWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-safetyIssues": {
+    "operationId": "get-safetyIssues",
+    "method": "GET",
+    "path": "/safetyIssues",
+    "summary": "",
+    "tags": [
+      "safetyIssues"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "The list of safety issues",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/SafetyIssue"
+          },
+          "title": "ArrayOfSafetyIssues",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-safetyIssues-byDate": {
+    "operationId": "get-safetyIssues-byDate",
+    "method": "GET",
+    "path": "/safetyIssues/byDate",
+    "summary": "",
+    "tags": [
+      "safetyIssues"
+    ],
+    "parameters": [
+      {
+        "name": "dateStart",
+        "in": "query",
+        "required": false,
+        "description": "The start date to look up safetyIssues by.",
+        "type": "string"
+      },
+      {
+        "name": "dateEnd",
+        "in": "query",
+        "required": false,
+        "description": "The end date to look up safetyIssues by.",
+        "type": "string"
+      },
+      {
+        "name": "issueType",
+        "in": "query",
+        "required": false,
+        "description": "The specified issue type only: 'recall', 'investigation'.(defaults to recall)",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of SafetyIssues from within the specified date range.",
+        "schema": {
+          "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-safetyIssues-byKeywords": {
+    "operationId": "get-safetyIssues-byKeywords",
+    "method": "GET",
+    "path": "/safetyIssues/byKeywords",
+    "summary": "",
+    "tags": [
+      "safetyIssues"
+    ],
+    "parameters": [
+      {
+        "name": "keywords",
+        "in": "query",
+        "required": true,
+        "description": "The keyword[s] to search descriptions for (Only applicable to 'complaint' type). Natural language (words, spaces) is allowed.",
+        "type": "string"
+      },
+      {
+        "name": "allKeywords",
+        "in": "query",
+        "required": false,
+        "description": "match must have all keywords. true or false. defaults to true",
+        "type": "boolean"
+      },
+      {
+        "name": "productType",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [vehicle], [childSeat], [tireDetails], [equipment] without brackets. Choose which product type to limit the search to.",
+        "type": "string"
+      },
+      {
+        "name": "productYearStart",
+        "in": "query",
+        "required": false,
+        "description": "Find only products made in the specified year or later",
+        "type": "integer"
+      },
+      {
+        "name": "productYearEnd",
+        "in": "query",
+        "required": false,
+        "description": "Find only products made in the specified year or before",
+        "type": "integer"
+      },
+      {
+        "name": "productMake",
+        "in": "query",
+        "required": false,
+        "description": "Restrict query to the specified make only",
+        "type": "string"
+      },
+      {
+        "name": "productModel",
+        "in": "query",
+        "required": false,
+        "description": "Restrict query to the specified model only",
+        "type": "string"
+      },
+      {
+        "name": "issueType",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [recall], [manufacturerCommunication], [complaint], [investigation] without brackets. Choose which issue type to limit the search to.",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "A list of issues containing the key word[s] in their descriptions.",
+        "schema": {
+          "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-safetyIssues-byNhtsaId": {
+    "operationId": "get-safetyIssues-byNhtsaId",
+    "method": "GET",
+    "path": "/safetyIssues/byNhtsaId",
+    "summary": "",
+    "tags": [
+      "safetyIssues"
+    ],
+    "parameters": [
+      {
+        "name": "nhtsaId",
+        "in": "query",
+        "required": true,
+        "description": "The nhtsa id to search for.",
+        "type": "string"
+      },
+      {
+        "name": "filter",
+        "in": "query",
+        "required": false,
+        "description": "Filter the response by the specified field. Valid inputs: [issueType]",
+        "type": "string"
+      },
+      {
+        "name": "filterValue",
+        "in": "query",
+        "required": false,
+        "description": "The value to use as a filter. Valid inputs: [recalls,complaints,investigations,manufacturerCommunications]",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "List of SafetyIssues identified by the specified nhtsaId.",
+        "schema": {
+          "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-tires": {
+    "operationId": "get-tires",
+    "method": "GET",
+    "path": "/tires",
+    "summary": "",
+    "tags": [
+      "tires"
+    ],
+    "parameters": [
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\".",
+        "type": "string"
+      },
+      {
+        "name": "brand",
+        "in": "query",
+        "required": false,
+        "description": "brand of tireDetails",
+        "type": "string"
+      },
+      {
+        "name": "tireline",
+        "in": "query",
+        "required": false,
+        "description": "line of the tireDetails",
+        "type": "string"
+      },
+      {
+        "name": "size",
+        "in": "query",
+        "required": false,
+        "description": "size of the tireDetails",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns zero or more tires",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/TireWrapped"
+          },
+          "title": "ArrayOfTires",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-tires-brands": {
+    "operationId": "get-tires-brands",
+    "method": "GET",
+    "path": "/tires/brands",
+    "summary": "",
+    "tags": [
+      "tires"
+    ],
+    "parameters": [
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'ratings'",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns all available tireDetails brands",
+        "schema": {
+          "$ref": "#/definitions/TireBrandWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-tires-bySearch": {
+    "operationId": "get-tires-bySearch",
+    "method": "GET",
+    "path": "/tires/bySearch",
+    "summary": "",
+    "tags": [
+      "tires"
+    ],
+    "parameters": [
+      {
+        "name": "query",
+        "in": "query",
+        "required": true,
+        "description": "returns zero or more tires based on search query",
+        "type": "string"
+      },
+      {
+        "name": null,
+        "in": null,
+        "required": false,
+        "description": "",
+        "type": ""
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "order in which to sort",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "dataSet",
+        "in": "query",
+        "required": false,
+        "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\".",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return, upper bound: 50.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Fuzzy search for a tireDetails based on productName and size",
+        "schema": {
+          "$ref": "#/definitions/TireWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-tires-{id}": {
+    "operationId": "get-tires-{id}",
+    "method": "GET",
+    "path": "/tires/{id}",
+    "summary": "",
+    "tags": [
+      "tires"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "ID of the tireDetails",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Returns a single tireDetails with the specified ID",
+        "schema": {
+          "$ref": "#/definitions/TireWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles": {
+    "operationId": "get-vehicles",
+    "method": "GET",
+    "path": "/vehicles",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of all vehicles.",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/VehicleBasicWrapped"
+          },
+          "title": "ArrayOfVehicles",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byArtemisId": {
+    "operationId": "get-vehicles-byArtemisId",
+    "method": "GET",
+    "path": "/vehicles/byArtemisId",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "artemisId",
+        "in": "query",
+        "required": true,
+        "description": "The artemisId for a vehicle.",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Return the vehicle associated with the specified artemisId.",
+        "schema": {
+          "$ref": "#/definitions/VehicleDetailsWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byMultipleArtemisIds": {
+    "operationId": "get-vehicles-byMultipleArtemisIds",
+    "method": "GET",
+    "path": "/vehicles/byMultipleArtemisIds",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "artemisIds",
+        "in": "query",
+        "required": true,
+        "description": "The artemisIds for vehicles. Comma separated if more than one",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "This should always be none, as we only want to return minimum counts data",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "This should always be null, as we want to get the counts",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Return the vehicle associated with the specified artemisId.",
+        "schema": {
+          "$ref": "#/definitions/VehicleBasicWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byClass": {
+    "operationId": "get-vehicles-byClass",
+    "method": "GET",
+    "path": "/vehicles/byClass",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "vehicleClass",
+        "in": "query",
+        "required": true,
+        "description": "The name of the class to search by.",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [minimal]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "One or more vehicles that match the specified class.",
+        "schema": {
+          "$ref": "#/definitions/VehicleBasicWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byIds": {
+    "operationId": "get-vehicles-byIds",
+    "method": "GET",
+    "path": "/vehicles/byIds",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "ids",
+        "in": "query",
+        "required": true,
+        "description": "A CSV list of IDs",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicles matching the specified list of CSV ids.",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/VehicleDetailsWrapped"
+          },
+          "title": "ArrayOfVehicles",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byManufacturer": {
+    "operationId": "get-vehicles-byManufacturer",
+    "method": "GET",
+    "path": "/vehicles/byManufacturer",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "manufacturerName",
+        "in": "query",
+        "required": true,
+        "description": "The name of the manufacturer to search by.",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      },
+      {
+        "name": "dateStart",
+        "in": "query",
+        "required": false,
+        "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd",
+        "type": "integer"
+      },
+      {
+        "name": "dateEnd",
+        "in": "query",
+        "required": false,
+        "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "sort",
+        "in": "query",
+        "required": false,
+        "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']",
+        "type": "string"
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]",
+        "type": "string"
+      },
+      {
+        "name": "filter",
+        "in": "query",
+        "required": false,
+        "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]",
+        "type": "string"
+      },
+      {
+        "name": "filterValue",
+        "in": "query",
+        "required": false,
+        "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "One or more vehicles that match the specified manufacturer.",
+        "schema": {
+          "$ref": "#/definitions/VehicleBasicWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byNcapId": {
+    "operationId": "get-vehicles-byNcapId",
+    "method": "GET",
+    "path": "/vehicles/byNcapId",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "ncapId",
+        "in": "query",
+        "required": true,
+        "description": "The NcapId of the vehicle to look up.",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records set to return for pagination.",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicles matching the specified NcapId (the original vehicle id in the source NCAP system).",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/VehicleDetailsWrapped"
+          },
+          "title": "ArrayOfVehicles",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-bySearch": {
+    "operationId": "get-vehicles-bySearch",
+    "method": "GET",
+    "path": "/vehicles/bySearch",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "query",
+        "in": "query",
+        "required": true,
+        "description": "A fuzzy search query to search with",
+        "type": "string"
+      },
+      {
+        "name": "allKeywords",
+        "in": "query",
+        "required": false,
+        "description": "match must have all keywords. true or false. defaults to true",
+        "type": "boolean"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "dateStart",
+        "in": "query",
+        "required": false,
+        "description": "Find vehicles manufactured since this date (inclusive). Format: yyyy-MM-dd",
+        "type": "string"
+      },
+      {
+        "name": "dateEnd",
+        "in": "query",
+        "required": false,
+        "description": "Find vehicles manufactured up to this date (inclusive). Format: yyyy-MM-dd",
+        "type": "string"
+      },
+      {
+        "name": "sort",
+        "in": "query",
+        "required": false,
+        "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']",
+        "type": "string"
+      },
+      {
+        "name": "order",
+        "in": "query",
+        "required": false,
+        "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]",
+        "type": "string"
+      },
+      {
+        "name": "filter",
+        "in": "query",
+        "required": false,
+        "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]",
+        "type": "string"
+      },
+      {
+        "name": "filterValue",
+        "in": "query",
+        "required": false,
+        "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return, upper bound: 50.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicles whose make, model, year, or trim match the supplied search query.",
+        "schema": {
+          "$ref": "#/definitions/VehicleBasicWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byVin": {
+    "operationId": "get-vehicles-byVin",
+    "method": "GET",
+    "path": "/vehicles/byVin",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "vin",
+        "in": "query",
+        "required": true,
+        "description": "The vin number to search for vehicles with.",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "One or more vehicles that match the user-provided VIN.",
+        "schema": {
+          "$ref": "#/definitions/VehicleDetailsWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-byYmmt": {
+    "operationId": "get-vehicles-byYmmt",
+    "method": "GET",
+    "path": "/vehicles/byYmmt",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "modelYear",
+        "in": "query",
+        "required": true,
+        "description": "The vehicles modelYear",
+        "type": "integer"
+      },
+      {
+        "name": "make",
+        "in": "query",
+        "required": true,
+        "description": "The vehicles make",
+        "type": "string"
+      },
+      {
+        "name": "model",
+        "in": "query",
+        "required": true,
+        "description": "The vehicle model",
+        "type": "string"
+      },
+      {
+        "name": "trim",
+        "in": "query",
+        "required": false,
+        "description": "The vehicle trim",
+        "type": "string"
+      },
+      {
+        "name": "series",
+        "in": "query",
+        "required": false,
+        "description": "The vehicle series",
+        "type": "string"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicles matching the specified modelYear, make, model, and [trim (optional)].",
+        "schema": {
+          "$ref": "#/definitions/VehicleDetailsWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-classes": {
+    "operationId": "get-vehicles-classes",
+    "method": "GET",
+    "path": "/vehicles/classes",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "List of all vehicle classes.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-makes": {
+    "operationId": "get-vehicles-makes",
+    "method": "GET",
+    "path": "/vehicles/makes",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "modelYear",
+        "in": "query",
+        "required": false,
+        "description": "The model year for which to display makes, or the start year for a range.",
+        "type": "integer"
+      },
+      {
+        "name": "modelYearEnd",
+        "in": "query",
+        "required": false,
+        "description": "The end model year for which to display makes.",
+        "type": "integer"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicle makes for the specified modelYear.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-manufacturers": {
+    "operationId": "get-vehicles-manufacturers",
+    "method": "GET",
+    "path": "/vehicles/manufacturers",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "The location of Manufacturers to request. (ncap or all), defaults to ncap",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of vehicle manufacturers.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-modelYears": {
+    "operationId": "get-vehicles-modelYears",
+    "method": "GET",
+    "path": "/vehicles/modelYears",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of all model years.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-models": {
+    "operationId": "get-vehicles-models",
+    "method": "GET",
+    "path": "/vehicles/models",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "modelYear",
+        "in": "query",
+        "required": false,
+        "description": "The vehicle's modelYear, or the start year of a range.",
+        "type": "string"
+      },
+      {
+        "name": "modelYearEnd",
+        "in": "query",
+        "required": false,
+        "description": "The end year for a range of vehicle modelYears.",
+        "type": "string"
+      },
+      {
+        "name": "make",
+        "in": "query",
+        "required": true,
+        "description": "The vehicle's make",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of models for the specified model year(optional), and make.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-trims": {
+    "operationId": "get-vehicles-trims",
+    "method": "GET",
+    "path": "/vehicles/trims",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "modelYear",
+        "in": "query",
+        "required": true,
+        "description": "The vehicle's modelYear",
+        "type": "integer"
+      },
+      {
+        "name": "make",
+        "in": "query",
+        "required": true,
+        "description": "The vehicle's make",
+        "type": "string"
+      },
+      {
+        "name": "model",
+        "in": "query",
+        "required": true,
+        "description": "The vehicle's model",
+        "type": "string"
+      },
+      {
+        "name": "max",
+        "in": "query",
+        "required": false,
+        "description": "The maximum number of records to return. Use '-1' to get all records.",
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "description": "The offset of the records listing (for pagination).",
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Paginated list of models for the specified modelYear, make, and model.",
+        "schema": {
+          "$ref": "#/definitions/PartialVehicleWrapped"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  },
+  "get-vehicles-{id}-details": {
+    "operationId": "get-vehicles-{id}-details",
+    "method": "GET",
+    "path": "/vehicles/{id}/details",
+    "summary": "",
+    "tags": [
+      "vehicles"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "description": "The vehicle's id",
+        "type": "integer"
+      },
+      {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+        "type": "string"
+      },
+      {
+        "name": "productDetail",
+        "in": "query",
+        "required": false,
+        "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+        "type": "string"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "The details of a vehicle associated with the specified id.",
+        "schema": {
+          "items": {
+            "$ref": "#/definitions/VehicleDetailsWrapped"
+          },
+          "title": "ArrayOfVehicleAggregate",
+          "type": "array"
+        }
+      },
+      "400": {
+        "description": "Invalid Request",
+        "schema": {}
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "schema": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ChildSeatModeRating.json",
+  "title": "ChildSeatModeRating",
+  "description": "NHTSA ChildSeatModeRating schema",
+  "properties": {
+    "label": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "ratingType": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

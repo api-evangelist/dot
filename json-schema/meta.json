@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Meta.json",
+  "title": "Meta",
+  "description": "NHTSA Meta schema",
+  "properties": {
+    "messages": {
+      "items": {
+        "$ref": "#/definitions/Message"
+      },
+      "type": "array"
+    },
+    "pagination": {
+      "items": {
+        "$ref": "#/definitions/Pagination"
+      },
+      "type": "array"
+    },
+    "status": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

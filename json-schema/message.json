@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Message.json",
+  "title": "Message",
+  "description": "NHTSA Message schema",
+  "properties": {
+    "errorCode": {
+      "type": "string"
+    },
+    "errorDetail": {
+      "type": "string"
+    },
+    "errorMessage": {
+      "type": "string"
+    },
+    "userMessage": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

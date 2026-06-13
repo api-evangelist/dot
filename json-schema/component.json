@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Component.json",
+  "title": "Component",
+  "description": "NHTSA Component schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

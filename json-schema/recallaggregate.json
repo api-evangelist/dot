@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/RecallAggregate.json",
+  "title": "RecallAggregate",
+  "description": "NHTSA RecallAggregate schema",
+  "properties": {
+    "components": {
+      "items": {
+        "$ref": "#/definitions/Components"
+      },
+      "type": "array"
+    },
+    "consequence": {
+      "type": "string"
+    },
+    "correctiveAction": {
+      "type": "string"
+    },
+    "investigations": {
+      "items": {
+        "$ref": "#/definitions/Investigations"
+      },
+      "type": "array"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "nhtsaCampaignNumber": {
+      "type": "integer"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "potentialNumberOfUnitsAffected": {
+      "type": "string"
+    },
+    "reportsReceivedDate": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

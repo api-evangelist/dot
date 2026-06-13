@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/CrashTestRating.json",
+  "title": "CrashTestRating",
+  "description": "NHTSA CrashTestRating schema",
+  "properties": {
+    "curbWeight": {
+      "type": "string"
+    },
+    "display": {
+      "type": "string"
+    },
+    "media": {
+      "items": {
+        "$ref": "#/definitions/Media"
+      },
+      "type": "array"
+    },
+    "mmy": {
+      "type": "string"
+    },
+    "ncapVehicleId": {
+      "type": "integer"
+    },
+    "ratings": {
+      "items": {
+        "$ref": "#/definitions/Rating"
+      },
+      "type": "array"
+    },
+    "reports": {
+      "items": {
+        "$ref": "#/definitions/Report"
+      },
+      "type": "array"
+    },
+    "testNo": {
+      "type": "integer"
+    },
+    "testedWith": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

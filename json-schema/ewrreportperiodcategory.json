@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRReportPeriodCategory.json",
+  "title": "EWRReportPeriodCategory",
+  "description": "NHTSA EWRReportPeriodCategory schema",
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "categoryCode": {
+      "type": "string"
+    },
+    "count": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "reportId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "reportUrl": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "category",
+    "categoryCode",
+    "count",
+    "reportId",
+    "reportUrl"
+  ],
+  "type": "object"
+}

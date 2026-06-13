@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/VehicleBasic.json",
+  "title": "VehicleBasic",
+  "description": "NHTSA VehicleBasic schema",
+  "properties": {
+    "class": {
+      "type": "string"
+    },
+    "complaintsCount": {
+      "type": "integer"
+    },
+    "investigationsCount": {
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "manufacturerCommunicationsCount": {
+      "type": "integer"
+    },
+    "model": {
+      "type": "string"
+    },
+    "modelYear": {
+      "type": "string"
+    },
+    "ncapRated": {
+      "type": "boolean"
+    },
+    "recallsCount": {
+      "type": "integer"
+    },
+    "series": {
+      "type": "string"
+    },
+    "trim": {
+      "type": "string"
+    },
+    "vehicleDescription": {
+      "type": "string"
+    },
+    "vehicleId": {
+      "type": "integer"
+    },
+    "vehiclePicture": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

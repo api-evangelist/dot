@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRPropertyDamage.json",
+  "title": "EWRPropertyDamage",
+  "description": "NHTSA EWRPropertyDamage schema",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "typeCode": {
+      "type": "string"
+    },
+    "fuelPropulsionSystem": {
+      "type": "string"
+    },
+    "steering": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "suspension": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "serviceBrake": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "serviceBrakeAir": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "parkingBrake": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "engAndEngCooling": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fuelSystem": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fuelSystemDiesel": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fuelSystemOther": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "powerTrain": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "electrical": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "extLighting": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "visibility": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "airbags": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "seatbelts": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "structure": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "latch": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "speedControl": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "tiresRelated": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "wheels": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "trailerHitch": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "seats": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "fireRelated": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "rollover": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "buckle": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "seatShell": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "handle": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "base": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "electronicStabilityCtrl": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "forwardCollision": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "laneDeparture": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "backoverPrevention": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "tireLine": {
+      "type": "string"
+    },
+    "tireSize": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "plantCode": {
+      "type": "string"
+    },
+    "tread": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "sidewall": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "bead": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "other": {
+      "format": "int32",
+      "type": "integer"
+    }
+  },
+  "type": "object",
+  "required": [
+    "year"
+  ]
+}

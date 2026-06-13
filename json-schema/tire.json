@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Tire.json",
+  "title": "Tire",
+  "description": "NHTSA Tire schema",
+  "properties": {
+    "brand": {
+      "type": "string"
+    },
+    "const": {
+      "type": "string"
+    },
+    "productName": {
+      "type": "string"
+    },
+    "safetyIssues": {
+      "$ref": "#/definitions/SafetyIssueAggregate"
+    },
+    "size": {
+      "type": "string"
+    },
+    "temp": {
+      "type": "string"
+    },
+    "tireline": {
+      "type": "string"
+    },
+    "trac": {
+      "type": "string"
+    },
+    "wear": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

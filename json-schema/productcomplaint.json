@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ProductComplaint.json",
+  "title": "ProductComplaint",
+  "description": "NHTSA ProductComplaint schema",
+  "properties": {
+    "complaint": {
+      "$ref": "#/definitions/Complaint"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "product": {
+      "$ref": "#/definitions/Product"
+    },
+    "productType": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

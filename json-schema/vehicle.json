@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Vehicle.json",
+  "title": "Vehicle",
+  "description": "NHTSA Vehicle schema",
+  "properties": {
+    "artemisCreateDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "artemisUpdateDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "$ref": "#/definitions/Manufacturer"
+    },
+    "mmy": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "ncapRating": {
+      "$ref": "#/definitions/NCAPRating"
+    },
+    "ncapVehicleId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "productCategory": {
+      "enum": [
+        "C",
+        "E",
+        "H",
+        "L",
+        "M",
+        "T",
+        "U",
+        "Y"
+      ],
+      "type": "string"
+    },
+    "productType": {
+      "enum": [
+        "AT",
+        "BS",
+        "BT",
+        "CD",
+        "CO",
+        "DB",
+        "DT",
+        "EV",
+        "FT",
+        "IC",
+        "LB",
+        "LT",
+        "MP",
+        "OT",
+        "PC",
+        "RI",
+        "RT",
+        "RV",
+        "SB",
+        "TB",
+        "TK",
+        "TT",
+        "UNK",
+        "UN",
+        "VT",
+        "FK"
+      ],
+      "type": "string"
+    },
+    "productValidation": {
+      "enum": [
+        "C",
+        "M",
+        "X"
+      ],
+      "type": "string"
+    },
+    "productYear": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "series": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "vehicleClass": {
+      "type": "string"
+    },
+    "vehicleTrim": {
+      "type": "string"
+    },
+    "vehicleType": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

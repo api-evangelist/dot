@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/TireBrand.json",
+  "title": "TireBrand",
+  "description": "NHTSA TireBrand schema",
+  "properties": {
+    "brand": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

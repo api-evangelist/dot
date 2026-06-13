@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ManufacturerCommunication.json",
+  "title": "ManufacturerCommunication",
+  "description": "NHTSA ManufacturerCommunication schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "communicationDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "createDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "externalManufacturerId": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "issueYear": {
+      "type": "string"
+    },
+    "microfisheId": {
+      "type": "string"
+    },
+    "replacedTsbsId": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "updateDate": {
+      "format": "date",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

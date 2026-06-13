@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Investigation.json",
+  "title": "Investigation",
+  "description": "NHTSA Investigation schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "closeDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "createDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "investigationNumber": {
+      "type": "string"
+    },
+    "investigationType": {
+      "enum": [
+        "AQ",
+        "C",
+        "DP",
+        "EA",
+        "EQ",
+        "ID",
+        "IE",
+        "IQ",
+        "IR",
+        "PE",
+        "RP",
+        "RQ",
+        "SQ",
+        "TA",
+        "TQ"
+      ],
+      "type": "string"
+    },
+    "issueYear": {
+      "type": "string"
+    },
+    "latestActivityDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "nhtsaId": {
+      "type": "string"
+    },
+    "openDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "updateDate": {
+      "format": "date",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

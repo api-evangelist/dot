@@ -1,0 +1,6714 @@
+{
+  "definitions": {
+    "AssociatedProduct": {
+      "properties": {
+        "beginningManufactureDate": {
+          "type": "string"
+        },
+        "endManufactureDate": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "productYear": {
+          "type": "string"
+        },
+        "tireSize": {
+          "type": "string"
+        },
+        "typeCode": {
+          "enum": [
+            "V",
+            "C",
+            "T",
+            "E"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "AssociatedProductWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/AssociatedProduct"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Attributes": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "AttributesWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Attributes"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ChildSeatMode": {
+      "properties": {
+        "harnessType": {
+          "type": "string"
+        },
+        "maxChildHeight": {
+          "type": "number"
+        },
+        "maxChildHeightFinal": {
+          "type": "number"
+        },
+        "maxChildWeightFinal": {
+          "type": "number"
+        },
+        "maxUsingLowerAnchors": {
+          "type": "number"
+        },
+        "maxUsingLowerAnchorsFinal": {
+          "type": "number"
+        },
+        "maxUsingSeatBelts": {
+          "type": "number"
+        },
+        "minChildHeight": {
+          "type": "number"
+        },
+        "minUsingLowerAnchors": {
+          "type": "number"
+        },
+        "minUsingSeatBelts": {
+          "type": "number"
+        },
+        "mode": {
+          "description": "Name of the mode, example \"Foward-Facing\"",
+          "type": "string"
+        },
+        "modeWeight": {
+          "type": "number"
+        },
+        "ratings": {
+          "items": {
+            "$ref": "#/definitions/ChildSeatModeRating"
+          },
+          "type": "array"
+        },
+        "recommendedAge": {
+          "type": "boolean"
+        },
+        "weightHeightRange": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChildSeatModeRating": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "integer"
+        },
+        "ratingType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChildSeatModeRatingWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ChildSeatModeRating"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ChildSeatModeWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ChildSeatMode"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Childseat": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufactureDate": {
+          "type": "string"
+        },
+        "modelNumber": {
+          "type": "string"
+        },
+        "modes": {
+          "items": {
+            "$ref": "#/definitions/ChildSeatMode"
+          },
+          "type": "array"
+        },
+        "productModel": {
+          "type": "string"
+        },
+        "safetyIssues": {
+          "$ref": "#/definitions/SafetyIssueAggregate"
+        },
+        "seatType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChildseatWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Childseat"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Complaint": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "childSeat": {
+          "type": "boolean"
+        },
+        "city": {
+          "type": "string"
+        },
+        "consumerLocation": {
+          "type": "string"
+        },
+        "crash": {
+          "type": "boolean"
+        },
+        "createDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "equipment": {
+          "type": "boolean"
+        },
+        "fire": {
+          "type": "boolean"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "incidentDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "issueYear": {
+          "type": "string"
+        },
+        "numberInjured": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "numberOfDeaths": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "odiId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "receivedDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "stateAbbreviation": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "tire": {
+          "type": "boolean"
+        },
+        "updateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "vehicle": {
+          "type": "boolean"
+        },
+        "vin": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ComplaintAggregate": {
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Components"
+          },
+          "type": "array"
+        },
+        "crash": {
+          "type": "integer"
+        },
+        "dateFiled": {
+          "type": "string"
+        },
+        "dateOfIncident": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "fire": {
+          "type": "integer"
+        },
+        "nhtsaIdNumber": {
+          "type": "string"
+        },
+        "numberOfDeaths": {
+          "type": "integer"
+        },
+        "numberOfInjuries": {
+          "type": "integer"
+        },
+        "stateAbbreviation": {
+          "type": "string"
+        },
+        "vin": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ComplaintAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ComplaintAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ComplaintComponent": {
+      "properties": {
+        "complaint": {
+          "$ref": "#/definitions/Complaint"
+        },
+        "component": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "originalPart": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ComplaintComponentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ComplaintComponent"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ComplaintWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Complaint"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Component": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ComponentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Component"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Components": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ComponentsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Components"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "CrashTestRating": {
+      "properties": {
+        "curbWeight": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        },
+        "media": {
+          "items": {
+            "$ref": "#/definitions/Media"
+          },
+          "type": "array"
+        },
+        "mmy": {
+          "type": "string"
+        },
+        "ncapVehicleId": {
+          "type": "integer"
+        },
+        "ratings": {
+          "items": {
+            "$ref": "#/definitions/Rating"
+          },
+          "type": "array"
+        },
+        "reports": {
+          "items": {
+            "$ref": "#/definitions/Report"
+          },
+          "type": "array"
+        },
+        "testNo": {
+          "type": "integer"
+        },
+        "testedWith": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "CrashTestRatingWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/CrashTestRating"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Document": {
+      "properties": {
+        "foreignCampaign": {
+          "$ref": "#/definitions/ForeignCampaign"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "ncapRating": {
+          "$ref": "#/definitions/NCAPRating"
+        },
+        "safetyIssue": {
+          "$ref": "#/definitions/SafetyIssue"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "DocumentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Document"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Documents": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "DocumentsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Documents"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EWRManufacturer": {
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "reportTypes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "reportTypes"
+      ],
+      "type": "object"
+    },
+    "EWRManufacturerDetail": {
+      "properties": {
+        "damages": {
+          "items": {
+            "$ref": "#/definitions/EWRReportPeriod"
+          },
+          "type": "array"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "injuries": {
+          "items": {
+            "$ref": "#/definitions/EWRReportPeriod"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productions": {
+          "items": {
+            "$ref": "#/definitions/EWRReportPeriod"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "injuries",
+        "productions",
+        "damages"
+      ],
+      "type": "object"
+    },
+    "EWRManufacturerDetailWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/EWRManufacturerDetail"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EWRManufacturersWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/EWRManufacturer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EWRReportPeriod": {
+      "properties": {
+        "quarter": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "reports": {
+          "items": {
+            "$ref": "#/definitions/EWRReportPeriodCategory"
+          },
+          "type": "array"
+        },
+        "year": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "year",
+        "quarter",
+        "reports"
+      ],
+      "type": "object"
+    },
+    "EWRReportPeriodCategory": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "categoryCode": {
+          "type": "string"
+        },
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "reportId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "reportUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "categoryCode",
+        "count",
+        "reportId",
+        "reportUrl"
+      ],
+      "type": "object"
+    },
+    "EWRInjury": {
+      "properties": {
+        "sequenceId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "year": {
+          "type": "string"
+        },
+        "incidentDate": {
+          "type": "string"
+        },
+        "deaths": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "injuries": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "stateOrCountryCode": {
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "vin": {
+          "type": "string"
+        },
+        "productIdentifier": {
+          "type": "string"
+        },
+        "tin": {
+          "type": "string"
+        },
+        "vehicleMake": {
+          "type": "string"
+        },
+        "vehicleModel": {
+          "type": "string"
+        },
+        "vehicleYear": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "sequenceId",
+        "year",
+        "incidentDate",
+        "deaths",
+        "injuries",
+        "stateOrCountryCode",
+        "components"
+      ]
+    },
+    "EWRInjuryWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/EWRInjury"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EWRProduction": {
+      "properties": {
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "fuelSystem": {
+          "type": "string"
+        },
+        "brakeSystem": {
+          "type": "string"
+        },
+        "typeCode": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "totalProduction": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "fuelPropulsionSystem": {
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": ["make", "model", "modelYear", "typeCode", "totalProduction"]
+    },
+    "EWRProductionWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/EWRProduction"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "EWRPropertyDamage": {
+      "properties": {
+        "year": {
+          "type": "string"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "typeCode": {
+          "type": "string"
+        },
+        "fuelPropulsionSystem": {
+          "type": "string"
+        },
+        "steering": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "suspension": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "serviceBrake": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "serviceBrakeAir": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "parkingBrake": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "engAndEngCooling": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fuelSystem": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fuelSystemDiesel": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fuelSystemOther": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "powerTrain": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "electrical": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "extLighting": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "visibility": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "airbags": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "seatbelts": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "structure": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "latch": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "speedControl": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tiresRelated": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "wheels": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "trailerHitch": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "seats": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fireRelated": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rollover": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "buckle": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "seatShell": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "handle": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "base": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "electronicStabilityCtrl": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "forwardCollision": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "laneDeparture": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "backoverPrevention": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tireLine": {
+          "type": "string"
+        },
+        "tireSize": {
+          "type": "string"
+        },
+        "sku": {
+          "type": "string"
+        },
+        "plantCode": {
+          "type": "string"
+        },
+        "tread": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sidewall": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "bead": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "other": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object",
+      "required": [
+        "year"
+      ]
+    },
+    "EWRPropertyDamageWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/EWRPropertyDamage"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Equipment": {
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "safetyIssues": {
+          "$ref": "#/definitions/SafetyIssueAggregate"
+        }
+      },
+      "type": "object"
+    },
+    "EquipmentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Equipment"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Feature": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FeatureWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Feature"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ForeignCampaign": {
+      "properties": {
+        "associatedDocuments": {
+          "items": {
+            "$ref": "#/definitions/Documents"
+          },
+          "type": "array"
+        },
+        "dateReceived": {
+          "format": "date",
+          "type": "string"
+        },
+        "foreignRecallNumber": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "recallTypeCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ForeignCampaignWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ForeignCampaign"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InspectionStationDetails": {
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        },
+        "hasEvent": {
+          "type": "boolean"
+        },
+        "hours": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "note": {
+          "description": "a list of dates.",
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "spanishSpeaking": {
+          "type": "boolean"
+        },
+        "state": {
+          "type": "string"
+        },
+        "stateAbbr": {
+          "type": "string"
+        },
+        "streetAddress": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "InspectionStationDetailsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/InspectionStationDetails"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Investigation": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "closeDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "createDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "investigationNumber": {
+          "type": "string"
+        },
+        "investigationType": {
+          "enum": [
+            "AQ",
+            "C",
+            "DP",
+            "EA",
+            "EQ",
+            "ID",
+            "IE",
+            "IQ",
+            "IR",
+            "PE",
+            "RP",
+            "RQ",
+            "SQ",
+            "TA",
+            "TQ"
+          ],
+          "type": "string"
+        },
+        "issueYear": {
+          "type": "string"
+        },
+        "latestActivityDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "nhtsaId": {
+          "type": "string"
+        },
+        "openDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "updateDate": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationAggregate": {
+      "properties": {
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Components"
+          },
+          "type": "array"
+        },
+        "dateClosed": {
+          "type": "string"
+        },
+        "dateOpened": {
+          "type": "string"
+        },
+        "nhtsaCampaignNumber": {
+          "type": "string"
+        },
+        "recalls": {
+          "items": {
+            "$ref": "#/definitions/Recalls"
+          },
+          "type": "array"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/InvestigationAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationComponent": {
+      "properties": {
+        "component": {
+          "$ref": "#/definitions/Component"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "investigation": {
+          "$ref": "#/definitions/Investigation"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationComponentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/InvestigationComponent"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Investigation"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Investigations": {
+      "properties": {
+        "nhtsaActionNumber": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "InvestigationsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Investigations"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "MFRCommunicationAggregate": {
+      "properties": {
+        "communicationDate": {
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Components"
+          },
+          "type": "array"
+        },
+        "manufacturerCommunicationNumber": {
+          "type": "string"
+        },
+        "nhtsaIdNumber": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MFRCommunicationAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/MFRCommunicationAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Makes": {
+      "properties": {
+        "make": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MakesWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Makes"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Manufacturer": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ncapId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "products": {
+          "items": {
+            "$ref": "#/definitions/Product"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ManufacturerCommunication": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "communicationDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "createDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "externalManufacturerId": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "issueYear": {
+          "type": "string"
+        },
+        "microfisheId": {
+          "type": "string"
+        },
+        "replacedTsbsId": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "updateDate": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ManufacturerCommunicationComponent": {
+      "properties": {
+        "component": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "manufacturerCommunication": {
+          "$ref": "#/definitions/ManufacturerCommunication"
+        }
+      },
+      "type": "object"
+    },
+    "ManufacturerCommunicationComponentWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ManufacturerCommunicationComponent"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ManufacturerCommunicationWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ManufacturerCommunication"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ManufacturerWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Manufacturer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Media": {
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MediaWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Media"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Message": {
+      "properties": {
+        "errorCode": {
+          "type": "string"
+        },
+        "errorDetail": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "userMessage": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MessageWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Message"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Meta": {
+      "properties": {
+        "messages": {
+          "items": {
+            "$ref": "#/definitions/Message"
+          },
+          "type": "array"
+        },
+        "pagination": {
+          "items": {
+            "$ref": "#/definitions/Pagination"
+          },
+          "type": "array"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "MetaWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Meta"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ModelYears": {
+      "properties": {
+        "modelYear": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ModelYearsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ModelYears"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Models": {
+      "properties": {
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ModelsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Models"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "NCAPRating": {
+      "properties": {
+        "additionalAirbags": {
+          "type": "string"
+        },
+        "ars": {
+          "type": "string"
+        },
+        "arsLocDescription": {
+          "type": "string"
+        },
+        "backupCamera": {
+          "type": "string"
+        },
+        "chestSabType": {
+          "type": "string"
+        },
+        "combinedFrontRating": {
+          "type": "string"
+        },
+        "combinedRearRating": {
+          "type": "string"
+        },
+        "crashImminentBraking": {
+          "type": "string"
+        },
+        "curbWeight": {
+          "type": "string"
+        },
+        "dynamicBrakeSupport": {
+          "type": "string"
+        },
+        "dynamicHeadRestraintDescr": {
+          "type": "string"
+        },
+        "electronicStabilityControl": {
+          "type": "string"
+        },
+        "frontCollisionWarning": {
+          "type": "string"
+        },
+        "frontCrashDriversideRating": {
+          "type": "integer"
+        },
+        "frontCrashPassengersideRating": {
+          "type": "integer"
+        },
+        "frontCrashPicture": {
+          "type": "string"
+        },
+        "frontCrashVideo": {
+          "type": "string"
+        },
+        "frontDriverConcern": {
+          "type": "string"
+        },
+        "frontDriverNotes": {
+          "type": "string"
+        },
+        "frontPassengerConcern": {
+          "type": "string"
+        },
+        "frontPassengerNotes": {
+          "type": "string"
+        },
+        "frontTestNo": {
+          "type": "integer"
+        },
+        "frontTestedWith": {
+          "type": "string"
+        },
+        "headRestraintDescr": {
+          "type": "string"
+        },
+        "headSabDescription": {
+          "type": "string"
+        },
+        "headSabMeetRequirements": {
+          "type": "string"
+        },
+        "headSabType": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "kneeLocDescription": {
+          "type": "string"
+        },
+        "laneDepartureWarning": {
+          "type": "string"
+        },
+        "latchPositionDescr": {
+          "type": "string"
+        },
+        "loadLimiters": {
+          "type": "string"
+        },
+        "seatBeltPretensionerLoc": {
+          "type": "string"
+         },
+        "loadLimitersLoc": {
+          "type": "string"
+        },
+        "nhtsaFootNotes": {
+          "type": "string"
+        },
+        "overallFrontCrashRating": {
+          "type": "integer"
+        },
+        "overallRating": {
+          "type": "integer"
+        },
+        "overallSideCrashRating": {
+          "type": "integer"
+        },
+        "pelvisSabDescription": {
+          "type": "string"
+        },
+        "pelvisSabType": {
+          "type": "string"
+        },
+        "poleTestNo": {
+          "type": "integer"
+        },
+        "regBackupCamera": {
+          "type": "string"
+        },
+        "rollNotes": {
+          "type": "string"
+        },
+        "rollSafetyConcern": {
+          "type": "string"
+        },
+        "rollTip": {
+          "type": "string"
+        },
+        "rollTip2": {
+          "type": "string"
+        },
+        "rolloverPossibility": {
+          "type": "string"
+        },
+        "rolloverPossibility2": {
+          "type": "string"
+        },
+        "rolloverRating": {
+          "type": "string"
+        },
+        "rolloverRating2": {
+          "type": "string"
+        },
+        "seatBeltReminder": {
+          "type": "string"
+        },
+        "sideBarrierRating": {
+          "type": "string"
+        },
+        "sideCrashDriversideRating": {
+          "type": "integer"
+        },
+        "sideCrashPassengersideRating": {
+          "type": "integer"
+        },
+        "sideCrashPicture": {
+          "type": "string"
+        },
+        "sideCrashVideo": {
+          "type": "string"
+        },
+        "sideDriverConcern": {
+          "type": "string"
+        },
+        "sideDriverNotes": {
+          "type": "string"
+        },
+        "sidePassengerConcern": {
+          "type": "string"
+        },
+        "sidePassengerNotes": {
+          "type": "string"
+        },
+        "sidePoleConcern": {
+          "type": "string"
+        },
+        "sidePoleCrashRating": {
+          "type": "string"
+        },
+        "sidePoleNotes": {
+          "type": "string"
+        },
+        "sidePolePicture": {
+          "type": "string"
+        },
+        "sidePoleTestedWith": {
+          "type": "string"
+        },
+        "sidePoleVideo": {
+          "type": "string"
+        },
+        "sideTestNo": {
+          "type": "integer"
+        },
+        "sideTestedWith": {
+          "type": "string"
+        },
+        "torsoSabDescription": {
+          "type": "string"
+        },
+        "upperBeltAnchorageDescr": {
+          "type": "string"
+        },
+        "vehicle": {
+          "$ref": "#/definitions/Vehicle"
+        },
+        "vehiclePicture": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "NCAPRatingWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/NCAPRating"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Note": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "NoteWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Note"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Pagination": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "currentUrl": {
+          "type": "string"
+        },
+        "max": {
+          "type": "integer"
+        },
+        "nextUrl": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "order": {
+          "type": "string"
+        },
+        "previousUrl": {
+          "type": "string"
+        },
+        "sort": {
+          "type": "string"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "PaginationWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Pagination"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PartialChildSeat": {
+      "properties": {
+        "childSeatMode": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "maximumChildAge": {
+          "type": "integer"
+        },
+        "minimumChildAge": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "PartialChildSeatWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/PartialChildSeat"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PartialVehicle": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "productYear": {
+          "type": "integer"
+        },
+        "vehicleClass": {
+          "type": "string"
+        },
+        "vehicleTrim": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PartialVehicleWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/PartialVehicle"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Product": {
+      "properties": {
+        "artemisCreateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "artemisUpdateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "$ref": "#/definitions/Manufacturer"
+        },
+        "model": {
+          "type": "string"
+        },
+        "productCategory": {
+          "enum": [
+            "C",
+            "E",
+            "H",
+            "L",
+            "M",
+            "T",
+            "U",
+            "Y"
+          ],
+          "type": "string"
+        },
+        "productType": {
+          "enum": [
+            "AT",
+            "BS",
+            "BT",
+            "CD",
+            "CO",
+            "DB",
+            "DT",
+            "EV",
+            "FT",
+            "IC",
+            "LB",
+            "LT",
+            "MP",
+            "OT",
+            "PC",
+            "RI",
+            "RT",
+            "RV",
+            "SB",
+            "TB",
+            "TK",
+            "TT",
+            "UNK",
+            "UN",
+            "VT",
+            "FK"
+          ],
+          "type": "string"
+        },
+        "productValidation": {
+          "enum": [
+            "C",
+            "M",
+            "X"
+          ],
+          "type": "string"
+        },
+        "productYear": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductComplaint": {
+      "properties": {
+        "complaint": {
+          "$ref": "#/definitions/Complaint"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "product": {
+          "$ref": "#/definitions/Product"
+        },
+        "productType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductComplaintWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ProductComplaint"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ProductManfacturerCommunication": {
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "manufacturerCommunication": {
+          "$ref": "#/definitions/ManufacturerCommunication"
+        },
+        "product": {
+          "$ref": "#/definitions/Product"
+        }
+      },
+      "type": "object"
+    },
+    "ProductManfacturerCommunicationWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ProductManfacturerCommunication"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ProductWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Product"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Products": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Products"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Rating": {
+      "properties": {
+        "display": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "possibility": {
+          "type": "integer"
+        },
+        "rating": {
+          "type": "integer"
+        },
+        "ratings": {
+          "items": {
+            "$ref": "#/definitions/Rating"
+          },
+          "type": "array"
+        },
+        "safetyConcerns": {
+          "type": "string"
+        },
+        "tip": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "RatingWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Rating"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Recall": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "campaignId": {
+          "type": "string"
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "correctiveAction": {
+          "type": "string"
+        },
+        "createDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "issueYear": {
+          "type": "string"
+        },
+        "major": {
+          "type": "string"
+        },
+        "manufacturerName": {
+          "type": "string"
+        },
+        "mfrRecallNumber": {
+          "type": "string"
+        },
+        "mfrTollFreeNumber": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "ownerNotificationDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "potaff": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "potdef": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "recall573Date": {
+          "format": "date",
+          "type": "string"
+        },
+        "recall573ReceivedDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "recallType": {
+          "enum": [
+            "D",
+            "C",
+            "S"
+          ],
+          "type": "string"
+        },
+        "significantChangeDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "statusUpdateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "synopsis": {
+          "type": "string"
+        },
+        "typeCode": {
+          "enum": [
+            "V",
+            "I",
+            "C",
+            "T",
+            "X",
+            "E"
+          ],
+          "type": "string"
+        },
+        "updateDate": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RecallAggregate": {
+      "properties": {
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Components"
+          },
+          "type": "array"
+        },
+        "consequence": {
+          "type": "string"
+        },
+        "correctiveAction": {
+          "type": "string"
+        },
+        "investigations": {
+          "items": {
+            "$ref": "#/definitions/Investigations"
+          },
+          "type": "array"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "nhtsaCampaignNumber": {
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "potentialNumberOfUnitsAffected": {
+          "type": "string"
+        },
+        "reportsReceivedDate": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RecallAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/RecallAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RecallInvestigation": {
+      "properties": {
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "investigation": {
+          "$ref": "#/definitions/Investigation"
+        },
+        "recall": {
+          "$ref": "#/definitions/Recall"
+        }
+      },
+      "type": "object"
+    },
+    "RecallInvestigationWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/RecallInvestigation"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RecallWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Recall"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Recalls": {
+      "properties": {
+        "nhtsaCampaignNumber": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RecallsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Recalls"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RecommendedFeature": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "installed": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "video": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RecommendedFeatureWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/RecommendedFeature"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyConcern": {
+      "properties": {
+        "concern": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyConcernWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyConcern"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyFeature": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "features": {
+          "items": {
+            "$ref": "#/definitions/Feature"
+          },
+          "type": "array"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyFeatureWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyFeature"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyIssue": {
+      "properties": {
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "createDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "issueYear": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "updateDate": {
+          "format": "date",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyIssueAggregate": {
+      "properties": {
+        "complaints": {
+          "items": {
+            "$ref": "#/definitions/ComplaintAggregate"
+          },
+          "type": "array"
+        },
+        "investigation": {
+          "items": {
+            "$ref": "#/definitions/InvestigationAggregate"
+          },
+          "type": "array"
+        },
+        "manufacturerCommunications": {
+          "items": {
+            "$ref": "#/definitions/MFRCommunicationAggregate"
+          },
+          "type": "array"
+        },
+        "recalls": {
+          "items": {
+            "$ref": "#/definitions/RecallAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyIssueAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyIssueAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyIssueWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyIssue"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyRatingAggregate": {
+      "properties": {
+        "crashTestRatings": {
+          "items": {
+            "$ref": "#/definitions/CrashTestRating"
+          },
+          "type": "array"
+        },
+        "recommendedFeatures": {
+          "items": {
+            "$ref": "#/definitions/RecommendedFeature"
+          },
+          "type": "array"
+        },
+        "safetyFeatures": {
+          "items": {
+            "$ref": "#/definitions/SafetyFeature"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyRatingAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyRatingAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyRatingFullAggregate": {
+      "properties": {
+        "crashTestRatings": {
+          "items": {
+            "$ref": "#/definitions/CrashTestRating"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "SafetyRatingFullAggregateWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/SafetyRatingFullAggregate"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Tire": {
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "const": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "safetyIssues": {
+          "$ref": "#/definitions/SafetyIssueAggregate"
+        },
+        "size": {
+          "type": "string"
+        },
+        "temp": {
+          "type": "string"
+        },
+        "tireline": {
+          "type": "string"
+        },
+        "trac": {
+          "type": "string"
+        },
+        "wear": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TireBrand": {
+      "properties": {
+        "brand": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TireBrandWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/TireBrand"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TireWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Tire"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Trims": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TrimsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Trims"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Vehicle": {
+      "properties": {
+        "artemisCreateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "artemisId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "artemisUpdateDate": {
+          "format": "date",
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "$ref": "#/definitions/Manufacturer"
+        },
+        "mmy": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "ncapRating": {
+          "$ref": "#/definitions/NCAPRating"
+        },
+        "ncapVehicleId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "productCategory": {
+          "enum": [
+            "C",
+            "E",
+            "H",
+            "L",
+            "M",
+            "T",
+            "U",
+            "Y"
+          ],
+          "type": "string"
+        },
+        "productType": {
+          "enum": [
+            "AT",
+            "BS",
+            "BT",
+            "CD",
+            "CO",
+            "DB",
+            "DT",
+            "EV",
+            "FT",
+            "IC",
+            "LB",
+            "LT",
+            "MP",
+            "OT",
+            "PC",
+            "RI",
+            "RT",
+            "RV",
+            "SB",
+            "TB",
+            "TK",
+            "TT",
+            "UNK",
+            "UN",
+            "VT",
+            "FK"
+          ],
+          "type": "string"
+        },
+        "productValidation": {
+          "enum": [
+            "C",
+            "M",
+            "X"
+          ],
+          "type": "string"
+        },
+        "productYear": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "series": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "vehicleClass": {
+          "type": "string"
+        },
+        "vehicleTrim": {
+          "type": "string"
+        },
+        "vehicleType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleBasic": {
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "complaintsCount": {
+          "type": "integer"
+        },
+        "investigationsCount": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "manufacturerCommunicationsCount": {
+          "type": "integer"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "ncapRated": {
+          "type": "boolean"
+        },
+        "recallsCount": {
+          "type": "integer"
+        },
+        "series": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "vehicleDescription": {
+          "type": "string"
+        },
+        "vehicleId": {
+          "type": "integer"
+        },
+        "vehiclePicture": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleBasicWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/VehicleBasic"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleDetails": {
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "complaintsCount": {
+          "type": "integer"
+        },
+        "investigationsCount": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "manufacturerCommunicationsCount": {
+          "type": "integer"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "ncapRated": {
+          "type": "boolean"
+        },
+        "recallsCount": {
+          "type": "integer"
+        },
+        "safetyIssues": {
+          "$ref": "#/definitions/SafetyIssueAggregate"
+        },
+        "safetyRatings": {
+          "$ref": "#/definitions/SafetyRatingAggregate"
+        },
+        "series": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "vehicleDescription": {
+          "type": "string"
+        },
+        "vehicleId": {
+          "type": "integer"
+        },
+        "vehiclePicture": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleDetailsWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/VehicleDetails"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleFull": {
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "complaintsCount": {
+          "type": "integer"
+        },
+        "investigationsCount": {
+          "type": "integer"
+        },
+        "make": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "manufacturerCommunicationsCount": {
+          "type": "integer"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "ncapRated": {
+          "type": "boolean"
+        },
+        "recallsCount": {
+          "type": "integer"
+        },
+        "safetyRatings": {
+          "$ref": "#/definitions/SafetyRatingFullAggregate"
+        },
+        "series": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "vehicleDescription": {
+          "type": "string"
+        },
+        "vehicleId": {
+          "type": "integer"
+        },
+        "vehiclePicture": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleFullWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/VehicleFull"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleMinimal": {
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "modelYear": {
+          "type": "string"
+        },
+        "safetyIssues": {
+          "$ref": "#/definitions/SafetyIssueAggregate"
+        },
+        "safetyRatings": {
+          "$ref": "#/definitions/SafetyRatingAggregate"
+        },
+        "series": {
+          "type": "string"
+        },
+        "trim": {
+          "type": "string"
+        },
+        "vehicleId": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleMinimalWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/VehicleMinimal"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "VehicleWrapped": {
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/Meta"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/Vehicle"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "test": {}
+  },
+  "info": {
+    "title": "NHTSA API",
+    "version": "1.6.0"
+  },
+  "parameters": {
+    "EquipmentSort": {
+      "allowEmptyValue": false,
+      "collectionFormat": "csv",
+      "default": "productName",
+      "description": "key to sort on",
+      "enum": [
+        "productName",
+        "recallsCount",
+        "investigationsCount",
+        "complaintsCount",
+        "manufacturerCommunicationsCount"
+      ],
+      "format": "",
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "type": "string"
+    },
+    "Filter": {
+      "allowEmptyValue": true,
+      "collectionFormat": "csv",
+      "description": "Filter options based on seatType",
+      "enum": [
+        "seatTypeInfant",
+        "seatTypeCombination",
+        "seatTypeConvertible",
+        "seatTypeBooster",
+        "seatType3-in-1"
+      ],
+      "format": "",
+      "in": "query",
+      "name": "seatTypeFilter",
+      "required": false,
+      "type": "string"
+    },
+    "Sort": {
+      "allowEmptyValue": false,
+      "collectionFormat": "csv",
+      "default": "make",
+      "description": "key to sort on",
+      "enum": [
+        "make",
+        "productModel",
+        "seatType",
+        "childWeight",
+        "childHeight",
+        "recallsCount",
+        "investigationsCount",
+        "complaintsCount",
+        "manufacturerCommunicationsCount"
+      ],
+      "format": "",
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "type": "string"
+    },
+    "TireSort": {
+      "allowEmptyValue": false,
+      "collectionFormat": "csv",
+      "default": "productName",
+      "description": "key to sort on",
+      "enum": [
+        "productName",
+        "size",
+        "trac",
+        "temp",
+        "wear",
+        "recallsCount",
+        "investigationsCount",
+        "complaintsCount",
+        "manufacturerCommunicationsCount"
+      ],
+      "format": "",
+      "in": "query",
+      "name": "sort",
+      "required": false,
+      "type": "string"
+    }
+  },
+  "paths": {
+    "/childSeats": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturerCommunications).",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Child weight for any childSeat mode",
+            "format": "",
+            "in": "query",
+            "name": "weight",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Child height for any childSeat mode",
+            "format": "",
+            "in": "query",
+            "name": "height",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Child age for any childSeat mode",
+            "format": "",
+            "in": "query",
+            "name": "age",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Child height for any childSeat mode",
+            "format": "",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Returns child seats based on model",
+            "format": "",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/Filter"
+          },
+          {
+            "$ref": "#/parameters/Sort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "asc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns zero or more childSeats",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ChildseatWrapped"
+              },
+              "title": "ArrayOfChildSeats",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/bySearch": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "returns zero or more child seats based on search query",
+            "format": "",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/Filter"
+          },
+          {
+            "$ref": "#/parameters/Sort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "asc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Fuzzy search for a child seat based on make, productModel, and modelNumber",
+            "schema": {
+              "$ref": "#/definitions/ChildseatWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/inspectionStations": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "returns inspections stations within provided usState; use states provided by /carseats",
+            "format": "",
+            "in": "query",
+            "name": "usState",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "latitude of the child seat inspection stations overrides usState query param",
+            "format": "",
+            "in": "query",
+            "name": "latitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "longtiude of the child seat inspection stations overrides usState query param",
+            "format": "",
+            "in": "query",
+            "name": "longitude",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": 25,
+            "description": "maximum distance to search for an inspection station",
+            "enum": [
+              "25",
+              "50",
+              "75",
+              "100"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "distance",
+            "required": false,
+            "type": "number"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": false,
+            "description": "only return inspection stations that have spanish speaking contacts",
+            "format": "",
+            "in": "query",
+            "name": "onlySpanishSpeaking",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": false,
+            "description": "only return inspection statings that have an event associated with them",
+            "format": "",
+            "in": "query",
+            "name": "onlyWithEvent",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns zero or more inspections stations based on queries provided",
+            "schema": {
+              "$ref": "#/definitions/InspectionStationDetailsWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/inspectionStations/states": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all states with inspection stations",
+            "schema": {
+              "$ref": "#/definitions/PartialChildSeatWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/manufacturers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all available child seat manufacturers",
+            "schema": {
+              "$ref": "#/definitions/PartialChildSeatWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/modes": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns list of child seat modes and their recommended age range in years",
+            "schema": {
+              "$ref": "#/definitions/PartialChildSeatWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/childSeats/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "ID of the child seat",
+            "format": "int64",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a single child seat with the specified ID",
+            "schema": {
+              "$ref": "#/definitions/ChildseatWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "childSeats"
+        ]
+      }
+    },
+    "/equipment": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "brand of equipment",
+            "format": "",
+            "in": "query",
+            "name": "brand",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "model of the equipment",
+            "format": "",
+            "in": "query",
+            "name": "modelName",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/EquipmentSort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "desc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns zero or more equipment",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/EquipmentWrapped"
+              },
+              "title": "ArrayOfEquipment",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "equipment"
+        ]
+      }
+    },
+    "/equipment/brands": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all available equipment brands"
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "equipment"
+        ]
+      }
+    },
+    "/equipment/bySearch": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "returns zero or more tires based on search query",
+            "format": "",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/EquipmentSort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "desc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return, upper bound: 50.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Fuzzy search for a equipment based on manufacturer and mode",
+            "schema": {
+              "$ref": "#/definitions/EquipmentWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "equipment"
+        ]
+      }
+    },
+    "/equipment/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "ID of the equipmentDetails",
+            "format": "int64",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a single equipmentDetails with the specified ID",
+            "schema": {
+              "$ref": "#/definitions/EquipmentWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "equipment"
+        ]
+      }
+    },
+    "/ewr/damages": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The year of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The quarter of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "quarter",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The category of the property damage reports",
+            "in": "query",
+            "name": "reportCategory",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "H",
+              "L",
+              "M",
+              "T",
+              "Y"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of property damage reports",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/EWRPropertyDamageWrapped"
+              },
+              "title": "ArrayOfEWRPropertyDamages",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "ewr"
+        ]
+      }
+    },
+    "/ewr/injuries": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The year of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The quarter of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "quarter",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The category of the injury reports",
+            "in": "query",
+            "name": "reportCategory",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "C",
+              "E",
+              "H",
+              "L",
+              "M",
+              "T",
+              "Y",
+              "Z"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of injuries for the given report period and category",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/EWRInjuryWrapped"
+              },
+              "title": "ArrayOfEWRInjuries",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "ewr"
+        ]
+      }
+    },
+    "/ewr/manufacturers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of EWR manufacturers",
+            "schema": {
+              "$ref": "#/definitions/EWRManufacturersWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "ewr"
+        ]
+      }
+    },
+    "/ewr/manufacturers/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "ID of manufacturer",
+            "format": "int64",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Details for a specific manufacturer",
+            "schema": {
+              "$ref": "#/definitions/EWRManufacturerDetailWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "ewr"
+        ]
+      }
+    },
+    "/ewr/productions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The year of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "year",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The quarter of the reporting period",
+            "format": "int32",
+            "in": "query",
+            "name": "quarter",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The category of the light vehicle production reports",
+            "in": "query",
+            "name": "reportCategory",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "L"
+            ]
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of light vehicle productions",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/EWRProductionWrapped"
+              },
+              "title": "ArrayOfEWRProductions",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "ewr"
+        ]
+      }
+    },
+    "/foreignCampaigns": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "manufacturer associated with the foreign campaign",
+            "format": "",
+            "in": "query",
+            "name": "manufacturer",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The date to restrict the search to. Format: yyyy-MM-dd",
+            "format": "",
+            "in": "query",
+            "name": "dateStart",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The date to restrict the search to. Format: yyyy-MM-dd",
+            "format": "",
+            "in": "query",
+            "name": "dateEnd",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "desc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns zero or more Foreign Campaigns",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ForeignCampaignWrapped"
+              },
+              "title": "ArrayOfForeignCampaign",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "foreignCampaigns"
+        ]
+      }
+    },
+    "/foreignCampaigns/manufacturers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all available Foreign Campaign manufacturers",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "foreignCampaigns"
+        ]
+      }
+    },
+    "/foreignCampaigns/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "ID of the Foreign Campaign",
+            "format": "int64",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a single Foreign Campaign with the specified ID",
+            "schema": {
+              "$ref": "#/definitions/ForeignCampaignWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "foreignCampaigns"
+        ]
+      }
+    },
+    "/safetyIssues": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of safety issues",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/SafetyIssue"
+              },
+              "title": "ArrayOfSafetyIssues",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "safetyIssues"
+        ]
+      }
+    },
+    "/safetyIssues/byDate": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The start date to look up safetyIssues by.",
+            "format": "date",
+            "in": "query",
+            "name": "dateStart",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The end date to look up safetyIssues by.",
+            "format": "date",
+            "in": "query",
+            "name": "dateEnd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The specified issue type only: 'recall', 'investigation'.(defaults to recall)",
+            "format": "",
+            "in": "query",
+            "name": "issueType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of SafetyIssues from within the specified date range.",
+            "schema": {
+              "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "safetyIssues"
+        ]
+      }
+    },
+    "/safetyIssues/byKeywords": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The keyword[s] to search descriptions for (Only applicable to 'complaint' type). Natural language (words, spaces) is allowed.",
+            "format": "",
+            "in": "query",
+            "name": "keywords",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "match must have all keywords. true or false. defaults to true",
+            "format": "",
+            "in": "query",
+            "name": "allKeywords",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [vehicle], [childSeat], [tireDetails], [equipment] without brackets. Choose which product type to limit the search to.",
+            "format": "",
+            "in": "query",
+            "name": "productType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Find only products made in the specified year or later",
+            "format": "int32",
+            "in": "query",
+            "name": "productYearStart",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Find only products made in the specified year or before",
+            "format": "int32",
+            "in": "query",
+            "name": "productYearEnd",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Restrict query to the specified make only",
+            "format": "",
+            "in": "query",
+            "name": "productMake",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Restrict query to the specified model only",
+            "format": "",
+            "in": "query",
+            "name": "productModel",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [recall], [manufacturerCommunication], [complaint], [investigation] without brackets. Choose which issue type to limit the search to.",
+            "format": "",
+            "in": "query",
+            "name": "issueType",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of issues containing the key word[s] in their descriptions.",
+            "schema": {
+              "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "safetyIssues"
+        ]
+      }
+    },
+    "/safetyIssues/byNhtsaId": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The nhtsa id to search for.",
+            "format": "int64",
+            "in": "query",
+            "name": "nhtsaId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Filter the response by the specified field. Valid inputs: [issueType]",
+            "format": "",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The value to use as a filter. Valid inputs: [recalls,complaints,investigations,manufacturerCommunications]",
+            "format": "",
+            "in": "query",
+            "name": "filterValue",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of SafetyIssues identified by the specified nhtsaId.",
+            "schema": {
+              "$ref": "#/definitions/SafetyIssueAggregateWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "safetyIssues"
+        ]
+      }
+    },
+    "/tires": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\".",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "brand of tireDetails",
+            "format": "",
+            "in": "query",
+            "name": "brand",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "line of the tireDetails",
+            "format": "",
+            "in": "query",
+            "name": "tireline",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "size of the tireDetails",
+            "format": "",
+            "in": "query",
+            "name": "size",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/TireSort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "desc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns zero or more tires",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/TireWrapped"
+              },
+              "title": "ArrayOfTires",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "tires"
+        ]
+      }
+    },
+    "/tires/brands": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'ratings'",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all available tireDetails brands",
+            "schema": {
+              "$ref": "#/definitions/TireBrandWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "tires"
+        ]
+      }
+    },
+    "/tires/bySearch": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "returns zero or more tires based on search query",
+            "format": "",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/TireSort"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "default": "desc",
+            "description": "order in which to sort",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\".",
+            "format": "",
+            "in": "query",
+            "name": "dataSet",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return, upper bound: 50.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Fuzzy search for a tireDetails based on productName and size",
+            "schema": {
+              "$ref": "#/definitions/TireWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "tires"
+        ]
+      }
+    },
+    "/tires/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "ID of the tireDetails",
+            "format": "int64",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a single tireDetails with the specified ID",
+            "schema": {
+              "$ref": "#/definitions/TireWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "tires"
+        ]
+      }
+    },
+    "/vehicles": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of all vehicles.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VehicleBasicWrapped"
+              },
+              "title": "ArrayOfVehicles",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byArtemisId": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The artemisId for a vehicle.",
+            "format": "int64",
+            "in": "query",
+            "name": "artemisId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Return the vehicle associated with the specified artemisId.",
+            "schema": {
+              "$ref": "#/definitions/VehicleDetailsWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byMultipleArtemisIds": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The artemisIds for vehicles. Comma separated if more than one",
+            "format": "int64",
+            "in": "query",
+            "name": "artemisIds",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "This should always be none, as we only want to return minimum counts data",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "This should always be null, as we want to get the counts",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Return the vehicle associated with the specified artemisId.",
+            "schema": {
+              "$ref": "#/definitions/VehicleBasicWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byClass": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The name of the class to search by.",
+            "format": "",
+            "in": "query",
+            "name": "vehicleClass",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [minimal]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "One or more vehicles that match the specified class.",
+            "schema": {
+              "$ref": "#/definitions/VehicleBasicWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byIds": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A CSV list of IDs",
+            "format": "",
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicles matching the specified list of CSV ids.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VehicleDetailsWrapped"
+              },
+              "title": "ArrayOfVehicles",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byManufacturer": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The name of the manufacturer to search by.",
+            "format": "",
+            "in": "query",
+            "name": "manufacturerName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd",
+            "format": "",
+            "in": "query",
+            "name": "dateStart",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd",
+            "format": "",
+            "in": "query",
+            "name": "dateEnd",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']",
+            "format": "",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]",
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]",
+            "format": "",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]",
+            "format": "",
+            "in": "query",
+            "name": "filterValue",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "One or more vehicles that match the specified manufacturer.",
+            "schema": {
+              "$ref": "#/definitions/VehicleBasicWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byNcapId": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The NcapId of the vehicle to look up.",
+            "format": "",
+            "in": "query",
+            "name": "ncapId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records set to return for pagination.",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicles matching the specified NcapId (the original vehicle id in the source NCAP system).",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VehicleDetailsWrapped"
+              },
+              "title": "ArrayOfVehicles",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/bySearch": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A fuzzy search query to search with",
+            "format": "",
+            "in": "query",
+            "name": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "match must have all keywords. true or false. defaults to true",
+            "format": "",
+            "in": "query",
+            "name": "allKeywords",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Find vehicles manufactured since this date (inclusive). Format: yyyy-MM-dd",
+            "format": "date",
+            "in": "query",
+            "name": "dateStart",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Find vehicles manufactured up to this date (inclusive). Format: yyyy-MM-dd",
+            "format": "date",
+            "in": "query",
+            "name": "dateEnd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']",
+            "format": "",
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]",
+            "format": "",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]",
+            "format": "",
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]",
+            "format": "",
+            "in": "query",
+            "name": "filterValue",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return, upper bound: 50.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicles whose make, model, year, or trim match the supplied search query.",
+            "schema": {
+              "$ref": "#/definitions/VehicleBasicWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byVin": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vin number to search for vehicles with.",
+            "format": "",
+            "in": "query",
+            "name": "vin",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "One or more vehicles that match the user-provided VIN.",
+            "schema": {
+              "$ref": "#/definitions/VehicleDetailsWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/byYmmt": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicles modelYear",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYear",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicles make",
+            "format": "",
+            "in": "query",
+            "name": "make",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle model",
+            "format": "",
+            "in": "query",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle trim",
+            "format": "",
+            "in": "query",
+            "name": "trim",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle series",
+            "format": "",
+            "in": "query",
+            "name": "series",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicles matching the specified modelYear, make, model, and [trim (optional)].",
+            "schema": {
+              "$ref": "#/definitions/VehicleDetailsWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/classes": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of all vehicle classes.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/makes": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The model year for which to display makes, or the start year for a range.",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYear",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The end model year for which to display makes.",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYearEnd",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicle makes for the specified modelYear.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/manufacturers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The location of Manufacturers to request. (ncap or all), defaults to ncap",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of vehicle manufacturers.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/modelYears": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of all model years.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/models": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle's modelYear, or the start year of a range.",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYear",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The end year for a range of vehicle modelYears.",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYearEnd",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle's make",
+            "format": "",
+            "in": "query",
+            "name": "make",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of models for the specified model year(optional), and make.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/trims": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle's modelYear",
+            "format": "int32",
+            "in": "query",
+            "name": "modelYear",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle's make",
+            "format": "",
+            "in": "query",
+            "name": "make",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The vehicle's model",
+            "format": "",
+            "in": "query",
+            "name": "model",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The maximum number of records to return. Use '-1' to get all records.",
+            "format": "int32",
+            "in": "query",
+            "name": "max",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "The offset of the records listing (for pagination).",
+            "format": "int32",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of models for the specified modelYear, make, and model.",
+            "schema": {
+              "$ref": "#/definitions/PartialVehicleWrapped"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    },
+    "/vehicles/{id}/details": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "collectionFormat": "csv",
+            "description": "The vehicle's id",
+            "format": "int32",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.",
+            "format": "",
+            "in": "query",
+            "name": "data",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "allowEmptyValue": false,
+            "collectionFormat": "csv",
+            "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]",
+            "format": "",
+            "in": "query",
+            "name": "productDetail",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The details of a vehicle associated with the specified id.",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VehicleDetailsWrapped"
+              },
+              "title": "ArrayOfVehicleAggregate",
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "Invalid Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": [
+          "vehicles"
+        ]
+      }
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "description": "Vehicle search and list endpoints",
+      "name": "vehicles"
+    },
+    {
+      "description": "Child Seat search and list endpoints",
+      "name": "childSeats"
+    },
+    {
+      "description": "Equipment search and list endpoints",
+      "name": "equipment"
+    },
+    {
+      "description": "Foreign Campaign search and list endpoints",
+      "name": "foreignCampaigns"
+    },
+    {
+      "description": "Tire search and list endpoints",
+      "name": "tires"
+    },
+    {
+      "description": "Early Warning Report endpoints",
+      "name": "ewr"
+    },
+    {
+      "description": "Recalls, Investigations, Complaints, and Manufacturer Communications",
+      "name": "safetyIssues"
+    }
+  ]
+}

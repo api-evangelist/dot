@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Rating.json",
+  "title": "Rating",
+  "description": "NHTSA Rating schema",
+  "properties": {
+    "display": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "possibility": {
+      "type": "integer"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "ratings": {
+      "items": {
+        "$ref": "#/definitions/Rating"
+      },
+      "type": "array"
+    },
+    "safetyConcerns": {
+      "type": "string"
+    },
+    "tip": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

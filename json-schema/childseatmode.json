@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ChildSeatMode.json",
+  "title": "ChildSeatMode",
+  "description": "NHTSA ChildSeatMode schema",
+  "properties": {
+    "harnessType": {
+      "type": "string"
+    },
+    "maxChildHeight": {
+      "type": "number"
+    },
+    "maxChildHeightFinal": {
+      "type": "number"
+    },
+    "maxChildWeightFinal": {
+      "type": "number"
+    },
+    "maxUsingLowerAnchors": {
+      "type": "number"
+    },
+    "maxUsingLowerAnchorsFinal": {
+      "type": "number"
+    },
+    "maxUsingSeatBelts": {
+      "type": "number"
+    },
+    "minChildHeight": {
+      "type": "number"
+    },
+    "minUsingLowerAnchors": {
+      "type": "number"
+    },
+    "minUsingSeatBelts": {
+      "type": "number"
+    },
+    "mode": {
+      "description": "Name of the mode, example \"Foward-Facing\"",
+      "type": "string"
+    },
+    "modeWeight": {
+      "type": "number"
+    },
+    "ratings": {
+      "items": {
+        "$ref": "#/definitions/ChildSeatModeRating"
+      },
+      "type": "array"
+    },
+    "recommendedAge": {
+      "type": "boolean"
+    },
+    "weightHeightRange": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

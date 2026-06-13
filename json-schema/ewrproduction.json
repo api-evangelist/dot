@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/EWRProduction.json",
+  "title": "EWRProduction",
+  "description": "NHTSA EWRProduction schema",
+  "properties": {
+    "make": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "modelYear": {
+      "type": "string"
+    },
+    "fuelSystem": {
+      "type": "string"
+    },
+    "brakeSystem": {
+      "type": "string"
+    },
+    "typeCode": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "totalProduction": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "fuelPropulsionSystem": {
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "make",
+    "model",
+    "modelYear",
+    "typeCode",
+    "totalProduction"
+  ]
+}

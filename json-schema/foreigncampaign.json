@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/ForeignCampaign.json",
+  "title": "ForeignCampaign",
+  "description": "NHTSA ForeignCampaign schema",
+  "properties": {
+    "associatedDocuments": {
+      "items": {
+        "$ref": "#/definitions/Documents"
+      },
+      "type": "array"
+    },
+    "dateReceived": {
+      "format": "date",
+      "type": "string"
+    },
+    "foreignRecallNumber": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "recallTypeCode": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

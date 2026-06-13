@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/PartialVehicle.json",
+  "title": "PartialVehicle",
+  "description": "NHTSA PartialVehicle schema",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "make": {
+      "type": "string"
+    },
+    "manufacturerName": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "productYear": {
+      "type": "integer"
+    },
+    "vehicleClass": {
+      "type": "string"
+    },
+    "vehicleTrim": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

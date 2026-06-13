@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/Complaint.json",
+  "title": "Complaint",
+  "description": "NHTSA Complaint schema",
+  "properties": {
+    "artemisId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "childSeat": {
+      "type": "boolean"
+    },
+    "city": {
+      "type": "string"
+    },
+    "consumerLocation": {
+      "type": "string"
+    },
+    "crash": {
+      "type": "boolean"
+    },
+    "createDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "equipment": {
+      "type": "boolean"
+    },
+    "fire": {
+      "type": "boolean"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "incidentDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "issueYear": {
+      "type": "string"
+    },
+    "numberInjured": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "numberOfDeaths": {
+      "format": "int32",
+      "type": "integer"
+    },
+    "odiId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "receivedDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "stateAbbreviation": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "tire": {
+      "type": "boolean"
+    },
+    "updateDate": {
+      "format": "date",
+      "type": "string"
+    },
+    "vehicle": {
+      "type": "boolean"
+    },
+    "vin": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

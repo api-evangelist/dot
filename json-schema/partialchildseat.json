@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.nhtsa.gov/schemas/PartialChildSeat.json",
+  "title": "PartialChildSeat",
+  "description": "NHTSA PartialChildSeat schema",
+  "properties": {
+    "childSeatMode": {
+      "type": "string"
+    },
+    "manufacturerName": {
+      "type": "string"
+    },
+    "maximumChildAge": {
+      "type": "integer"
+    },
+    "minimumChildAge": {
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}
