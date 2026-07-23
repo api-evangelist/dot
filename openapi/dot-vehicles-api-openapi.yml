@@ -1,0 +1,1403 @@
+swagger: '2.0'
+info:
+  title: NHTSA childSeats vehicles API
+  version: 1.6.0
+  description: Child Seat search and list endpoints
+tags:
+- description: Vehicle search and list endpoints
+  name: vehicles
+paths:
+  /vehicles:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of all vehicles.
+          schema:
+            items:
+              $ref: '#/definitions/VehicleBasicWrapped'
+            title: ArrayOfVehicles
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byArtemisId:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The artemisId for a vehicle.
+        format: int64
+        in: query
+        name: artemisId
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Return the vehicle associated with the specified artemisId.
+          schema:
+            $ref: '#/definitions/VehicleDetailsWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byMultipleArtemisIds:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The artemisIds for vehicles. Comma separated if more than one
+        format: int64
+        in: query
+        name: artemisIds
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: This should always be none, as we only want to return minimum counts data
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: This should always be null, as we want to get the counts
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Return the vehicle associated with the specified artemisId.
+          schema:
+            $ref: '#/definitions/VehicleBasicWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byClass:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The name of the class to search by.
+        format: ''
+        in: query
+        name: vehicleClass
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [minimal]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: One or more vehicles that match the specified class.
+          schema:
+            $ref: '#/definitions/VehicleBasicWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byIds:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A CSV list of IDs
+        format: ''
+        in: query
+        name: ids
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicles matching the specified list of CSV ids.
+          schema:
+            items:
+              $ref: '#/definitions/VehicleDetailsWrapped'
+            title: ArrayOfVehicles
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byManufacturer:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The name of the manufacturer to search by.
+        format: ''
+        in: query
+        name: manufacturerName
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The model year to restrict the manufacturer search to. Format: yyyy-MM-dd'
+        format: ''
+        in: query
+        name: dateStart
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The model year to restrict the manufacturer search to. Format: yyyy-MM-dd'
+        format: ''
+        in: query
+        name: dateEnd
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The column to sort records by. Valid inputs: [''overallRating'', ''overallFrontCrashRating'', ''overallSideCrashRating'', ''rolloverRating'', ''recallsCount'', ''investigationsCount'', ''complaintsCount'', ''manufacturerCommunicationsCount'']'
+        format: ''
+        in: query
+        name: sort
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Which direction the ''sort'' parameter is applied, valid inputs: [asc, desc]'
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Filter the response by the specified field. Valid inputs: [vehicleClass]'
+        format: ''
+        in: query
+        name: filter
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]'
+        format: ''
+        in: query
+        name: filterValue
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: One or more vehicles that match the specified manufacturer.
+          schema:
+            $ref: '#/definitions/VehicleBasicWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byNcapId:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The NcapId of the vehicle to look up.
+        format: ''
+        in: query
+        name: ncapId
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records set to return for pagination.
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicles matching the specified NcapId (the original vehicle id in the source NCAP system).
+          schema:
+            items:
+              $ref: '#/definitions/VehicleDetailsWrapped'
+            title: ArrayOfVehicles
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/bySearch:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A fuzzy search query to search with
+        format: ''
+        in: query
+        name: query
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: match must have all keywords. true or false. defaults to true
+        format: ''
+        in: query
+        name: allKeywords
+        required: false
+        type: boolean
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Find vehicles manufactured since this date (inclusive). Format: yyyy-MM-dd'
+        format: date
+        in: query
+        name: dateStart
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Find vehicles manufactured up to this date (inclusive). Format: yyyy-MM-dd'
+        format: date
+        in: query
+        name: dateEnd
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The column to sort records by. Valid inputs: [''overallRating'', ''overallFrontCrashRating'', ''overallSideCrashRating'', ''rolloverRating'', ''recallsCount'', ''investigationsCount'', ''complaintsCount'', ''manufacturerCommunicationsCount'']'
+        format: ''
+        in: query
+        name: sort
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Which direction the ''sort'' parameter is applied, valid inputs: [asc, desc]'
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Filter the response by the specified field. Valid inputs: [vehicleClass]'
+        format: ''
+        in: query
+        name: filter
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]'
+        format: ''
+        in: query
+        name: filterValue
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The maximum number of records to return, upper bound: 50.'
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicles whose make, model, year, or trim match the supplied search query.
+          schema:
+            $ref: '#/definitions/VehicleBasicWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byVin:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vin number to search for vehicles with.
+        format: ''
+        in: query
+        name: vin
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: One or more vehicles that match the user-provided VIN.
+          schema:
+            $ref: '#/definitions/VehicleDetailsWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/byYmmt:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicles modelYear
+        format: int32
+        in: query
+        name: modelYear
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicles make
+        format: ''
+        in: query
+        name: make
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle model
+        format: ''
+        in: query
+        name: model
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle trim
+        format: ''
+        in: query
+        name: trim
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle series
+        format: ''
+        in: query
+        name: series
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicles matching the specified modelYear, make, model, and [trim (optional)].
+          schema:
+            $ref: '#/definitions/VehicleDetailsWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/classes:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: List of all vehicle classes.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/makes:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The model year for which to display makes, or the start year for a range.
+        format: int32
+        in: query
+        name: modelYear
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The end model year for which to display makes.
+        format: int32
+        in: query
+        name: modelYearEnd
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicle makes for the specified modelYear.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/manufacturers:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The location of Manufacturers to request. (ncap or all), defaults to ncap
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of vehicle manufacturers.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/modelYears:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of all model years.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/models:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle's modelYear, or the start year of a range.
+        format: int32
+        in: query
+        name: modelYear
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The end year for a range of vehicle modelYears.
+        format: int32
+        in: query
+        name: modelYearEnd
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle's make
+        format: ''
+        in: query
+        name: make
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of models for the specified model year(optional), and make.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/trims:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle's modelYear
+        format: int32
+        in: query
+        name: modelYear
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle's make
+        format: ''
+        in: query
+        name: make
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The vehicle's model
+        format: ''
+        in: query
+        name: model
+        required: true
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Paginated list of models for the specified modelYear, make, and model.
+          schema:
+            $ref: '#/definitions/PartialVehicleWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+  /vehicles/{id}/details:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - collectionFormat: csv
+        description: The vehicle's id
+        format: int32
+        in: path
+        name: id
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]'
+        format: ''
+        in: query
+        name: productDetail
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: The details of a vehicle associated with the specified id.
+          schema:
+            items:
+              $ref: '#/definitions/VehicleDetailsWrapped'
+            title: ArrayOfVehicleAggregate
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - vehicles
+definitions:
+  PartialVehicle:
+    properties:
+      id:
+        type: integer
+      make:
+        type: string
+      manufacturerName:
+        type: string
+      model:
+        type: string
+      productYear:
+        type: integer
+      vehicleClass:
+        type: string
+      vehicleTrim:
+        type: string
+    type: object
+  VehicleBasicWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/VehicleBasic'
+        type: array
+    type: object
+  VehicleBasic:
+    properties:
+      class:
+        type: string
+      complaintsCount:
+        type: integer
+      investigationsCount:
+        type: integer
+      make:
+        type: string
+      manufacturer:
+        type: string
+      manufacturerCommunicationsCount:
+        type: integer
+      model:
+        type: string
+      modelYear:
+        type: string
+      ncapRated:
+        type: boolean
+      recallsCount:
+        type: integer
+      series:
+        type: string
+      trim:
+        type: string
+      vehicleDescription:
+        type: string
+      vehicleId:
+        type: integer
+      vehiclePicture:
+        type: string
+    type: object
+  PartialVehicleWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/PartialVehicle'
+        type: array
+    type: object
+  RecommendedFeature:
+    properties:
+      description:
+        type: string
+      icon:
+        type: string
+      installed:
+        type: boolean
+      key:
+        type: string
+      label:
+        type: string
+      note:
+        type: string
+      type:
+        type: string
+      video:
+        type: string
+    type: object
+  Investigations:
+    properties:
+      nhtsaActionNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  MFRCommunicationAggregate:
+    properties:
+      communicationDate:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      manufacturerCommunicationNumber:
+        type: string
+      nhtsaIdNumber:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+  VehicleDetailsWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/VehicleDetails'
+        type: array
+    type: object
+  ComplaintAggregate:
+    properties:
+      city:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      crash:
+        type: integer
+      dateFiled:
+        type: string
+      dateOfIncident:
+        type: string
+      description:
+        type: string
+      fire:
+        type: integer
+      nhtsaIdNumber:
+        type: string
+      numberOfDeaths:
+        type: integer
+      numberOfInjuries:
+        type: integer
+      stateAbbreviation:
+        type: string
+      vin:
+        type: string
+    type: object
+  CrashTestRating:
+    properties:
+      curbWeight:
+        type: string
+      display:
+        type: string
+      media:
+        items:
+          $ref: '#/definitions/Media'
+        type: array
+      mmy:
+        type: string
+      ncapVehicleId:
+        type: integer
+      ratings:
+        items:
+          $ref: '#/definitions/Rating'
+        type: array
+      reports:
+        items:
+          $ref: '#/definitions/Report'
+        type: array
+      testNo:
+        type: integer
+      testedWith:
+        type: string
+      type:
+        type: string
+    type: object
+  InvestigationAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      dateClosed:
+        type: string
+      dateOpened:
+        type: string
+      nhtsaCampaignNumber:
+        type: string
+      recalls:
+        items:
+          $ref: '#/definitions/Recalls'
+        type: array
+      subject:
+        type: string
+      summary:
+        type: string
+      type:
+        type: string
+    type: object
+  RecallAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      consequence:
+        type: string
+      correctiveAction:
+        type: string
+      investigations:
+        items:
+          $ref: '#/definitions/Investigations'
+        type: array
+      manufacturer:
+        type: string
+      nhtsaCampaignNumber:
+        type: integer
+      notes:
+        type: string
+      potentialNumberOfUnitsAffected:
+        type: string
+      reportsReceivedDate:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+  Recalls:
+    properties:
+      nhtsaCampaignNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  Message:
+    properties:
+      errorCode:
+        type: string
+      errorDetail:
+        type: string
+      errorMessage:
+        type: string
+      userMessage:
+        type: string
+    type: object
+  Feature:
+    properties:
+      label:
+        type: string
+      notes:
+        type: string
+      value:
+        type: string
+    type: object
+  VehicleDetails:
+    properties:
+      class:
+        type: string
+      complaintsCount:
+        type: integer
+      investigationsCount:
+        type: integer
+      make:
+        type: string
+      manufacturer:
+        type: string
+      manufacturerCommunicationsCount:
+        type: integer
+      model:
+        type: string
+      modelYear:
+        type: string
+      ncapRated:
+        type: boolean
+      recallsCount:
+        type: integer
+      safetyIssues:
+        $ref: '#/definitions/SafetyIssueAggregate'
+      safetyRatings:
+        $ref: '#/definitions/SafetyRatingAggregate'
+      series:
+        type: string
+      trim:
+        type: string
+      vehicleDescription:
+        type: string
+      vehicleId:
+        type: integer
+      vehiclePicture:
+        type: string
+    type: object
+  Components:
+    properties:
+      name:
+        type: string
+    type: object
+  Rating:
+    properties:
+      display:
+        type: string
+      notes:
+        type: string
+      position:
+        type: string
+      possibility:
+        type: integer
+      rating:
+        type: integer
+      ratings:
+        items:
+          $ref: '#/definitions/Rating'
+        type: array
+      safetyConcerns:
+        type: string
+      tip:
+        type: integer
+    type: object
+  Media:
+    properties:
+      type:
+        type: string
+      url:
+        type: string
+    type: object
+  Pagination:
+    properties:
+      count:
+        type: integer
+      currentUrl:
+        type: string
+      max:
+        type: integer
+      nextUrl:
+        type: string
+      offset:
+        type: integer
+      order:
+        type: string
+      previousUrl:
+        type: string
+      sort:
+        type: string
+      total:
+        type: integer
+    type: object
+  SafetyFeature:
+    properties:
+      category:
+        type: string
+      features:
+        items:
+          $ref: '#/definitions/Feature'
+        type: array
+      notes:
+        type: string
+    type: object
+  SafetyRatingAggregate:
+    properties:
+      crashTestRatings:
+        items:
+          $ref: '#/definitions/CrashTestRating'
+        type: array
+      recommendedFeatures:
+        items:
+          $ref: '#/definitions/RecommendedFeature'
+        type: array
+      safetyFeatures:
+        items:
+          $ref: '#/definitions/SafetyFeature'
+        type: array
+    type: object
+  SafetyIssueAggregate:
+    properties:
+      complaints:
+        items:
+          $ref: '#/definitions/ComplaintAggregate'
+        type: array
+      investigation:
+        items:
+          $ref: '#/definitions/InvestigationAggregate'
+        type: array
+      manufacturerCommunications:
+        items:
+          $ref: '#/definitions/MFRCommunicationAggregate'
+        type: array
+      recalls:
+        items:
+          $ref: '#/definitions/RecallAggregate'
+        type: array
+    type: object
+  Meta:
+    properties:
+      messages:
+        items:
+          $ref: '#/definitions/Message'
+        type: array
+      pagination:
+        items:
+          $ref: '#/definitions/Pagination'
+        type: array
+      status:
+        type: integer
+    type: object

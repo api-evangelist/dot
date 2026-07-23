@@ -1,0 +1,577 @@
+swagger: '2.0'
+info:
+  title: NHTSA childSeats ewr API
+  version: 1.6.0
+  description: Child Seat search and list endpoints
+tags:
+- description: Early Warning Report endpoints
+  name: ewr
+paths:
+  /ewr/damages:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The year of the reporting period
+        format: int32
+        in: query
+        name: year
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The quarter of the reporting period
+        format: int32
+        in: query
+        name: quarter
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The category of the property damage reports
+        in: query
+        name: reportCategory
+        required: true
+        type: string
+        enum:
+        - H
+        - L
+        - M
+        - T
+        - Y
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: The list of property damage reports
+          schema:
+            items:
+              $ref: '#/definitions/EWRPropertyDamageWrapped'
+            title: ArrayOfEWRPropertyDamages
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - ewr
+  /ewr/injuries:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The year of the reporting period
+        format: int32
+        in: query
+        name: year
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The quarter of the reporting period
+        format: int32
+        in: query
+        name: quarter
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The category of the injury reports
+        in: query
+        name: reportCategory
+        required: true
+        type: string
+        enum:
+        - C
+        - E
+        - H
+        - L
+        - M
+        - T
+        - Y
+        - Z
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: The list of injuries for the given report period and category
+          schema:
+            items:
+              $ref: '#/definitions/EWRInjuryWrapped'
+            title: ArrayOfEWRInjuries
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - ewr
+  /ewr/manufacturers:
+    get:
+      consumes:
+      - application/json
+      parameters: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: The list of EWR manufacturers
+          schema:
+            $ref: '#/definitions/EWRManufacturersWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - ewr
+  /ewr/manufacturers/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - collectionFormat: csv
+        description: ID of manufacturer
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Details for a specific manufacturer
+          schema:
+            $ref: '#/definitions/EWRManufacturerDetailWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - ewr
+  /ewr/productions:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The year of the reporting period
+        format: int32
+        in: query
+        name: year
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The quarter of the reporting period
+        format: int32
+        in: query
+        name: quarter
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The category of the light vehicle production reports
+        in: query
+        name: reportCategory
+        required: true
+        type: string
+        enum:
+        - L
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: The list of light vehicle productions
+          schema:
+            items:
+              $ref: '#/definitions/EWRProductionWrapped'
+            title: ArrayOfEWRProductions
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - ewr
+definitions:
+  EWRProduction:
+    properties:
+      make:
+        type: string
+      model:
+        type: string
+      modelYear:
+        type: string
+      fuelSystem:
+        type: string
+      brakeSystem:
+        type: string
+      typeCode:
+        type: string
+      platform:
+        type: string
+      totalProduction:
+        format: int64
+        type: integer
+      fuelPropulsionSystem:
+        type: string
+    type: object
+    required:
+    - make
+    - model
+    - modelYear
+    - typeCode
+    - totalProduction
+  EWRInjury:
+    properties:
+      sequenceId:
+        format: int32
+        type: integer
+      year:
+        type: string
+      incidentDate:
+        type: string
+      deaths:
+        format: int32
+        type: integer
+      injuries:
+        format: int32
+        type: integer
+      stateOrCountryCode:
+        type: string
+      components:
+        items:
+          type: string
+        type: array
+      make:
+        type: string
+      model:
+        type: string
+      vin:
+        type: string
+      productIdentifier:
+        type: string
+      tin:
+        type: string
+      vehicleMake:
+        type: string
+      vehicleModel:
+        type: string
+      vehicleYear:
+        type: string
+    type: object
+    required:
+    - sequenceId
+    - year
+    - incidentDate
+    - deaths
+    - injuries
+    - stateOrCountryCode
+    - components
+  EWRInjuryWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/EWRInjury'
+        type: array
+    type: object
+  EWRReportPeriod:
+    properties:
+      quarter:
+        format: int32
+        type: integer
+      reports:
+        items:
+          $ref: '#/definitions/EWRReportPeriodCategory'
+        type: array
+      year:
+        format: int32
+        type: integer
+    required:
+    - year
+    - quarter
+    - reports
+    type: object
+  EWRReportPeriodCategory:
+    properties:
+      category:
+        type: string
+      categoryCode:
+        type: string
+      count:
+        format: int32
+        type: integer
+      reportId:
+        format: int64
+        type: integer
+      reportUrl:
+        type: string
+    required:
+    - category
+    - categoryCode
+    - count
+    - reportId
+    - reportUrl
+    type: object
+  EWRPropertyDamage:
+    properties:
+      year:
+        type: string
+      make:
+        type: string
+      model:
+        type: string
+      typeCode:
+        type: string
+      fuelPropulsionSystem:
+        type: string
+      steering:
+        format: int32
+        type: integer
+      suspension:
+        format: int32
+        type: integer
+      serviceBrake:
+        format: int32
+        type: integer
+      serviceBrakeAir:
+        format: int32
+        type: integer
+      parkingBrake:
+        format: int32
+        type: integer
+      engAndEngCooling:
+        format: int32
+        type: integer
+      fuelSystem:
+        format: int32
+        type: integer
+      fuelSystemDiesel:
+        format: int32
+        type: integer
+      fuelSystemOther:
+        format: int32
+        type: integer
+      powerTrain:
+        format: int32
+        type: integer
+      electrical:
+        format: int32
+        type: integer
+      extLighting:
+        format: int32
+        type: integer
+      visibility:
+        format: int32
+        type: integer
+      airbags:
+        format: int32
+        type: integer
+      seatbelts:
+        format: int32
+        type: integer
+      structure:
+        format: int32
+        type: integer
+      latch:
+        format: int32
+        type: integer
+      speedControl:
+        format: int32
+        type: integer
+      tiresRelated:
+        format: int32
+        type: integer
+      wheels:
+        format: int32
+        type: integer
+      trailerHitch:
+        format: int32
+        type: integer
+      seats:
+        format: int32
+        type: integer
+      fireRelated:
+        format: int32
+        type: integer
+      rollover:
+        format: int32
+        type: integer
+      buckle:
+        format: int32
+        type: integer
+      seatShell:
+        format: int32
+        type: integer
+      handle:
+        format: int32
+        type: integer
+      base:
+        format: int32
+        type: integer
+      electronicStabilityCtrl:
+        format: int32
+        type: integer
+      forwardCollision:
+        format: int32
+        type: integer
+      laneDeparture:
+        format: int32
+        type: integer
+      backoverPrevention:
+        format: int32
+        type: integer
+      tireLine:
+        type: string
+      tireSize:
+        type: string
+      sku:
+        type: string
+      plantCode:
+        type: string
+      tread:
+        format: int32
+        type: integer
+      sidewall:
+        format: int32
+        type: integer
+      bead:
+        format: int32
+        type: integer
+      other:
+        format: int32
+        type: integer
+    type: object
+    required:
+    - year
+  Message:
+    properties:
+      errorCode:
+        type: string
+      errorDetail:
+        type: string
+      errorMessage:
+        type: string
+      userMessage:
+        type: string
+    type: object
+  EWRManufacturerDetailWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/EWRManufacturerDetail'
+        type: array
+    type: object
+  EWRManufacturerDetail:
+    properties:
+      damages:
+        items:
+          $ref: '#/definitions/EWRReportPeriod'
+        type: array
+      id:
+        format: int64
+        type: integer
+      injuries:
+        items:
+          $ref: '#/definitions/EWRReportPeriod'
+        type: array
+      name:
+        type: string
+      productions:
+        items:
+          $ref: '#/definitions/EWRReportPeriod'
+        type: array
+    required:
+    - id
+    - name
+    - injuries
+    - productions
+    - damages
+    type: object
+  EWRManufacturersWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/EWRManufacturer'
+        type: array
+    type: object
+  EWRManufacturer:
+    properties:
+      id:
+        format: int64
+        type: integer
+      name:
+        type: string
+      reportTypes:
+        items:
+          type: string
+        type: array
+    required:
+    - id
+    - name
+    - reportTypes
+    type: object
+  Pagination:
+    properties:
+      count:
+        type: integer
+      currentUrl:
+        type: string
+      max:
+        type: integer
+      nextUrl:
+        type: string
+      offset:
+        type: integer
+      order:
+        type: string
+      previousUrl:
+        type: string
+      sort:
+        type: string
+      total:
+        type: integer
+    type: object
+  EWRProductionWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/EWRProduction'
+        type: array
+    type: object
+  EWRPropertyDamageWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/EWRPropertyDamage'
+        type: array
+    type: object
+  Meta:
+    properties:
+      messages:
+        items:
+          $ref: '#/definitions/Message'
+        type: array
+      pagination:
+        items:
+          $ref: '#/definitions/Pagination'
+        type: array
+      status:
+        type: integer
+    type: object

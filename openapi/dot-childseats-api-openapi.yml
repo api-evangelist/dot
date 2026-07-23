@@ -1,0 +1,760 @@
+swagger: '2.0'
+info:
+  title: NHTSA childSeats API
+  version: 1.6.0
+  description: Child Seat search and list endpoints
+tags:
+- description: Child Seat search and list endpoints
+  name: childSeats
+paths:
+  /childSeats:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturerCommunications).
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues". Defaults to 'all'
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Child weight for any childSeat mode
+        format: ''
+        in: query
+        name: weight
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Child height for any childSeat mode
+        format: ''
+        in: query
+        name: height
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Child age for any childSeat mode
+        format: ''
+        in: query
+        name: age
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Child height for any childSeat mode
+        format: ''
+        in: query
+        name: modelName
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Returns child seats based on model
+        format: ''
+        in: query
+        name: manufacturerName
+        required: false
+        type: string
+      - $ref: '#/parameters/Filter'
+      - $ref: '#/parameters/Sort'
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: asc
+        description: order in which to sort
+        enum:
+        - asc
+        - desc
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records set to return for pagination.
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns zero or more childSeats
+          schema:
+            items:
+              $ref: '#/definitions/ChildseatWrapped'
+            title: ArrayOfChildSeats
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/bySearch:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: returns zero or more child seats based on search query
+        format: ''
+        in: query
+        name: query
+        required: true
+        type: string
+      - $ref: '#/parameters/Filter'
+      - $ref: '#/parameters/Sort'
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: asc
+        description: order in which to sort
+        enum:
+        - asc
+        - desc
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues". Defaults to 'all'
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Fuzzy search for a child seat based on make, productModel, and modelNumber
+          schema:
+            $ref: '#/definitions/ChildseatWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/inspectionStations:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: returns inspections stations within provided usState; use states provided by /carseats
+        format: ''
+        in: query
+        name: usState
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: latitude of the child seat inspection stations overrides usState query param
+        format: ''
+        in: query
+        name: latitude
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: longtiude of the child seat inspection stations overrides usState query param
+        format: ''
+        in: query
+        name: longitude
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: 25
+        description: maximum distance to search for an inspection station
+        enum:
+        - '25'
+        - '50'
+        - '75'
+        - '100'
+        format: ''
+        in: query
+        name: distance
+        required: false
+        type: number
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: false
+        description: only return inspection stations that have spanish speaking contacts
+        format: ''
+        in: query
+        name: onlySpanishSpeaking
+        required: false
+        type: boolean
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: false
+        description: only return inspection statings that have an event associated with them
+        format: ''
+        in: query
+        name: onlyWithEvent
+        required: false
+        type: boolean
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns zero or more inspections stations based on queries provided
+          schema:
+            $ref: '#/definitions/InspectionStationDetailsWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/inspectionStations/states:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns all states with inspection stations
+          schema:
+            $ref: '#/definitions/PartialChildSeatWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/manufacturers:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues". Defaults to 'all'
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns all available child seat manufacturers
+          schema:
+            $ref: '#/definitions/PartialChildSeatWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/modes:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns list of child seat modes and their recommended age range in years
+          schema:
+            $ref: '#/definitions/PartialChildSeatWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+  /childSeats/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - collectionFormat: csv
+        description: ID of the child seat
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications).
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns a single child seat with the specified ID
+          schema:
+            $ref: '#/definitions/ChildseatWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - childSeats
+definitions:
+  ChildSeatMode:
+    properties:
+      harnessType:
+        type: string
+      maxChildHeight:
+        type: number
+      maxChildHeightFinal:
+        type: number
+      maxChildWeightFinal:
+        type: number
+      maxUsingLowerAnchors:
+        type: number
+      maxUsingLowerAnchorsFinal:
+        type: number
+      maxUsingSeatBelts:
+        type: number
+      minChildHeight:
+        type: number
+      minUsingLowerAnchors:
+        type: number
+      minUsingSeatBelts:
+        type: number
+      mode:
+        description: Name of the mode, example "Foward-Facing"
+        type: string
+      modeWeight:
+        type: number
+      ratings:
+        items:
+          $ref: '#/definitions/ChildSeatModeRating'
+        type: array
+      recommendedAge:
+        type: boolean
+      weightHeightRange:
+        type: string
+    type: object
+  InspectionStationDetailsWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/InspectionStationDetails'
+        type: array
+    type: object
+  Investigations:
+    properties:
+      nhtsaActionNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  MFRCommunicationAggregate:
+    properties:
+      communicationDate:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      manufacturerCommunicationNumber:
+        type: string
+      nhtsaIdNumber:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+  ComplaintAggregate:
+    properties:
+      city:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      crash:
+        type: integer
+      dateFiled:
+        type: string
+      dateOfIncident:
+        type: string
+      description:
+        type: string
+      fire:
+        type: integer
+      nhtsaIdNumber:
+        type: string
+      numberOfDeaths:
+        type: integer
+      numberOfInjuries:
+        type: integer
+      stateAbbreviation:
+        type: string
+      vin:
+        type: string
+    type: object
+  InvestigationAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      dateClosed:
+        type: string
+      dateOpened:
+        type: string
+      nhtsaCampaignNumber:
+        type: string
+      recalls:
+        items:
+          $ref: '#/definitions/Recalls'
+        type: array
+      subject:
+        type: string
+      summary:
+        type: string
+      type:
+        type: string
+    type: object
+  RecallAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      consequence:
+        type: string
+      correctiveAction:
+        type: string
+      investigations:
+        items:
+          $ref: '#/definitions/Investigations'
+        type: array
+      manufacturer:
+        type: string
+      nhtsaCampaignNumber:
+        type: integer
+      notes:
+        type: string
+      potentialNumberOfUnitsAffected:
+        type: string
+      reportsReceivedDate:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+  Recalls:
+    properties:
+      nhtsaCampaignNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  Message:
+    properties:
+      errorCode:
+        type: string
+      errorDetail:
+        type: string
+      errorMessage:
+        type: string
+      userMessage:
+        type: string
+    type: object
+  PartialChildSeatWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/PartialChildSeat'
+        type: array
+    type: object
+  PartialChildSeat:
+    properties:
+      childSeatMode:
+        type: string
+      manufacturerName:
+        type: string
+      maximumChildAge:
+        type: integer
+      minimumChildAge:
+        type: integer
+    type: object
+  Components:
+    properties:
+      name:
+        type: string
+    type: object
+  ChildSeatModeRating:
+    properties:
+      label:
+        type: string
+      notes:
+        type: string
+      rating:
+        type: integer
+      ratingType:
+        type: string
+    type: object
+  Childseat:
+    properties:
+      id:
+        type: integer
+      make:
+        type: string
+      manufactureDate:
+        type: string
+      modelNumber:
+        type: string
+      modes:
+        items:
+          $ref: '#/definitions/ChildSeatMode'
+        type: array
+      productModel:
+        type: string
+      safetyIssues:
+        $ref: '#/definitions/SafetyIssueAggregate'
+      seatType:
+        type: string
+    type: object
+  InspectionStationDetails:
+    properties:
+      city:
+        type: string
+      contact:
+        type: string
+      hasEvent:
+        type: boolean
+      hours:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      name:
+        type: string
+      note:
+        description: a list of dates.
+        type: string
+      phone:
+        type: string
+      spanishSpeaking:
+        type: boolean
+      state:
+        type: string
+      stateAbbr:
+        type: string
+      streetAddress:
+        type: string
+      zip:
+        type: string
+    type: object
+  ChildseatWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/Childseat'
+        type: array
+    type: object
+  Pagination:
+    properties:
+      count:
+        type: integer
+      currentUrl:
+        type: string
+      max:
+        type: integer
+      nextUrl:
+        type: string
+      offset:
+        type: integer
+      order:
+        type: string
+      previousUrl:
+        type: string
+      sort:
+        type: string
+      total:
+        type: integer
+    type: object
+  SafetyIssueAggregate:
+    properties:
+      complaints:
+        items:
+          $ref: '#/definitions/ComplaintAggregate'
+        type: array
+      investigation:
+        items:
+          $ref: '#/definitions/InvestigationAggregate'
+        type: array
+      manufacturerCommunications:
+        items:
+          $ref: '#/definitions/MFRCommunicationAggregate'
+        type: array
+      recalls:
+        items:
+          $ref: '#/definitions/RecallAggregate'
+        type: array
+    type: object
+  Meta:
+    properties:
+      messages:
+        items:
+          $ref: '#/definitions/Message'
+        type: array
+      pagination:
+        items:
+          $ref: '#/definitions/Pagination'
+        type: array
+      status:
+        type: integer
+    type: object
+parameters:
+  Filter:
+    allowEmptyValue: true
+    collectionFormat: csv
+    description: Filter options based on seatType
+    enum:
+    - seatTypeInfant
+    - seatTypeCombination
+    - seatTypeConvertible
+    - seatTypeBooster
+    - seatType3-in-1
+    format: ''
+    in: query
+    name: seatTypeFilter
+    required: false
+    type: string
+  Sort:
+    allowEmptyValue: false
+    collectionFormat: csv
+    default: make
+    description: key to sort on
+    enum:
+    - make
+    - productModel
+    - seatType
+    - childWeight
+    - childHeight
+    - recallsCount
+    - investigationsCount
+    - complaintsCount
+    - manufacturerCommunicationsCount
+    format: ''
+    in: query
+    name: sort
+    required: false
+    type: string

@@ -1,0 +1,492 @@
+swagger: '2.0'
+info:
+  title: NHTSA childSeats tires API
+  version: 1.6.0
+  description: Child Seat search and list endpoints
+tags:
+- description: Tire search and list endpoints
+  name: tires
+paths:
+  /tires:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues".
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: brand of tireDetails
+        format: ''
+        in: query
+        name: brand
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: line of the tireDetails
+        format: ''
+        in: query
+        name: tireline
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: size of the tireDetails
+        format: ''
+        in: query
+        name: size
+        required: false
+        type: string
+      - $ref: '#/parameters/TireSort'
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: desc
+        description: order in which to sort
+        enum:
+        - asc
+        - desc
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records set to return for pagination.
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns zero or more tires
+          schema:
+            items:
+              $ref: '#/definitions/TireWrapped'
+            title: ArrayOfTires
+            type: array
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - tires
+  /tires/brands:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues". Defaults to 'ratings'
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The maximum number of records to return. Use '-1' to get all records.
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns all available tireDetails brands
+          schema:
+            $ref: '#/definitions/TireBrandWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - tires
+  /tires/bySearch:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: returns zero or more tires based on search query
+        format: ''
+        in: query
+        name: query
+        required: true
+        type: string
+      - $ref: '#/parameters/TireSort'
+      - allowEmptyValue: false
+        collectionFormat: csv
+        default: desc
+        description: order in which to sort
+        enum:
+        - asc
+        - desc
+        format: ''
+        in: query
+        name: order
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: Select which data set to return, either "ratings" or "safetyIssues".
+        format: ''
+        in: query
+        name: dataSet
+        required: false
+        type: string
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: 'The maximum number of records to return, upper bound: 50.'
+        format: int32
+        in: query
+        name: max
+        required: false
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: The offset of the records listing (for pagination).
+        format: int32
+        in: query
+        name: offset
+        required: false
+        type: integer
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Fuzzy search for a tireDetails based on productName and size
+          schema:
+            $ref: '#/definitions/TireWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - tires
+  /tires/{id}:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - collectionFormat: csv
+        description: ID of the tireDetails
+        format: int64
+        in: path
+        name: id
+        required: true
+        type: integer
+      - allowEmptyValue: false
+        collectionFormat: csv
+        description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
+        format: ''
+        in: query
+        name: data
+        required: false
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Returns a single tireDetails with the specified ID
+          schema:
+            $ref: '#/definitions/TireWrapped'
+        '400':
+          description: Invalid Request
+        '500':
+          description: Internal Server Error
+      tags:
+      - tires
+definitions:
+  Recalls:
+    properties:
+      nhtsaCampaignNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  Components:
+    properties:
+      name:
+        type: string
+    type: object
+  TireBrand:
+    properties:
+      brand:
+        type: string
+    type: object
+  Message:
+    properties:
+      errorCode:
+        type: string
+      errorDetail:
+        type: string
+      errorMessage:
+        type: string
+      userMessage:
+        type: string
+    type: object
+  TireBrandWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/TireBrand'
+        type: array
+    type: object
+  InvestigationAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      dateClosed:
+        type: string
+      dateOpened:
+        type: string
+      nhtsaCampaignNumber:
+        type: string
+      recalls:
+        items:
+          $ref: '#/definitions/Recalls'
+        type: array
+      subject:
+        type: string
+      summary:
+        type: string
+      type:
+        type: string
+    type: object
+  TireWrapped:
+    properties:
+      meta:
+        $ref: '#/definitions/Meta'
+      results:
+        items:
+          $ref: '#/definitions/Tire'
+        type: array
+    type: object
+  Pagination:
+    properties:
+      count:
+        type: integer
+      currentUrl:
+        type: string
+      max:
+        type: integer
+      nextUrl:
+        type: string
+      offset:
+        type: integer
+      order:
+        type: string
+      previousUrl:
+        type: string
+      sort:
+        type: string
+      total:
+        type: integer
+    type: object
+  Investigations:
+    properties:
+      nhtsaActionNumber:
+        type: string
+      subject:
+        type: string
+    type: object
+  MFRCommunicationAggregate:
+    properties:
+      communicationDate:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      manufacturerCommunicationNumber:
+        type: string
+      nhtsaIdNumber:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+  SafetyIssueAggregate:
+    properties:
+      complaints:
+        items:
+          $ref: '#/definitions/ComplaintAggregate'
+        type: array
+      investigation:
+        items:
+          $ref: '#/definitions/InvestigationAggregate'
+        type: array
+      manufacturerCommunications:
+        items:
+          $ref: '#/definitions/MFRCommunicationAggregate'
+        type: array
+      recalls:
+        items:
+          $ref: '#/definitions/RecallAggregate'
+        type: array
+    type: object
+  ComplaintAggregate:
+    properties:
+      city:
+        type: string
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      crash:
+        type: integer
+      dateFiled:
+        type: string
+      dateOfIncident:
+        type: string
+      description:
+        type: string
+      fire:
+        type: integer
+      nhtsaIdNumber:
+        type: string
+      numberOfDeaths:
+        type: integer
+      numberOfInjuries:
+        type: integer
+      stateAbbreviation:
+        type: string
+      vin:
+        type: string
+    type: object
+  Tire:
+    properties:
+      brand:
+        type: string
+      const:
+        type: string
+      productName:
+        type: string
+      safetyIssues:
+        $ref: '#/definitions/SafetyIssueAggregate'
+      size:
+        type: string
+      temp:
+        type: string
+      tireline:
+        type: string
+      trac:
+        type: string
+      wear:
+        type: string
+    type: object
+  Meta:
+    properties:
+      messages:
+        items:
+          $ref: '#/definitions/Message'
+        type: array
+      pagination:
+        items:
+          $ref: '#/definitions/Pagination'
+        type: array
+      status:
+        type: integer
+    type: object
+  RecallAggregate:
+    properties:
+      components:
+        items:
+          $ref: '#/definitions/Components'
+        type: array
+      consequence:
+        type: string
+      correctiveAction:
+        type: string
+      investigations:
+        items:
+          $ref: '#/definitions/Investigations'
+        type: array
+      manufacturer:
+        type: string
+      nhtsaCampaignNumber:
+        type: integer
+      notes:
+        type: string
+      potentialNumberOfUnitsAffected:
+        type: string
+      reportsReceivedDate:
+        type: string
+      subject:
+        type: string
+      summary:
+        type: string
+    type: object
+parameters:
+  TireSort:
+    allowEmptyValue: false
+    collectionFormat: csv
+    default: productName
+    description: key to sort on
+    enum:
+    - productName
+    - size
+    - trac
+    - temp
+    - wear
+    - recallsCount
+    - investigationsCount
+    - complaintsCount
+    - manufacturerCommunicationsCount
+    format: ''
+    in: query
+    name: sort
+    required: false
+    type: string
