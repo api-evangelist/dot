@@ -1,0 +1,29 @@
+{
+  "provider": "dot",
+  "sources": [
+    "dot-childseats-api-openapi.yml",
+    "dot-equipment-api-openapi.yml",
+    "dot-ewr-api-openapi.yml",
+    "dot-foreigncampaigns-api-openapi.yml",
+    "dot-safetyissues-api-openapi.yml",
+    "dot-tires-api-openapi.yml",
+    "dot-vehicles-api-openapi.yml"
+  ],
+  "outputs": [
+    "dot-childseats-api-openapi.yml",
+    "dot-equipment-api-openapi.yml",
+    "dot-ewr-api-openapi.yml",
+    "dot-foreigncampaigns-api-openapi.yml",
+    "dot-safetyissues-api-openapi.yml",
+    "dot-tires-api-openapi.yml",
+    "dot-vehicles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "dot-foreigncampaigns-api-openapi.yml: dangling $ref: #/definitions/ApiResponse",
+    "dot-vehicles-api-openapi.yml: dangling $ref: #/definitions/Report"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
