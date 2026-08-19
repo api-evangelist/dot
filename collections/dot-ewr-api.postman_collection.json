@@ -1,0 +1,887 @@
+{
+  "item": [
+    {
+      "id": "eb3f7e08-ff11-4ade-8f3e-8d7c8cf52f32",
+      "name": "ewr",
+      "description": {
+        "content": "Early Warning Report endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f704c582-a4d5-47c6-9ce8-764e382c0e74",
+          "name": "/ewr/damages",
+          "request": {
+            "name": "/ewr/damages",
+            "description": {},
+            "url": {
+              "path": [
+                "ewr",
+                "damages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "(Required) The year of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "quarter",
+                  "value": "<integer>",
+                  "description": "(Required) The quarter of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportCategory",
+                  "value": "<string>",
+                  "description": "(Required) The category of the property damage reports"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "21dfb749-2bd2-4002-becc-469915145587",
+              "name": "The list of property damage reports",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "damages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 3624,\n          \"currentUrl\": \"string\",\n          \"max\": 3785,\n          \"nextUrl\": \"string\",\n          \"offset\": 7700,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 2226\n        },\n        {\n          \"count\": 3066,\n          \"currentUrl\": \"string\",\n          \"max\": 2373,\n          \"nextUrl\": \"string\",\n          \"offset\": 4597,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 712\n        }\n      ],\n      \"status\": 5838\n    },\n    \"results\": [\n      {\n        \"year\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"typeCode\": \"string\",\n        \"fuelPropulsionSystem\": \"string\",\n        \"steering\": 5253,\n        \"suspension\": 8321,\n        \"serviceBrake\": 3068,\n        \"serviceBrakeAir\": 2913,\n        \"parkingBrake\": 493,\n        \"engAndEngCooling\": 6600,\n        \"fuelSystem\": 9438,\n        \"fuelSystemDiesel\": 3216,\n        \"fuelSystemOther\": 9957,\n        \"powerTrain\": 5809,\n        \"electrical\": 8994,\n        \"extLighting\": 68,\n        \"visibility\": 5999,\n        \"airbags\": 3474,\n        \"seatbelts\": 5212,\n        \"structure\": 3733,\n        \"latch\": 5285,\n        \"speedControl\": 6776,\n        \"tiresRelated\": 7048,\n        \"wheels\": 7985,\n        \"trailerHitch\": 4533,\n        \"seats\": 7947,\n        \"fireRelated\": 56,\n        \"rollover\": 6490,\n        \"buckle\": 2676,\n        \"seatShell\": 6852,\n        \"handle\": 6140,\n        \"base\": 1200,\n        \"electronicStabilityCtrl\": 6204,\n        \"forwardCollision\": 8677,\n        \"laneDeparture\": 955,\n        \"backoverPrevention\": 8738,\n        \"tireLine\": \"string\",\n        \"tireSize\": \"string\",\n        \"sku\": \"string\",\n        \"plantCode\": \"string\",\n        \"tread\": 5120,\n        \"sidewall\": 5407,\n        \"bead\": 6097,\n        \"other\": 3107\n      },\n      {\n        \"year\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"typeCode\": \"string\",\n        \"fuelPropulsionSystem\": \"string\",\n        \"steering\": 8982,\n        \"suspension\": 4211,\n        \"serviceBrake\": 4417,\n        \"serviceBrakeAir\": 7304,\n        \"parkingBrake\": 624,\n        \"engAndEngCooling\": 5697,\n        \"fuelSystem\": 6973,\n        \"fuelSystemDiesel\": 4722,\n        \"fuelSystemOther\": 5178,\n        \"powerTrain\": 3727,\n        \"electrical\": 8161,\n        \"extLighting\": 9399,\n        \"visibility\": 9350,\n        \"airbags\": 4511,\n        \"seatbelts\": 3378,\n        \"structure\": 3320,\n        \"latch\": 9679,\n        \"speedControl\": 242,\n        \"tiresRelated\": 8234,\n        \"wheels\": 6014,\n        \"trailerHitch\": 6771,\n        \"seats\": 4027,\n        \"fireRelated\": 8022,\n        \"rollover\": 8759,\n        \"buckle\": 2375,\n        \"seatShell\": 3070,\n        \"handle\": 3315,\n        \"base\": 4813,\n        \"electronicStabilityCtrl\": 5384,\n        \"forwardCollision\": 5257,\n        \"laneDeparture\": 3714,\n        \"backoverPrevention\": 6755,\n        \"tireLine\": \"string\",\n        \"tireSize\": \"string\",\n        \"sku\": \"string\",\n        \"plantCode\": \"string\",\n        \"tread\": 4742,\n        \"sidewall\": 9500,\n        \"bead\": 9007,\n        \"other\": 7102\n      }\n    ]\n  },\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 9444,\n          \"currentUrl\": \"string\",\n          \"max\": 6923,\n          \"nextUrl\": \"string\",\n          \"offset\": 6893,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 2626\n        },\n        {\n          \"count\": 3174,\n          \"currentUrl\": \"string\",\n          \"max\": 1567,\n          \"nextUrl\": \"string\",\n          \"offset\": 821,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 4438\n        }\n      ],\n      \"status\": 9240\n    },\n    \"results\": [\n      {\n        \"year\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"typeCode\": \"string\",\n        \"fuelPropulsionSystem\": \"string\",\n        \"steering\": 5300,\n        \"suspension\": 8991,\n        \"serviceBrake\": 8373,\n        \"serviceBrakeAir\": 9364,\n        \"parkingBrake\": 1473,\n        \"engAndEngCooling\": 5108,\n        \"fuelSystem\": 1318,\n        \"fuelSystemDiesel\": 7210,\n        \"fuelSystemOther\": 326,\n        \"powerTrain\": 7633,\n        \"electrical\": 6839,\n        \"extLighting\": 1399,\n        \"visibility\": 1085,\n        \"airbags\": 5851,\n        \"seatbelts\": 6093,\n        \"structure\": 8897,\n        \"latch\": 5261,\n        \"speedControl\": 1466,\n        \"tiresRelated\": 8903,\n        \"wheels\": 4773,\n        \"trailerHitch\": 5857,\n        \"seats\": 7264,\n        \"fireRelated\": 8846,\n        \"rollover\": 1877,\n        \"buckle\": 4680,\n        \"seatShell\": 6984,\n        \"handle\": 5017,\n        \"base\": 748,\n        \"electronicStabilityCtrl\": 6176,\n        \"forwardCollision\": 7145,\n        \"laneDeparture\": 2321,\n        \"backoverPrevention\": 4487,\n        \"tireLine\": \"string\",\n        \"tireSize\": \"string\",\n        \"sku\": \"string\",\n        \"plantCode\": \"string\",\n        \"tread\": 7015,\n        \"sidewall\": 6896,\n        \"bead\": 884,\n        \"other\": 366\n      },\n      {\n        \"year\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"typeCode\": \"string\",\n        \"fuelPropulsionSystem\": \"string\",\n        \"steering\": 5154,\n        \"suspension\": 8103,\n        \"serviceBrake\": 7852,\n        \"serviceBrakeAir\": 8811,\n        \"parkingBrake\": 2289,\n        \"engAndEngCooling\": 907,\n        \"fuelSystem\": 3512,\n        \"fuelSystemDiesel\": 4085,\n        \"fuelSystemOther\": 7200,\n        \"powerTrain\": 5740,\n        \"electrical\": 1086,\n        \"extLighting\": 4838,\n        \"visibility\": 8491,\n        \"airbags\": 6679,\n        \"seatbelts\": 7257,\n        \"structure\": 778,\n        \"latch\": 2063,\n        \"speedControl\": 3109,\n        \"tiresRelated\": 128,\n        \"wheels\": 7442,\n        \"trailerHitch\": 3432,\n        \"seats\": 4118,\n        \"fireRelated\": 232,\n        \"rollover\": 3363,\n        \"buckle\": 1340,\n        \"seatShell\": 5571,\n        \"handle\": 2007,\n        \"base\": 2355,\n        \"electronicStabilityCtrl\": 1549,\n        \"forwardCollision\": 5768,\n        \"laneDeparture\": 1454,\n        \"backoverPrevention\": 8,\n        \"tireLine\": \"string\",\n        \"tireSize\": \"string\",\n        \"sku\": \"string\",\n        \"plantCode\": \"string\",\n        \"tread\": 9127,\n        \"sidewall\": 6656,\n        \"bead\": 2455,\n        \"other\": 8660\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45e17246-a8d8-4eba-a175-61adf225a8c8",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "damages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c8061306-bfeb-4c41-b8c4-443344ad9cd9",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "damages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cab64db-301c-4ed9-9d0c-14ae7c2b2f0e",
+          "name": "/ewr/injuries",
+          "request": {
+            "name": "/ewr/injuries",
+            "description": {},
+            "url": {
+              "path": [
+                "ewr",
+                "injuries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "(Required) The year of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "quarter",
+                  "value": "<integer>",
+                  "description": "(Required) The quarter of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportCategory",
+                  "value": "<string>",
+                  "description": "(Required) The category of the injury reports"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e7423eb5-d80d-4a87-b892-a1ba8addad8d",
+              "name": "The list of injuries for the given report period and category",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "injuries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 4021,\n          \"currentUrl\": \"string\",\n          \"max\": 318,\n          \"nextUrl\": \"string\",\n          \"offset\": 7694,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 1459\n        },\n        {\n          \"count\": 706,\n          \"currentUrl\": \"string\",\n          \"max\": 5552,\n          \"nextUrl\": \"string\",\n          \"offset\": 8823,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 7796\n        }\n      ],\n      \"status\": 9828\n    },\n    \"results\": [\n      {\n        \"sequenceId\": 8066,\n        \"year\": \"string\",\n        \"incidentDate\": \"string\",\n        \"deaths\": 5870,\n        \"injuries\": 5205,\n        \"stateOrCountryCode\": \"string\",\n        \"components\": [\n          \"string\",\n          \"string\"\n        ],\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"vin\": \"string\",\n        \"productIdentifier\": \"string\",\n        \"tin\": \"string\",\n        \"vehicleMake\": \"string\",\n        \"vehicleModel\": \"string\",\n        \"vehicleYear\": \"string\"\n      },\n      {\n        \"sequenceId\": 9367,\n        \"year\": \"string\",\n        \"incidentDate\": \"string\",\n        \"deaths\": 4569,\n        \"injuries\": 3322,\n        \"stateOrCountryCode\": \"string\",\n        \"components\": [\n          \"string\",\n          \"string\"\n        ],\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"vin\": \"string\",\n        \"productIdentifier\": \"string\",\n        \"tin\": \"string\",\n        \"vehicleMake\": \"string\",\n        \"vehicleModel\": \"string\",\n        \"vehicleYear\": \"string\"\n      }\n    ]\n  },\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 9748,\n          \"currentUrl\": \"string\",\n          \"max\": 1953,\n          \"nextUrl\": \"string\",\n          \"offset\": 4216,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 294\n        },\n        {\n          \"count\": 6366,\n          \"currentUrl\": \"string\",\n          \"max\": 9414,\n          \"nextUrl\": \"string\",\n          \"offset\": 3610,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 4549\n        }\n      ],\n      \"status\": 4141\n    },\n    \"results\": [\n      {\n        \"sequenceId\": 8435,\n        \"year\": \"string\",\n        \"incidentDate\": \"string\",\n        \"deaths\": 1428,\n        \"injuries\": 3967,\n        \"stateOrCountryCode\": \"string\",\n        \"components\": [\n          \"string\",\n          \"string\"\n        ],\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"vin\": \"string\",\n        \"productIdentifier\": \"string\",\n        \"tin\": \"string\",\n        \"vehicleMake\": \"string\",\n        \"vehicleModel\": \"string\",\n        \"vehicleYear\": \"string\"\n      },\n      {\n        \"sequenceId\": 6756,\n        \"year\": \"string\",\n        \"incidentDate\": \"string\",\n        \"deaths\": 4928,\n        \"injuries\": 3962,\n        \"stateOrCountryCode\": \"string\",\n        \"components\": [\n          \"string\",\n          \"string\"\n        ],\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"vin\": \"string\",\n        \"productIdentifier\": \"string\",\n        \"tin\": \"string\",\n        \"vehicleMake\": \"string\",\n        \"vehicleModel\": \"string\",\n        \"vehicleYear\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f1d118b-749d-4fa1-98b5-89842f0e0d5e",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "injuries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52dbf301-d5ef-46ab-9afa-6b8a25f30070",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "injuries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77da753a-7925-4cf0-a450-71ac86830020",
+          "name": "/ewr/manufacturers",
+          "request": {
+            "name": "/ewr/manufacturers",
+            "description": {},
+            "url": {
+              "path": [
+                "ewr",
+                "manufacturers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f700865-e771-4560-87bb-5eca85efe851",
+              "name": "The list of EWR manufacturers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 5337,\n        \"currentUrl\": \"string\",\n        \"max\": 8214,\n        \"nextUrl\": \"string\",\n        \"offset\": 3771,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 8071\n      },\n      {\n        \"count\": 6513,\n        \"currentUrl\": \"string\",\n        \"max\": 6900,\n        \"nextUrl\": \"string\",\n        \"offset\": 8794,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 3011\n      }\n    ],\n    \"status\": 8197\n  },\n  \"results\": [\n    {\n      \"id\": 3925,\n      \"name\": \"string\",\n      \"reportTypes\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": 4183,\n      \"name\": \"string\",\n      \"reportTypes\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9732acef-bf1a-4876-8133-a5f2faa525ea",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc20623e-b1f4-4d5d-84df-768d5faed497",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "777ee16d-6f67-494d-bee4-dce8b2d926f4",
+          "name": "/ewr/manufacturers/:id",
+          "request": {
+            "name": "/ewr/manufacturers/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "ewr",
+                "manufacturers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) ID of manufacturer"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23b16008-38c0-4067-8942-efbdddccfeea",
+              "name": "Details for a specific manufacturer",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of manufacturer"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 4235,\n        \"currentUrl\": \"string\",\n        \"max\": 1174,\n        \"nextUrl\": \"string\",\n        \"offset\": 6485,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 2165\n      },\n      {\n        \"count\": 9097,\n        \"currentUrl\": \"string\",\n        \"max\": 6787,\n        \"nextUrl\": \"string\",\n        \"offset\": 1814,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 9326\n      }\n    ],\n    \"status\": 4278\n  },\n  \"results\": [\n    {\n      \"id\": 8819,\n      \"name\": \"string\",\n      \"injuries\": [\n        {\n          \"year\": 196,\n          \"quarter\": 5508,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 3147,\n          \"quarter\": 9438,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productions\": [\n        {\n          \"year\": 6069,\n          \"quarter\": 4932,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 2138,\n          \"quarter\": 6835,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"damages\": [\n        {\n          \"year\": 4137,\n          \"quarter\": 6178,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 5158,\n          \"quarter\": 918,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": 7048,\n      \"name\": \"string\",\n      \"injuries\": [\n        {\n          \"year\": 382,\n          \"quarter\": 9195,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 6469,\n          \"quarter\": 2967,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"productions\": [\n        {\n          \"year\": 5428,\n          \"quarter\": 3114,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 5661,\n          \"quarter\": 7007,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ],\n      \"damages\": [\n        {\n          \"year\": 3535,\n          \"quarter\": 2602,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"year\": 7324,\n          \"quarter\": 2392,\n          \"reports\": [\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"category\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"categoryCode\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"count\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"reportUrl\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0977360-a85c-4fa8-bdd3-013d7e0d4d07",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of manufacturer"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccf20737-40e3-490f-a5f1-11ef97a64420",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "manufacturers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of manufacturer"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8906707d-5aaa-4690-994e-c2554375727d",
+          "name": "/ewr/productions",
+          "request": {
+            "name": "/ewr/productions",
+            "description": {},
+            "url": {
+              "path": [
+                "ewr",
+                "productions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "(Required) The year of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "quarter",
+                  "value": "<integer>",
+                  "description": "(Required) The quarter of the reporting period"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportCategory",
+                  "value": "<string>",
+                  "description": "(Required) The category of the light vehicle production reports"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e407259-5d52-46d7-b305-15ec04198f7e",
+              "name": "The list of light vehicle productions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "productions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 8444,\n          \"currentUrl\": \"string\",\n          \"max\": 6997,\n          \"nextUrl\": \"string\",\n          \"offset\": 6067,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 53\n        },\n        {\n          \"count\": 7953,\n          \"currentUrl\": \"string\",\n          \"max\": 8674,\n          \"nextUrl\": \"string\",\n          \"offset\": 6601,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 3342\n        }\n      ],\n      \"status\": 8128\n    },\n    \"results\": [\n      {\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"modelYear\": \"string\",\n        \"typeCode\": \"string\",\n        \"totalProduction\": 622,\n        \"fuelSystem\": \"string\",\n        \"brakeSystem\": \"string\",\n        \"platform\": \"string\",\n        \"fuelPropulsionSystem\": \"string\"\n      },\n      {\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"modelYear\": \"string\",\n        \"typeCode\": \"string\",\n        \"totalProduction\": 2125,\n        \"fuelSystem\": \"string\",\n        \"brakeSystem\": \"string\",\n        \"platform\": \"string\",\n        \"fuelPropulsionSystem\": \"string\"\n      }\n    ]\n  },\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 3509,\n          \"currentUrl\": \"string\",\n          \"max\": 720,\n          \"nextUrl\": \"string\",\n          \"offset\": 6926,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 7269\n        },\n        {\n          \"count\": 1538,\n          \"currentUrl\": \"string\",\n          \"max\": 1547,\n          \"nextUrl\": \"string\",\n          \"offset\": 6514,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 1609\n        }\n      ],\n      \"status\": 7316\n    },\n    \"results\": [\n      {\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"modelYear\": \"string\",\n        \"typeCode\": \"string\",\n        \"totalProduction\": 6534,\n        \"fuelSystem\": \"string\",\n        \"brakeSystem\": \"string\",\n        \"platform\": \"string\",\n        \"fuelPropulsionSystem\": \"string\"\n      },\n      {\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"modelYear\": \"string\",\n        \"typeCode\": \"string\",\n        \"totalProduction\": 6808,\n        \"fuelSystem\": \"string\",\n        \"brakeSystem\": \"string\",\n        \"platform\": \"string\",\n        \"fuelPropulsionSystem\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a96d55fe-3205-4778-b4ed-33372c57c710",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "productions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20d07ffc-1366-41c8-934c-5e8f6520c86d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ewr",
+                    "productions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "quarter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "reportCategory",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "94c95392-9350-4376-aa13-3de66e8449fe",
+    "name": "NHTSA childSeats ewr API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Child Seat search and list endpoints",
+      "type": "text/plain"
+    }
+  }
+}

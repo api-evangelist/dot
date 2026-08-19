@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats equipment API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "equipment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /equipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/equipment",
+            "params": [
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "brand",
+                "value": "",
+                "type": "query",
+                "description": "brand of equipment"
+              },
+              {
+                "name": "modelName",
+                "value": "",
+                "type": "query",
+                "description": "model of the equipment"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "key to sort on"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order in which to sort"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records set to return for pagination."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /equipment/brands",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/equipment/brands",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /equipment/bySearch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/equipment/bySearch",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "returns zero or more tires based on search query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "key to sort on"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order in which to sort"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return, upper bound: 50."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /equipment/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/equipment/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the equipmentDetails"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

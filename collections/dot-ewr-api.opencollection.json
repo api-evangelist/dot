@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats ewr API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ewr",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /ewr/damages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ewr/damages",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The year of the reporting period"
+              },
+              {
+                "name": "quarter",
+                "value": "",
+                "type": "query",
+                "description": "The quarter of the reporting period"
+              },
+              {
+                "name": "reportCategory",
+                "value": "",
+                "type": "query",
+                "description": "The category of the property damage reports"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ewr/injuries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ewr/injuries",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The year of the reporting period"
+              },
+              {
+                "name": "quarter",
+                "value": "",
+                "type": "query",
+                "description": "The quarter of the reporting period"
+              },
+              {
+                "name": "reportCategory",
+                "value": "",
+                "type": "query",
+                "description": "The category of the injury reports"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ewr/manufacturers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ewr/manufacturers"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ewr/manufacturers/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ewr/manufacturers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of manufacturer"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /ewr/productions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ewr/productions",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "The year of the reporting period"
+              },
+              {
+                "name": "quarter",
+                "value": "",
+                "type": "query",
+                "description": "The quarter of the reporting period"
+              },
+              {
+                "name": "reportCategory",
+                "value": "",
+                "type": "query",
+                "description": "The category of the light vehicle production reports"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

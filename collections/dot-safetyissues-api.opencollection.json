@@ -1,0 +1,186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats safetyIssues API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "safetyIssues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /safetyIssues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/safetyIssues",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records set to return for pagination."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /safetyIssues/byDate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/safetyIssues/byDate",
+            "params": [
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query",
+                "description": "The start date to look up safetyIssues by."
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query",
+                "description": "The end date to look up safetyIssues by."
+              },
+              {
+                "name": "issueType",
+                "value": "",
+                "type": "query",
+                "description": "The specified issue type only: 'recall', 'investigation'.(defaults to recall)"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /safetyIssues/byKeywords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/safetyIssues/byKeywords",
+            "params": [
+              {
+                "name": "keywords",
+                "value": "",
+                "type": "query",
+                "description": "The keyword[s] to search descriptions for (Only applicable to 'complaint' type). Natural language (words, spaces) is allowed."
+              },
+              {
+                "name": "allKeywords",
+                "value": "",
+                "type": "query",
+                "description": "match must have all keywords. true or false. defaults to true"
+              },
+              {
+                "name": "productType",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [vehicle], [childSeat], [tireDetails], [equipment] without brackets. Choose which product type to limit the search to."
+              },
+              {
+                "name": "productYearStart",
+                "value": "",
+                "type": "query",
+                "description": "Find only products made in the specified year or later"
+              },
+              {
+                "name": "productYearEnd",
+                "value": "",
+                "type": "query",
+                "description": "Find only products made in the specified year or before"
+              },
+              {
+                "name": "productMake",
+                "value": "",
+                "type": "query",
+                "description": "Restrict query to the specified make only"
+              },
+              {
+                "name": "productModel",
+                "value": "",
+                "type": "query",
+                "description": "Restrict query to the specified model only"
+              },
+              {
+                "name": "issueType",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [recall], [manufacturerCommunication], [complaint], [investigation] without brackets. Choose which issue type to limit the search to."
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /safetyIssues/byNhtsaId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/safetyIssues/byNhtsaId",
+            "params": [
+              {
+                "name": "nhtsaId",
+                "value": "",
+                "type": "query",
+                "description": "The nhtsa id to search for."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter the response by the specified field. Valid inputs: [issueType]"
+              },
+              {
+                "name": "filterValue",
+                "value": "",
+                "type": "query",
+                "description": "The value to use as a filter. Valid inputs: [recalls,complaints,investigations,manufacturerCommunications]"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,310 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "childSeats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /childSeats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats",
+            "params": [
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturerCommunications)."
+              },
+              {
+                "name": "dataSet",
+                "value": "",
+                "type": "query",
+                "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+              },
+              {
+                "name": "weight",
+                "value": "",
+                "type": "query",
+                "description": "Child weight for any childSeat mode"
+              },
+              {
+                "name": "height",
+                "value": "",
+                "type": "query",
+                "description": "Child height for any childSeat mode"
+              },
+              {
+                "name": "age",
+                "value": "",
+                "type": "query",
+                "description": "Child age for any childSeat mode"
+              },
+              {
+                "name": "modelName",
+                "value": "",
+                "type": "query",
+                "description": "Child height for any childSeat mode"
+              },
+              {
+                "name": "manufacturerName",
+                "value": "",
+                "type": "query",
+                "description": "Returns child seats based on model"
+              },
+              {
+                "name": "seatTypeFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filter options based on seatType"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "key to sort on"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order in which to sort"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records set to return for pagination."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/bySearch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/bySearch",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "returns zero or more child seats based on search query"
+              },
+              {
+                "name": "seatTypeFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filter options based on seatType"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "key to sort on"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order in which to sort"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications)."
+              },
+              {
+                "name": "dataSet",
+                "value": "",
+                "type": "query",
+                "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/inspectionStations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/inspectionStations",
+            "params": [
+              {
+                "name": "usState",
+                "value": "",
+                "type": "query",
+                "description": "returns inspections stations within provided usState; use states provided by /carseats"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query",
+                "description": "latitude of the child seat inspection stations overrides usState query param"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query",
+                "description": "longtiude of the child seat inspection stations overrides usState query param"
+              },
+              {
+                "name": "distance",
+                "value": "",
+                "type": "query",
+                "description": "maximum distance to search for an inspection station"
+              },
+              {
+                "name": "onlySpanishSpeaking",
+                "value": "",
+                "type": "query",
+                "description": "only return inspection stations that have spanish speaking contacts"
+              },
+              {
+                "name": "onlyWithEvent",
+                "value": "",
+                "type": "query",
+                "description": "only return inspection statings that have an event associated with them"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/inspectionStations/states",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/inspectionStations/states",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/manufacturers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/manufacturers",
+            "params": [
+              {
+                "name": "dataSet",
+                "value": "",
+                "type": "query",
+                "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/modes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/modes"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /childSeats/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/childSeats/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the child seat"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications)."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

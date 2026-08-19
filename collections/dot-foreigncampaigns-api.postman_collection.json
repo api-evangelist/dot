@@ -1,0 +1,599 @@
+{
+  "item": [
+    {
+      "id": "2dba4ebd-d669-450d-b4aa-f712511892f4",
+      "name": "foreignCampaigns",
+      "description": {
+        "content": "Foreign Campaign search and list endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "98e11621-7453-42d0-bf04-413779416e73",
+          "name": "/foreignCampaigns",
+          "request": {
+            "name": "/foreignCampaigns",
+            "description": {},
+            "url": {
+              "path": [
+                "foreignCampaigns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "manufacturer",
+                  "value": "",
+                  "description": "manufacturer associated with the foreign campaign"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateStart",
+                  "value": "",
+                  "description": "The date to restrict the search to. Format: yyyy-MM-dd"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateEnd",
+                  "value": "",
+                  "description": "The date to restrict the search to. Format: yyyy-MM-dd"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "order in which to sort"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records set to return for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "62d081d8-6544-4e10-b734-370d6c41e29e",
+              "name": "Returns zero or more Foreign Campaigns",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "manufacturer",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": ""
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 6945,\n          \"currentUrl\": \"string\",\n          \"max\": 9858,\n          \"nextUrl\": \"string\",\n          \"offset\": 6857,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 5091\n        },\n        {\n          \"count\": 7357,\n          \"currentUrl\": \"string\",\n          \"max\": 5232,\n          \"nextUrl\": \"string\",\n          \"offset\": 1504,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 3366\n        }\n      ],\n      \"status\": 2665\n    },\n    \"results\": [\n      {\n        \"associatedDocuments\": [\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"dateReceived\": \"1972-06-12\",\n        \"foreignRecallNumber\": \"string\",\n        \"id\": 7832,\n        \"manufacturer\": \"string\",\n        \"recallTypeCode\": \"string\"\n      },\n      {\n        \"associatedDocuments\": [\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"dateReceived\": \"1969-01-31\",\n        \"foreignRecallNumber\": \"string\",\n        \"id\": 7014,\n        \"manufacturer\": \"string\",\n        \"recallTypeCode\": \"string\"\n      }\n    ]\n  },\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 1170,\n          \"currentUrl\": \"string\",\n          \"max\": 4637,\n          \"nextUrl\": \"string\",\n          \"offset\": 7236,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 2698\n        },\n        {\n          \"count\": 4829,\n          \"currentUrl\": \"string\",\n          \"max\": 6447,\n          \"nextUrl\": \"string\",\n          \"offset\": 2643,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 6557\n        }\n      ],\n      \"status\": 4792\n    },\n    \"results\": [\n      {\n        \"associatedDocuments\": [\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"dateReceived\": \"2017-04-13\",\n        \"foreignRecallNumber\": \"string\",\n        \"id\": 3357,\n        \"manufacturer\": \"string\",\n        \"recallTypeCode\": \"string\"\n      },\n      {\n        \"associatedDocuments\": [\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          },\n          {\n            \"description\": \"string\",\n            \"name\": \"string\",\n            \"size\": \"string\",\n            \"type\": \"string\",\n            \"url\": \"string\"\n          }\n        ],\n        \"dateReceived\": \"2017-12-05\",\n        \"foreignRecallNumber\": \"string\",\n        \"id\": 5023,\n        \"manufacturer\": \"string\",\n        \"recallTypeCode\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c66f1031-aa82-417a-aec2-a5b0736800c4",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "manufacturer",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": ""
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5727288b-6b9e-4d91-b5b4-2967d1cd7bc9",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "manufacturer",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateStart",
+                      "value": ""
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": ""
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "389a77b1-db31-48b8-8d21-c0204f99ec04",
+          "name": "/foreignCampaigns/manufacturers",
+          "request": {
+            "name": "/foreignCampaigns/manufacturers",
+            "description": {},
+            "url": {
+              "path": [
+                "foreignCampaigns",
+                "manufacturers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return. Use '-1' to get all records."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7665a797-a48a-4152-a706-32931c4f3975",
+              "name": "Returns all available Foreign Campaign manufacturers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a27346f9-035a-4ab7-94ad-359bc39e77f1",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "09e89d64-db71-4cc2-97ac-5a87855d0d66",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b26efb28-b11a-4b3f-a9ee-4301838723bc",
+          "name": "/foreignCampaigns/:id",
+          "request": {
+            "name": "/foreignCampaigns/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "foreignCampaigns",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) ID of the Foreign Campaign"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1f89f9f-eaa2-4be3-bb29-0c4cb9a5cba9",
+              "name": "Returns a single Foreign Campaign with the specified ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the Foreign Campaign"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 6523,\n        \"currentUrl\": \"string\",\n        \"max\": 6649,\n        \"nextUrl\": \"string\",\n        \"offset\": 4617,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 7424\n      },\n      {\n        \"count\": 5678,\n        \"currentUrl\": \"string\",\n        \"max\": 1664,\n        \"nextUrl\": \"string\",\n        \"offset\": 3252,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 7879\n      }\n    ],\n    \"status\": 2244\n  },\n  \"results\": [\n    {\n      \"associatedDocuments\": [\n        {\n          \"description\": \"string\",\n          \"name\": \"string\",\n          \"size\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"description\": \"string\",\n          \"name\": \"string\",\n          \"size\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"dateReceived\": \"2003-01-24\",\n      \"foreignRecallNumber\": \"string\",\n      \"id\": 8413,\n      \"manufacturer\": \"string\",\n      \"recallTypeCode\": \"string\"\n    },\n    {\n      \"associatedDocuments\": [\n        {\n          \"description\": \"string\",\n          \"name\": \"string\",\n          \"size\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        },\n        {\n          \"description\": \"string\",\n          \"name\": \"string\",\n          \"size\": \"string\",\n          \"type\": \"string\",\n          \"url\": \"string\"\n        }\n      ],\n      \"dateReceived\": \"1988-08-01\",\n      \"foreignRecallNumber\": \"string\",\n      \"id\": 4720,\n      \"manufacturer\": \"string\",\n      \"recallTypeCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b53a88e-ae86-45d3-876b-4009f177a116",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the Foreign Campaign"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d67bd98f-901a-41df-a562-ef6896fdafc0",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "foreignCampaigns",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the Foreign Campaign"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a42580d5-5e60-42be-97e2-c6db76dca474",
+    "name": "NHTSA childSeats foreignCampaigns API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Child Seat search and list endpoints",
+      "type": "text/plain"
+    }
+  }
+}

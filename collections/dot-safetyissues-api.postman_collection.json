@@ -1,0 +1,920 @@
+{
+  "item": [
+    {
+      "id": "dbf9623b-6087-4d89-8264-b620fa96014d",
+      "name": "safetyIssues",
+      "description": {
+        "content": "Recalls, Investigations, Complaints, and Manufacturer Communications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e8fdc534-95eb-4847-a47c-1b9004378721",
+          "name": "/safetyIssues",
+          "request": {
+            "name": "/safetyIssues",
+            "description": {},
+            "url": {
+              "path": [
+                "safetyIssues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records set to return for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b62221bb-fb0a-400f-9cbc-f73b6ed7375e",
+              "name": "The list of safety issues",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"artemisId\": 968,\n    \"createDate\": \"2017-03-08\",\n    \"description\": \"string\",\n    \"id\": 9570,\n    \"issueYear\": \"string\",\n    \"subject\": \"string\",\n    \"updateDate\": \"1980-08-02\"\n  },\n  {\n    \"artemisId\": 8342,\n    \"createDate\": \"2021-01-25\",\n    \"description\": \"string\",\n    \"id\": 8195,\n    \"issueYear\": \"string\",\n    \"subject\": \"string\",\n    \"updateDate\": \"2025-09-27\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d4c87d9-0720-4483-8299-c719b0f80452",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2db75d8-2920-4690-b1be-99018650496b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c126e93-2420-482f-910d-79bfeab8c860",
+          "name": "/safetyIssues/byDate",
+          "request": {
+            "name": "/safetyIssues/byDate",
+            "description": {},
+            "url": {
+              "path": [
+                "safetyIssues",
+                "byDate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dateStart",
+                  "value": "<date>",
+                  "description": "The start date to look up safetyIssues by."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateEnd",
+                  "value": "<date>",
+                  "description": "The end date to look up safetyIssues by."
+                },
+                {
+                  "disabled": false,
+                  "key": "issueType",
+                  "value": "",
+                  "description": "The specified issue type only: 'recall', 'investigation'.(defaults to recall)"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0dcfad90-c437-4627-bcbb-518bea6cacba",
+              "name": "Paginated list of SafetyIssues from within the specified date range.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 468,\n        \"currentUrl\": \"string\",\n        \"max\": 6383,\n        \"nextUrl\": \"string\",\n        \"offset\": 490,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 449\n      },\n      {\n        \"count\": 1699,\n        \"currentUrl\": \"string\",\n        \"max\": 5429,\n        \"nextUrl\": \"string\",\n        \"offset\": 8759,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 2355\n      }\n    ],\n    \"status\": 9359\n  },\n  \"results\": [\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 4812,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 9228,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 4203,\n          \"numberOfInjuries\": 2876,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 8765,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 4477,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 5707,\n          \"numberOfInjuries\": 4667,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 5125,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 6162,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    },\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 3912,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 1227,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 8323,\n          \"numberOfInjuries\": 4460,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 6526,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 6770,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 2894,\n          \"numberOfInjuries\": 9598,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7027,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7748,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32a94fa0-dfec-4f91-b15b-4cc7037f7af8",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c0ca3f8-43fc-4046-baf2-c9959372c1cf",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dateStart",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateEnd",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffad0a23-f79a-4deb-b4b7-a521ecad2786",
+          "name": "/safetyIssues/byKeywords",
+          "request": {
+            "name": "/safetyIssues/byKeywords",
+            "description": {},
+            "url": {
+              "path": [
+                "safetyIssues",
+                "byKeywords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "keywords",
+                  "value": "",
+                  "description": "(Required) The keyword[s] to search descriptions for (Only applicable to 'complaint' type). Natural language (words, spaces) is allowed."
+                },
+                {
+                  "disabled": false,
+                  "key": "allKeywords",
+                  "value": "",
+                  "description": "match must have all keywords. true or false. defaults to true"
+                },
+                {
+                  "disabled": false,
+                  "key": "productType",
+                  "value": "",
+                  "description": "Valid inputs: [vehicle], [childSeat], [tireDetails], [equipment] without brackets. Choose which product type to limit the search to."
+                },
+                {
+                  "disabled": false,
+                  "key": "productYearStart",
+                  "value": "<integer>",
+                  "description": "Find only products made in the specified year or later"
+                },
+                {
+                  "disabled": false,
+                  "key": "productYearEnd",
+                  "value": "<integer>",
+                  "description": "Find only products made in the specified year or before"
+                },
+                {
+                  "disabled": false,
+                  "key": "productMake",
+                  "value": "",
+                  "description": "Restrict query to the specified make only"
+                },
+                {
+                  "disabled": false,
+                  "key": "productModel",
+                  "value": "",
+                  "description": "Restrict query to the specified model only"
+                },
+                {
+                  "disabled": false,
+                  "key": "issueType",
+                  "value": "",
+                  "description": "Valid inputs: [recall], [manufacturerCommunication], [complaint], [investigation] without brackets. Choose which issue type to limit the search to."
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b94642b3-a97e-4cc8-84bb-f5ee6958bb35",
+              "name": "A list of issues containing the key word[s] in their descriptions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byKeywords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "allKeywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "productType",
+                      "value": ""
+                    },
+                    {
+                      "key": "productYearStart",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productYearEnd",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productMake",
+                      "value": ""
+                    },
+                    {
+                      "key": "productModel",
+                      "value": ""
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 7315,\n        \"currentUrl\": \"string\",\n        \"max\": 3703,\n        \"nextUrl\": \"string\",\n        \"offset\": 3572,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 9231\n      },\n      {\n        \"count\": 8906,\n        \"currentUrl\": \"string\",\n        \"max\": 673,\n        \"nextUrl\": \"string\",\n        \"offset\": 9349,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 731\n      }\n    ],\n    \"status\": 8410\n  },\n  \"results\": [\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 3875,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 3037,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 3281,\n          \"numberOfInjuries\": 8676,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2456,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 3189,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 4305,\n          \"numberOfInjuries\": 6951,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 9700,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7976,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    },\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2834,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 5897,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 5683,\n          \"numberOfInjuries\": 7870,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2415,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 821,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 6577,\n          \"numberOfInjuries\": 5719,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7629,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 6062,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "348317ca-2da5-4165-8ed7-7dc96aa4d25c",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byKeywords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "allKeywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "productType",
+                      "value": ""
+                    },
+                    {
+                      "key": "productYearStart",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productYearEnd",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productMake",
+                      "value": ""
+                    },
+                    {
+                      "key": "productModel",
+                      "value": ""
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fbb21e28-6f37-41c2-a527-96f748e5f898",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byKeywords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "keywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "allKeywords",
+                      "value": ""
+                    },
+                    {
+                      "key": "productType",
+                      "value": ""
+                    },
+                    {
+                      "key": "productYearStart",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productYearEnd",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "productMake",
+                      "value": ""
+                    },
+                    {
+                      "key": "productModel",
+                      "value": ""
+                    },
+                    {
+                      "key": "issueType",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7b7ab4b-8c1b-4337-a66d-716aec2cee5b",
+          "name": "/safetyIssues/byNhtsaId",
+          "request": {
+            "name": "/safetyIssues/byNhtsaId",
+            "description": {},
+            "url": {
+              "path": [
+                "safetyIssues",
+                "byNhtsaId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "nhtsaId",
+                  "value": "<int64>",
+                  "description": "(Required) The nhtsa id to search for."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "",
+                  "description": "Filter the response by the specified field. Valid inputs: [issueType]"
+                },
+                {
+                  "disabled": false,
+                  "key": "filterValue",
+                  "value": "",
+                  "description": "The value to use as a filter. Valid inputs: [recalls,complaints,investigations,manufacturerCommunications]"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a69ba76-6c64-4a89-8a11-1e05c6b08f42",
+              "name": "List of SafetyIssues identified by the specified nhtsaId.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byNhtsaId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nhtsaId",
+                      "value": "<int64>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "filterValue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 7315,\n        \"currentUrl\": \"string\",\n        \"max\": 3703,\n        \"nextUrl\": \"string\",\n        \"offset\": 3572,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 9231\n      },\n      {\n        \"count\": 8906,\n        \"currentUrl\": \"string\",\n        \"max\": 673,\n        \"nextUrl\": \"string\",\n        \"offset\": 9349,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 731\n      }\n    ],\n    \"status\": 8410\n  },\n  \"results\": [\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 3875,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 3037,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 3281,\n          \"numberOfInjuries\": 8676,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2456,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 3189,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 4305,\n          \"numberOfInjuries\": 6951,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 9700,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7976,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    },\n    {\n      \"complaints\": [\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2834,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 5897,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 5683,\n          \"numberOfInjuries\": 7870,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        },\n        {\n          \"city\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"crash\": 2415,\n          \"dateFiled\": \"string\",\n          \"dateOfIncident\": \"string\",\n          \"description\": \"string\",\n          \"fire\": 821,\n          \"nhtsaIdNumber\": \"string\",\n          \"numberOfDeaths\": 6577,\n          \"numberOfInjuries\": 5719,\n          \"stateAbbreviation\": \"string\",\n          \"vin\": \"string\"\n        }\n      ],\n      \"investigation\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"dateClosed\": \"string\",\n          \"dateOpened\": \"string\",\n          \"nhtsaCampaignNumber\": \"string\",\n          \"recalls\": [\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaCampaignNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"subject\": \"string\",\n          \"summary\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"manufacturerCommunications\": [\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"communicationDate\": \"string\",\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturerCommunicationNumber\": \"string\",\n          \"nhtsaIdNumber\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ],\n      \"recalls\": [\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 7629,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        },\n        {\n          \"components\": [\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"consequence\": \"string\",\n          \"correctiveAction\": \"string\",\n          \"investigations\": [\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"nhtsaActionNumber\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"subject\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"manufacturer\": \"string\",\n          \"nhtsaCampaignNumber\": 6062,\n          \"notes\": \"string\",\n          \"potentialNumberOfUnitsAffected\": \"string\",\n          \"reportsReceivedDate\": \"string\",\n          \"subject\": \"string\",\n          \"summary\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd6f1ee8-c1d5-4a8e-9740-8360683da945",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byNhtsaId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nhtsaId",
+                      "value": "<int64>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "filterValue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67164b2e-8d71-456c-adef-6f7fb0ab2f17",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "safetyIssues",
+                    "byNhtsaId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nhtsaId",
+                      "value": "<int64>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "filterValue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1c9f3a8b-4135-43e4-95d9-9fdc6ec6ec70",
+    "name": "NHTSA childSeats safetyIssues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Child Seat search and list endpoints",
+      "type": "text/plain"
+    }
+  }
+}

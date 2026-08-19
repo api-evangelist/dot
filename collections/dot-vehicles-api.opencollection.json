@@ -1,0 +1,726 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats vehicles API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "vehicles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /vehicles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles",
+            "params": [
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byArtemisId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byArtemisId",
+            "params": [
+              {
+                "name": "artemisId",
+                "value": "",
+                "type": "query",
+                "description": "The artemisId for a vehicle."
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byMultipleArtemisIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byMultipleArtemisIds",
+            "params": [
+              {
+                "name": "artemisIds",
+                "value": "",
+                "type": "query",
+                "description": "The artemisIds for vehicles. Comma separated if more than one"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "This should always be none, as we only want to return minimum counts data"
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "This should always be null, as we want to get the counts"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byClass",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byClass",
+            "params": [
+              {
+                "name": "vehicleClass",
+                "value": "",
+                "type": "query",
+                "description": "The name of the class to search by."
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [minimal]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byIds",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "A CSV list of IDs"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byManufacturer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byManufacturer",
+            "params": [
+              {
+                "name": "manufacturerName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the manufacturer to search by."
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              },
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query",
+                "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query",
+                "description": "The model year to restrict the manufacturer search to. Format: yyyy-MM-dd"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'none'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]"
+              },
+              {
+                "name": "filterValue",
+                "value": "",
+                "type": "query",
+                "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byNcapId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byNcapId",
+            "params": [
+              {
+                "name": "ncapId",
+                "value": "",
+                "type": "query",
+                "description": "The NcapId of the vehicle to look up."
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records set to return for pagination."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/bySearch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/bySearch",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "A fuzzy search query to search with"
+              },
+              {
+                "name": "allKeywords",
+                "value": "",
+                "type": "query",
+                "description": "match must have all keywords. true or false. defaults to true"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'crashtestratings'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query",
+                "description": "Find vehicles manufactured since this date (inclusive). Format: yyyy-MM-dd"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query",
+                "description": "Find vehicles manufactured up to this date (inclusive). Format: yyyy-MM-dd"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "The column to sort records by. Valid inputs: ['overallRating', 'overallFrontCrashRating', 'overallSideCrashRating', 'rolloverRating', 'recallsCount', 'investigationsCount', 'complaintsCount', 'manufacturerCommunicationsCount']"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Which direction the 'sort' parameter is applied, valid inputs: [asc, desc]"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter the response by the specified field. Valid inputs: [vehicleClass]"
+              },
+              {
+                "name": "filterValue",
+                "value": "",
+                "type": "query",
+                "description": "The value to use as a filter. Valid inputs: [SUV, TRUCK, PASSENGERCAR, VAN, BUS]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return, upper bound: 50."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byVin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byVin",
+            "params": [
+              {
+                "name": "vin",
+                "value": "",
+                "type": "query",
+                "description": "The vin number to search for vehicles with."
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/byYmmt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/byYmmt",
+            "params": [
+              {
+                "name": "modelYear",
+                "value": "",
+                "type": "query",
+                "description": "The vehicles modelYear"
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query",
+                "description": "The vehicles make"
+              },
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle model"
+              },
+              {
+                "name": "trim",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle trim"
+              },
+              {
+                "name": "series",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle series"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/classes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/classes",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/makes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/makes",
+            "params": [
+              {
+                "name": "modelYear",
+                "value": "",
+                "type": "query",
+                "description": "The model year for which to display makes, or the start year for a range."
+              },
+              {
+                "name": "modelYearEnd",
+                "value": "",
+                "type": "query",
+                "description": "The end model year for which to display makes."
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/manufacturers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/manufacturers",
+            "params": [
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "The location of Manufacturers to request. (ncap or all), defaults to ncap"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/modelYears",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/modelYears",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/models",
+            "params": [
+              {
+                "name": "modelYear",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle's modelYear, or the start year of a range."
+              },
+              {
+                "name": "modelYearEnd",
+                "value": "",
+                "type": "query",
+                "description": "The end year for a range of vehicle modelYears."
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle's make"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/trims",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/trims",
+            "params": [
+              {
+                "name": "modelYear",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle's modelYear"
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle's make"
+              },
+              {
+                "name": "model",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle's model"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /vehicles/{id}/details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/:id/details",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The vehicle's id"
+              },
+              {
+                "name": "data",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of data to return (crashtestratings, safetyfeatures, recommendedfeatures, complaints, recalls, investigations, manufacturercommunications, none, all), defaults to 'all'."
+              },
+              {
+                "name": "productDetail",
+                "value": "",
+                "type": "query",
+                "description": "Valid inputs: [minimal], [all] without brackets. Choose which detail level to show. defaults to: [all]"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHTSA childSeats foreignCampaigns API",
+    "version": "1.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "foreignCampaigns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /foreignCampaigns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/foreignCampaigns",
+            "params": [
+              {
+                "name": "manufacturer",
+                "value": "",
+                "type": "query",
+                "description": "manufacturer associated with the foreign campaign"
+              },
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query",
+                "description": "The date to restrict the search to. Format: yyyy-MM-dd"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query",
+                "description": "The date to restrict the search to. Format: yyyy-MM-dd"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "order in which to sort"
+              },
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records set to return for pagination."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /foreignCampaigns/manufacturers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/foreignCampaigns/manufacturers",
+            "params": [
+              {
+                "name": "max",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of records to return. Use '-1' to get all records."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset of the records listing (for pagination)."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /foreignCampaigns/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/foreignCampaigns/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the Foreign Campaign"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

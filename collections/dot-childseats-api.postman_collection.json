@@ -1,0 +1,1603 @@
+{
+  "item": [
+    {
+      "id": "f85567c1-03ed-43db-93ed-8d45cd0dfbb2",
+      "name": "childSeats",
+      "description": {
+        "content": "Child Seat search and list endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92628f9d-f3ec-4926-9291-0a6b71fe6d3b",
+          "name": "/childSeats",
+          "request": {
+            "name": "/childSeats",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "",
+                  "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturerCommunications)."
+                },
+                {
+                  "disabled": false,
+                  "key": "dataSet",
+                  "value": "",
+                  "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+                },
+                {
+                  "disabled": false,
+                  "key": "weight",
+                  "value": "",
+                  "description": "Child weight for any childSeat mode"
+                },
+                {
+                  "disabled": false,
+                  "key": "height",
+                  "value": "",
+                  "description": "Child height for any childSeat mode"
+                },
+                {
+                  "disabled": false,
+                  "key": "age",
+                  "value": "",
+                  "description": "Child age for any childSeat mode"
+                },
+                {
+                  "disabled": false,
+                  "key": "modelName",
+                  "value": "",
+                  "description": "Child height for any childSeat mode"
+                },
+                {
+                  "disabled": false,
+                  "key": "manufacturerName",
+                  "value": "",
+                  "description": "Returns child seats based on model"
+                },
+                {
+                  "disabled": false,
+                  "key": "seatTypeFilter",
+                  "value": "",
+                  "description": "Filter options based on seatType"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "make",
+                  "description": "key to sort on"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "order in which to sort"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records set to return for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "359bc48c-98ec-4574-bc72-c66a7dd6a1ea",
+              "name": "Returns zero or more childSeats",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "weight",
+                      "value": ""
+                    },
+                    {
+                      "key": "height",
+                      "value": ""
+                    },
+                    {
+                      "key": "age",
+                      "value": ""
+                    },
+                    {
+                      "key": "modelName",
+                      "value": ""
+                    },
+                    {
+                      "key": "manufacturerName",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 1706,\n          \"currentUrl\": \"string\",\n          \"max\": 119,\n          \"nextUrl\": \"string\",\n          \"offset\": 2899,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 8854\n        },\n        {\n          \"count\": 2379,\n          \"currentUrl\": \"string\",\n          \"max\": 8485,\n          \"nextUrl\": \"string\",\n          \"offset\": 5556,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 4699\n        }\n      ],\n      \"status\": 8207\n    },\n    \"results\": [\n      {\n        \"id\": 2701,\n        \"make\": \"string\",\n        \"manufactureDate\": \"string\",\n        \"modelNumber\": \"string\",\n        \"modes\": [\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 4796.935598781182,\n            \"maxChildHeightFinal\": 6479.6279905748825,\n            \"maxChildWeightFinal\": 5320.120662449521,\n            \"maxUsingLowerAnchors\": 1102.9434483746559,\n            \"maxUsingLowerAnchorsFinal\": 3254.8566407587555,\n            \"maxUsingSeatBelts\": 2437.7777847532834,\n            \"minChildHeight\": 7259.777173714147,\n            \"minUsingLowerAnchors\": 6720.946148694646,\n            \"minUsingSeatBelts\": 3553.2763957219595,\n            \"mode\": \"string\",\n            \"modeWeight\": 6553.026041775332,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": false,\n            \"weightHeightRange\": \"string\"\n          },\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 1987.4267579549387,\n            \"maxChildHeightFinal\": 5710.136467752417,\n            \"maxChildWeightFinal\": 5115.522496859949,\n            \"maxUsingLowerAnchors\": 8273.910084433055,\n            \"maxUsingLowerAnchorsFinal\": 9957.19702725168,\n            \"maxUsingSeatBelts\": 4151.067543674582,\n            \"minChildHeight\": 9603.514228500966,\n            \"minUsingLowerAnchors\": 9713.350682432443,\n            \"minUsingSeatBelts\": 3989.9345000281305,\n            \"mode\": \"string\",\n            \"modeWeight\": 6060.72734182614,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": false,\n            \"weightHeightRange\": \"string\"\n          }\n        ],\n        \"productModel\": \"string\",\n        \"safetyIssues\": {\n          \"complaints\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"investigation\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"manufacturerCommunications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"recalls\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"seatType\": \"string\"\n      },\n      {\n        \"id\": 1656,\n        \"make\": \"string\",\n        \"manufactureDate\": \"string\",\n        \"modelNumber\": \"string\",\n        \"modes\": [\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 8505.62725209431,\n            \"maxChildHeightFinal\": 2827.12990587777,\n            \"maxChildWeightFinal\": 7698.774159334567,\n            \"maxUsingLowerAnchors\": 4080.990118567531,\n            \"maxUsingLowerAnchorsFinal\": 4649.081605302312,\n            \"maxUsingSeatBelts\": 9991.678427002878,\n            \"minChildHeight\": 8212.006080709765,\n            \"minUsingLowerAnchors\": 1768.173257521205,\n            \"minUsingSeatBelts\": 193.93511800310347,\n            \"mode\": \"string\",\n            \"modeWeight\": 4978.254149656734,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": false,\n            \"weightHeightRange\": \"string\"\n          },\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 3799.477931609915,\n            \"maxChildHeightFinal\": 8958.779519893471,\n            \"maxChildWeightFinal\": 1441.228224551413,\n            \"maxUsingLowerAnchors\": 575.7421804420237,\n            \"maxUsingLowerAnchorsFinal\": 9982.693437636693,\n            \"maxUsingSeatBelts\": 9317.155122575321,\n            \"minChildHeight\": 5337.105200670047,\n            \"minUsingLowerAnchors\": 432.9622906242392,\n            \"minUsingSeatBelts\": 9675.263748144787,\n            \"mode\": \"string\",\n            \"modeWeight\": 3468.9052361135764,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": false,\n            \"weightHeightRange\": \"string\"\n          }\n        ],\n        \"productModel\": \"string\",\n        \"safetyIssues\": {\n          \"complaints\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"investigation\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"manufacturerCommunications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"recalls\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"seatType\": \"string\"\n      }\n    ]\n  },\n  {\n    \"meta\": {\n      \"messages\": [\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        },\n        {\n          \"errorCode\": \"string\",\n          \"errorDetail\": \"string\",\n          \"errorMessage\": \"string\",\n          \"userMessage\": \"string\"\n        }\n      ],\n      \"pagination\": [\n        {\n          \"count\": 8486,\n          \"currentUrl\": \"string\",\n          \"max\": 9031,\n          \"nextUrl\": \"string\",\n          \"offset\": 2127,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 87\n        },\n        {\n          \"count\": 7681,\n          \"currentUrl\": \"string\",\n          \"max\": 3234,\n          \"nextUrl\": \"string\",\n          \"offset\": 15,\n          \"order\": \"string\",\n          \"previousUrl\": \"string\",\n          \"sort\": \"string\",\n          \"total\": 1455\n        }\n      ],\n      \"status\": 4410\n    },\n    \"results\": [\n      {\n        \"id\": 7942,\n        \"make\": \"string\",\n        \"manufactureDate\": \"string\",\n        \"modelNumber\": \"string\",\n        \"modes\": [\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 5730.423090129016,\n            \"maxChildHeightFinal\": 5710.704302778276,\n            \"maxChildWeightFinal\": 7809.003109602772,\n            \"maxUsingLowerAnchors\": 3912.0949419008975,\n            \"maxUsingLowerAnchorsFinal\": 4687.148331881836,\n            \"maxUsingSeatBelts\": 1114.7441081947895,\n            \"minChildHeight\": 9309.380566821874,\n            \"minUsingLowerAnchors\": 4229.091616988939,\n            \"minUsingSeatBelts\": 9147.140010039582,\n            \"mode\": \"string\",\n            \"modeWeight\": 4221.013515631063,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": true,\n            \"weightHeightRange\": \"string\"\n          },\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 3618.329786344666,\n            \"maxChildHeightFinal\": 3463.885038832314,\n            \"maxChildWeightFinal\": 5098.159064656833,\n            \"maxUsingLowerAnchors\": 6424.415998945084,\n            \"maxUsingLowerAnchorsFinal\": 8087.924126695897,\n            \"maxUsingSeatBelts\": 8667.882651752838,\n            \"minChildHeight\": 9012.611556659045,\n            \"minUsingLowerAnchors\": 1552.011502228212,\n            \"minUsingSeatBelts\": 4727.391244953633,\n            \"mode\": \"string\",\n            \"modeWeight\": 5968.179555050756,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": true,\n            \"weightHeightRange\": \"string\"\n          }\n        ],\n        \"productModel\": \"string\",\n        \"safetyIssues\": {\n          \"complaints\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"investigation\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"manufacturerCommunications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"recalls\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"seatType\": \"string\"\n      },\n      {\n        \"id\": 7309,\n        \"make\": \"string\",\n        \"manufactureDate\": \"string\",\n        \"modelNumber\": \"string\",\n        \"modes\": [\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 6311.985778654813,\n            \"maxChildHeightFinal\": 4034.7211013398132,\n            \"maxChildWeightFinal\": 8606.738335691358,\n            \"maxUsingLowerAnchors\": 1047.7565150086598,\n            \"maxUsingLowerAnchorsFinal\": 8363.123817409745,\n            \"maxUsingSeatBelts\": 5260.1486937317595,\n            \"minChildHeight\": 61.60108497399119,\n            \"minUsingLowerAnchors\": 8324.076501822803,\n            \"minUsingSeatBelts\": 6960.742562050563,\n            \"mode\": \"string\",\n            \"modeWeight\": 9748.512677748684,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": false,\n            \"weightHeightRange\": \"string\"\n          },\n          {\n            \"harnessType\": \"string\",\n            \"maxChildHeight\": 8512.915023415086,\n            \"maxChildHeightFinal\": 9309.456619483739,\n            \"maxChildWeightFinal\": 2725.2497077329754,\n            \"maxUsingLowerAnchors\": 3188.813608504192,\n            \"maxUsingLowerAnchorsFinal\": 7709.8743101933605,\n            \"maxUsingSeatBelts\": 1751.543740511302,\n            \"minChildHeight\": 7364.881137490351,\n            \"minUsingLowerAnchors\": 9347.36583703221,\n            \"minUsingSeatBelts\": 6872.404969396273,\n            \"mode\": \"string\",\n            \"modeWeight\": 5571.611209215338,\n            \"ratings\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"recommendedAge\": true,\n            \"weightHeightRange\": \"string\"\n          }\n        ],\n        \"productModel\": \"string\",\n        \"safetyIssues\": {\n          \"complaints\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"investigation\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"manufacturerCommunications\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"recalls\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"seatType\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6a1b031-74d2-43ee-9f0f-0a2642dadbf3",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "weight",
+                      "value": ""
+                    },
+                    {
+                      "key": "height",
+                      "value": ""
+                    },
+                    {
+                      "key": "age",
+                      "value": ""
+                    },
+                    {
+                      "key": "modelName",
+                      "value": ""
+                    },
+                    {
+                      "key": "manufacturerName",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90244789-ee0a-48e4-86d2-b85dc060dc38",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "weight",
+                      "value": ""
+                    },
+                    {
+                      "key": "height",
+                      "value": ""
+                    },
+                    {
+                      "key": "age",
+                      "value": ""
+                    },
+                    {
+                      "key": "modelName",
+                      "value": ""
+                    },
+                    {
+                      "key": "manufacturerName",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3244357e-95a2-49b6-aa01-97406c87a68f",
+          "name": "/childSeats/bySearch",
+          "request": {
+            "name": "/childSeats/bySearch",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                "bySearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "",
+                  "description": "(Required) returns zero or more child seats based on search query"
+                },
+                {
+                  "disabled": false,
+                  "key": "seatTypeFilter",
+                  "value": "",
+                  "description": "Filter options based on seatType"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "make",
+                  "description": "key to sort on"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "order in which to sort"
+                },
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "",
+                  "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications)."
+                },
+                {
+                  "disabled": false,
+                  "key": "dataSet",
+                  "value": "",
+                  "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55522df9-18e7-4043-8fad-b2c33215a9ce",
+              "name": "Fuzzy search for a child seat based on make, productModel, and modelNumber",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "bySearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 1215,\n        \"currentUrl\": \"string\",\n        \"max\": 3400,\n        \"nextUrl\": \"string\",\n        \"offset\": 9459,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 6461\n      },\n      {\n        \"count\": 1210,\n        \"currentUrl\": \"string\",\n        \"max\": 4952,\n        \"nextUrl\": \"string\",\n        \"offset\": 8526,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 4621\n      }\n    ],\n    \"status\": 8239\n  },\n  \"results\": [\n    {\n      \"id\": 9346,\n      \"make\": \"string\",\n      \"manufactureDate\": \"string\",\n      \"modelNumber\": \"string\",\n      \"modes\": [\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 4892.820222420596,\n          \"maxChildHeightFinal\": 5212.778483175542,\n          \"maxChildWeightFinal\": 2672.4741885561575,\n          \"maxUsingLowerAnchors\": 1371.979225023805,\n          \"maxUsingLowerAnchorsFinal\": 3891.035111606852,\n          \"maxUsingSeatBelts\": 6959.49332834763,\n          \"minChildHeight\": 4484.005902753804,\n          \"minUsingLowerAnchors\": 5649.409529697036,\n          \"minUsingSeatBelts\": 5012.580915864599,\n          \"mode\": \"string\",\n          \"modeWeight\": 4496.2785362661325,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        },\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 4238.678101275733,\n          \"maxChildHeightFinal\": 5674.654550372919,\n          \"maxChildWeightFinal\": 3014.203730803826,\n          \"maxUsingLowerAnchors\": 5180.084967995024,\n          \"maxUsingLowerAnchorsFinal\": 7693.36196878855,\n          \"maxUsingSeatBelts\": 8862.260235855396,\n          \"minChildHeight\": 6183.653321060928,\n          \"minUsingLowerAnchors\": 7441.578906188948,\n          \"minUsingSeatBelts\": 7652.439086878533,\n          \"mode\": \"string\",\n          \"modeWeight\": 458.2158845462492,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        }\n      ],\n      \"productModel\": \"string\",\n      \"safetyIssues\": {\n        \"complaints\": [\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 9711,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 707,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 3571,\n            \"numberOfInjuries\": 2704,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          },\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 3481,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 8268,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 2103,\n            \"numberOfInjuries\": 6933,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          }\n        ],\n        \"investigation\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"manufacturerCommunications\": [\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ],\n        \"recalls\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 7839,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 6761,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ]\n      },\n      \"seatType\": \"string\"\n    },\n    {\n      \"id\": 8676,\n      \"make\": \"string\",\n      \"manufactureDate\": \"string\",\n      \"modelNumber\": \"string\",\n      \"modes\": [\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 170.17817524605073,\n          \"maxChildHeightFinal\": 6196.063744750978,\n          \"maxChildWeightFinal\": 357.15999085665027,\n          \"maxUsingLowerAnchors\": 5616.100840868074,\n          \"maxUsingLowerAnchorsFinal\": 7841.802563940093,\n          \"maxUsingSeatBelts\": 8789.635775930332,\n          \"minChildHeight\": 8872.612612996645,\n          \"minUsingLowerAnchors\": 3565.0268399216866,\n          \"minUsingSeatBelts\": 5672.582304759701,\n          \"mode\": \"string\",\n          \"modeWeight\": 8211.017930833179,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": true,\n          \"weightHeightRange\": \"string\"\n        },\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 1181.2214661375153,\n          \"maxChildHeightFinal\": 299.8316415194147,\n          \"maxChildWeightFinal\": 8013.62375151167,\n          \"maxUsingLowerAnchors\": 8144.453526563548,\n          \"maxUsingLowerAnchorsFinal\": 5622.9331452439565,\n          \"maxUsingSeatBelts\": 942.6700493910778,\n          \"minChildHeight\": 3709.6622704801284,\n          \"minUsingLowerAnchors\": 75.07553160319813,\n          \"minUsingSeatBelts\": 6068.333021376064,\n          \"mode\": \"string\",\n          \"modeWeight\": 4634.052190021652,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": true,\n          \"weightHeightRange\": \"string\"\n        }\n      ],\n      \"productModel\": \"string\",\n      \"safetyIssues\": {\n        \"complaints\": [\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 3721,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 4457,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 890,\n            \"numberOfInjuries\": 9608,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          },\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 8198,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 4205,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 1048,\n            \"numberOfInjuries\": 1270,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          }\n        ],\n        \"investigation\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"manufacturerCommunications\": [\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ],\n        \"recalls\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 7350,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 1112,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ]\n      },\n      \"seatType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3981563e-bc9f-4e48-815c-b811bf2a1749",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "bySearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4554ff13-4946-49a4-903f-e4c5a30de65c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "bySearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": ""
+                    },
+                    {
+                      "key": "seatTypeFilter",
+                      "value": ""
+                    },
+                    {
+                      "key": "sort",
+                      "value": "make"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "data",
+                      "value": ""
+                    },
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c79bbf4d-6e9c-4579-9331-c189657e15d6",
+          "name": "/childSeats/inspectionStations",
+          "request": {
+            "name": "/childSeats/inspectionStations",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                "inspectionStations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "usState",
+                  "value": "",
+                  "description": "returns inspections stations within provided usState; use states provided by /carseats"
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "",
+                  "description": "latitude of the child seat inspection stations overrides usState query param"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "",
+                  "description": "longtiude of the child seat inspection stations overrides usState query param"
+                },
+                {
+                  "disabled": false,
+                  "key": "distance",
+                  "value": "25",
+                  "description": "maximum distance to search for an inspection station"
+                },
+                {
+                  "disabled": false,
+                  "key": "onlySpanishSpeaking",
+                  "value": "false",
+                  "description": "only return inspection stations that have spanish speaking contacts"
+                },
+                {
+                  "disabled": false,
+                  "key": "onlyWithEvent",
+                  "value": "false",
+                  "description": "only return inspection statings that have an event associated with them"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return. Use '-1' to get all records."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "284facc4-4ac2-4744-9d8e-bab82af030e9",
+              "name": "Returns zero or more inspections stations based on queries provided",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "usState",
+                      "value": ""
+                    },
+                    {
+                      "key": "latitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "longitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "distance",
+                      "value": "25"
+                    },
+                    {
+                      "key": "onlySpanishSpeaking",
+                      "value": "false"
+                    },
+                    {
+                      "key": "onlyWithEvent",
+                      "value": "false"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 325,\n        \"currentUrl\": \"string\",\n        \"max\": 2562,\n        \"nextUrl\": \"string\",\n        \"offset\": 1717,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 6062\n      },\n      {\n        \"count\": 4112,\n        \"currentUrl\": \"string\",\n        \"max\": 6603,\n        \"nextUrl\": \"string\",\n        \"offset\": 2507,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 4874\n      }\n    ],\n    \"status\": 1104\n  },\n  \"results\": [\n    {\n      \"city\": \"string\",\n      \"contact\": \"string\",\n      \"hasEvent\": true,\n      \"hours\": \"string\",\n      \"latitude\": 5116.877427924404,\n      \"longitude\": 7621.522216095583,\n      \"name\": \"string\",\n      \"note\": \"string\",\n      \"phone\": \"string\",\n      \"spanishSpeaking\": false,\n      \"state\": \"string\",\n      \"stateAbbr\": \"string\",\n      \"streetAddress\": \"string\",\n      \"zip\": \"string\"\n    },\n    {\n      \"city\": \"string\",\n      \"contact\": \"string\",\n      \"hasEvent\": false,\n      \"hours\": \"string\",\n      \"latitude\": 4865.979396575533,\n      \"longitude\": 9085.998471170298,\n      \"name\": \"string\",\n      \"note\": \"string\",\n      \"phone\": \"string\",\n      \"spanishSpeaking\": true,\n      \"state\": \"string\",\n      \"stateAbbr\": \"string\",\n      \"streetAddress\": \"string\",\n      \"zip\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bd52f43-566a-4fe3-b2a9-26dbafff3b2b",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "usState",
+                      "value": ""
+                    },
+                    {
+                      "key": "latitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "longitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "distance",
+                      "value": "25"
+                    },
+                    {
+                      "key": "onlySpanishSpeaking",
+                      "value": "false"
+                    },
+                    {
+                      "key": "onlyWithEvent",
+                      "value": "false"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b4fa76ff-e304-434e-8ef3-4dbd28520a93",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "usState",
+                      "value": ""
+                    },
+                    {
+                      "key": "latitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "longitude",
+                      "value": ""
+                    },
+                    {
+                      "key": "distance",
+                      "value": "25"
+                    },
+                    {
+                      "key": "onlySpanishSpeaking",
+                      "value": "false"
+                    },
+                    {
+                      "key": "onlyWithEvent",
+                      "value": "false"
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0c0909c-98bd-41a3-ae9d-c00d01c0f839",
+          "name": "/childSeats/inspectionStations/states",
+          "request": {
+            "name": "/childSeats/inspectionStations/states",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                "inspectionStations",
+                "states"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return. Use '-1' to get all records."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6402382b-ca71-45e2-a005-466b80d9576f",
+              "name": "Returns all states with inspection stations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 8513,\n        \"currentUrl\": \"string\",\n        \"max\": 2366,\n        \"nextUrl\": \"string\",\n        \"offset\": 5223,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 7676\n      },\n      {\n        \"count\": 8370,\n        \"currentUrl\": \"string\",\n        \"max\": 3330,\n        \"nextUrl\": \"string\",\n        \"offset\": 4720,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 6331\n      }\n    ],\n    \"status\": 2324\n  },\n  \"results\": [\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 5054,\n      \"minimumChildAge\": 446\n    },\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 1996,\n      \"minimumChildAge\": 7938\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d963e1d-0042-46c8-bcd0-2d8aba49e437",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6f2b45e3-ade9-47be-afc6-5a5d2ea460c4",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "inspectionStations",
+                    "states"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3760698-34c4-4352-84fa-19a6ad5c9a48",
+          "name": "/childSeats/manufacturers",
+          "request": {
+            "name": "/childSeats/manufacturers",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                "manufacturers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataSet",
+                  "value": "",
+                  "description": "Select which data set to return, either \"ratings\" or \"safetyIssues\". Defaults to 'all'"
+                },
+                {
+                  "disabled": false,
+                  "key": "max",
+                  "value": "<integer>",
+                  "description": "The maximum number of records to return. Use '-1' to get all records."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset of the records listing (for pagination)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "324ea959-99f3-41fd-80d8-bb36b2b9a548",
+              "name": "Returns all available child seat manufacturers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 5658,\n        \"currentUrl\": \"string\",\n        \"max\": 5112,\n        \"nextUrl\": \"string\",\n        \"offset\": 6591,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 5818\n      },\n      {\n        \"count\": 4831,\n        \"currentUrl\": \"string\",\n        \"max\": 9370,\n        \"nextUrl\": \"string\",\n        \"offset\": 5682,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 9329\n      }\n    ],\n    \"status\": 9599\n  },\n  \"results\": [\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 2828,\n      \"minimumChildAge\": 825\n    },\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 4166,\n      \"minimumChildAge\": 6839\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "719a9651-9dad-4274-a345-c105c76741b6",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5fd6b70e-2338-4064-8dcb-589c9a594426",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "manufacturers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataSet",
+                      "value": ""
+                    },
+                    {
+                      "key": "max",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84fe380c-9d7b-4f62-89bd-7bbc96d02067",
+          "name": "/childSeats/modes",
+          "request": {
+            "name": "/childSeats/modes",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                "modes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27ecb56b-5e07-4c50-aae4-04ca1b833b51",
+              "name": "Returns list of child seat modes and their recommended age range in years",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 5658,\n        \"currentUrl\": \"string\",\n        \"max\": 5112,\n        \"nextUrl\": \"string\",\n        \"offset\": 6591,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 5818\n      },\n      {\n        \"count\": 4831,\n        \"currentUrl\": \"string\",\n        \"max\": 9370,\n        \"nextUrl\": \"string\",\n        \"offset\": 5682,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 9329\n      }\n    ],\n    \"status\": 9599\n  },\n  \"results\": [\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 2828,\n      \"minimumChildAge\": 825\n    },\n    {\n      \"childSeatMode\": \"string\",\n      \"manufacturerName\": \"string\",\n      \"maximumChildAge\": 4166,\n      \"minimumChildAge\": 6839\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5130a983-4fbc-45a1-ae7e-d7535536b9ee",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa2a8273-0806-482f-aebe-b949f6f936eb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    "modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "353b9871-945b-4d04-b90a-6226e9917477",
+          "name": "/childSeats/:id",
+          "request": {
+            "name": "/childSeats/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "childSeats",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "data",
+                  "value": "",
+                  "description": "A comma separated list of data to return (modes, complaints, recalls, investigations, manufacturercommunications)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) ID of the child seat"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1dafb03-16c0-43ef-92c7-a33e1b9e625d",
+              "name": "Returns a single child seat with the specified ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the child seat"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"messages\": [\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      },\n      {\n        \"errorCode\": \"string\",\n        \"errorDetail\": \"string\",\n        \"errorMessage\": \"string\",\n        \"userMessage\": \"string\"\n      }\n    ],\n    \"pagination\": [\n      {\n        \"count\": 3939,\n        \"currentUrl\": \"string\",\n        \"max\": 2979,\n        \"nextUrl\": \"string\",\n        \"offset\": 6279,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 5555\n      },\n      {\n        \"count\": 5189,\n        \"currentUrl\": \"string\",\n        \"max\": 8594,\n        \"nextUrl\": \"string\",\n        \"offset\": 9253,\n        \"order\": \"string\",\n        \"previousUrl\": \"string\",\n        \"sort\": \"string\",\n        \"total\": 4239\n      }\n    ],\n    \"status\": 2808\n  },\n  \"results\": [\n    {\n      \"id\": 8485,\n      \"make\": \"string\",\n      \"manufactureDate\": \"string\",\n      \"modelNumber\": \"string\",\n      \"modes\": [\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 5531.304955792377,\n          \"maxChildHeightFinal\": 1940.8531900449277,\n          \"maxChildWeightFinal\": 3680.931505782764,\n          \"maxUsingLowerAnchors\": 812.5449639646598,\n          \"maxUsingLowerAnchorsFinal\": 7593.757283426443,\n          \"maxUsingSeatBelts\": 5537.309300708181,\n          \"minChildHeight\": 1724.4527015410072,\n          \"minUsingLowerAnchors\": 9951.569973969921,\n          \"minUsingSeatBelts\": 5753.443729856354,\n          \"mode\": \"string\",\n          \"modeWeight\": 9131.918517089673,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        },\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 5223.224116624262,\n          \"maxChildHeightFinal\": 6680.308198907537,\n          \"maxChildWeightFinal\": 3516.2243489349607,\n          \"maxUsingLowerAnchors\": 3267.502742228726,\n          \"maxUsingLowerAnchorsFinal\": 4091.6086868888556,\n          \"maxUsingSeatBelts\": 5297.7805703125,\n          \"minChildHeight\": 8377.20389785504,\n          \"minUsingLowerAnchors\": 7920.203824060968,\n          \"minUsingSeatBelts\": 7040.684796622888,\n          \"mode\": \"string\",\n          \"modeWeight\": 4986.827250977538,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        }\n      ],\n      \"productModel\": \"string\",\n      \"safetyIssues\": {\n        \"complaints\": [\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 5461,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 4288,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 5601,\n            \"numberOfInjuries\": 8695,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          },\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 2976,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 7106,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 1551,\n            \"numberOfInjuries\": 6949,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          }\n        ],\n        \"investigation\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"manufacturerCommunications\": [\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ],\n        \"recalls\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 7036,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 4380,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ]\n      },\n      \"seatType\": \"string\"\n    },\n    {\n      \"id\": 2754,\n      \"make\": \"string\",\n      \"manufactureDate\": \"string\",\n      \"modelNumber\": \"string\",\n      \"modes\": [\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 7770.9611295331815,\n          \"maxChildHeightFinal\": 236.61898912741287,\n          \"maxChildWeightFinal\": 2921.282154237923,\n          \"maxUsingLowerAnchors\": 8735.421496101588,\n          \"maxUsingLowerAnchorsFinal\": 9791.0608494648,\n          \"maxUsingSeatBelts\": 8554.216188407787,\n          \"minChildHeight\": 4552.075714805347,\n          \"minUsingLowerAnchors\": 3818.137331322854,\n          \"minUsingSeatBelts\": 2990.1933243648427,\n          \"mode\": \"string\",\n          \"modeWeight\": 1239.8334279173673,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        },\n        {\n          \"harnessType\": \"string\",\n          \"maxChildHeight\": 5051.774016520081,\n          \"maxChildHeightFinal\": 6448.651205509883,\n          \"maxChildWeightFinal\": 282.12324445286873,\n          \"maxUsingLowerAnchors\": 5514.66457447043,\n          \"maxUsingLowerAnchorsFinal\": 4169.787471304162,\n          \"maxUsingSeatBelts\": 1233.172419079721,\n          \"minChildHeight\": 6847.626694451041,\n          \"minUsingLowerAnchors\": 1811.89115718863,\n          \"minUsingSeatBelts\": 6688.832539366758,\n          \"mode\": \"string\",\n          \"modeWeight\": 9190.84288895528,\n          \"ratings\": [\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"label\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"notes\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"rating\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"ratingType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"recommendedAge\": false,\n          \"weightHeightRange\": \"string\"\n        }\n      ],\n      \"productModel\": \"string\",\n      \"safetyIssues\": {\n        \"complaints\": [\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 3161,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 7665,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 764,\n            \"numberOfInjuries\": 9918,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          },\n          {\n            \"city\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"crash\": 1927,\n            \"dateFiled\": \"string\",\n            \"dateOfIncident\": \"string\",\n            \"description\": \"string\",\n            \"fire\": 4250,\n            \"nhtsaIdNumber\": \"string\",\n            \"numberOfDeaths\": 8933,\n            \"numberOfInjuries\": 9298,\n            \"stateAbbreviation\": \"string\",\n            \"vin\": \"string\"\n          }\n        ],\n        \"investigation\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"dateClosed\": \"string\",\n            \"dateOpened\": \"string\",\n            \"nhtsaCampaignNumber\": \"string\",\n            \"recalls\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"subject\": \"string\",\n            \"summary\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"manufacturerCommunications\": [\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"communicationDate\": \"string\",\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturerCommunicationNumber\": \"string\",\n            \"nhtsaIdNumber\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ],\n        \"recalls\": [\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 208,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          },\n          {\n            \"components\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"consequence\": \"string\",\n            \"correctiveAction\": \"string\",\n            \"investigations\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"manufacturer\": \"string\",\n            \"nhtsaCampaignNumber\": 8492,\n            \"notes\": \"string\",\n            \"potentialNumberOfUnitsAffected\": \"string\",\n            \"reportsReceivedDate\": \"string\",\n            \"subject\": \"string\",\n            \"summary\": \"string\"\n          }\n        ]\n      },\n      \"seatType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0af920ed-c4e7-4f53-b6a5-28ff0082edbd",
+              "name": "Invalid Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the child seat"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0dc4b66e-4cf8-40c8-95c1-b1afd3943f67",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "childSeats",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "data",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) ID of the child seat"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e36d6574-4e70-4221-86b2-e0d382dd2fc0",
+    "name": "NHTSA childSeats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Child Seat search and list endpoints",
+      "type": "text/plain"
+    }
+  }
+}
