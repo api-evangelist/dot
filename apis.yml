@@ -31,6 +31,14 @@ tags:
   - Transportation
   - Trucking
   - Aviation
+  - Vehicle Safety
+  - Transit
+  - Open Data
+tags_raw:
+  - Government
+  - Transportation
+  - Trucking
+  - Aviation
   - VehicleSafety
   - Transit
   - OpenData
@@ -121,6 +129,11 @@ apis:
   humanURL: https://data.transportation.gov/
   baseURL: https://data.transportation.gov/api
   tags:
+  - Open Data
+  - Transportation Statistics
+  - Government
+  - BTS
+  tags_raw:
   - OpenData
   - Transportation Statistics
   - Government
@@ -133,7 +146,8 @@ apis:
   description: Child Seat search and list endpoints
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
-  tags:
+  tags: []
+  tags_raw:
   - childSeats
   properties:
   - type: OpenAPI
@@ -144,6 +158,8 @@ apis:
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
   tags:
+  - Equipment
+  tags_raw:
   - equipment
   properties:
   - type: OpenAPI
@@ -163,7 +179,8 @@ apis:
   description: Foreign Campaign search and list endpoints
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
-  tags:
+  tags: []
+  tags_raw:
   - foreignCampaigns
   properties:
   - type: OpenAPI
@@ -173,7 +190,8 @@ apis:
   description: Recalls, Investigations, Complaints, and Manufacturer Communications
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
-  tags:
+  tags: []
+  tags_raw:
   - safetyIssues
   properties:
   - type: OpenAPI
@@ -184,6 +202,8 @@ apis:
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
   tags:
+  - Tires
+  tags_raw:
   - tires
   properties:
   - type: OpenAPI
@@ -194,6 +214,8 @@ apis:
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
   tags:
+  - Vehicles
+  tags_raw:
   - vehicles
   properties:
   - type: OpenAPI
