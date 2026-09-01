@@ -43,7 +43,7 @@ tags:
   - Transportation
   - Trucking
   - Aviation
-  - VehicleSafety
+  - Vehicle Safety
   - Transit
   - Open Data
 tags_raw:
@@ -226,7 +226,7 @@ apis:
   humanURL: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
   baseURL: https://mobile.fmcsa.dot.gov/qc/services
   tags:
-  - vehicles
+  - Vehicles
   tags_raw:
   - vehicles
   properties:
