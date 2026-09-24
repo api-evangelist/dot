@@ -1,80 +1,92 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: NHTSA childSeats equipment API
+  title: NHTSA childSeats Equipment API
   version: 1.6.0
   description: Child Seat search and list endpoints
+servers:
+- url: https://mobile.fmcsa.dot.gov/qc/services
 tags:
 - description: Equipment search and list endpoints
   name: equipment
 paths:
   /equipment:
     get:
-      consumes:
-      - application/json
       parameters:
       - allowEmptyValue: false
-        collectionFormat: csv
         description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
-        format: ''
         in: query
         name: data
         required: false
-        type: string
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
       - allowEmptyValue: false
-        collectionFormat: csv
         description: brand of equipment
-        format: ''
         in: query
         name: brand
         required: false
-        type: string
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
       - allowEmptyValue: false
-        collectionFormat: csv
         description: model of the equipment
-        format: ''
         in: query
         name: modelName
         required: false
-        type: string
-      - $ref: '#/parameters/EquipmentSort'
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
+      - $ref: '#/components/parameters/EquipmentSort'
       - allowEmptyValue: false
-        collectionFormat: csv
-        default: desc
         description: order in which to sort
-        enum:
-        - asc
-        - desc
-        format: ''
         in: query
         name: order
         required: false
-        type: string
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
+          enum:
+          - asc
+          - desc
+          default: desc
       - allowEmptyValue: false
-        collectionFormat: csv
         description: The maximum number of records to return
-        format: int32
         in: query
         name: max
         required: false
-        type: integer
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       - allowEmptyValue: false
-        collectionFormat: csv
         description: The offset of the records set to return for pagination.
-        format: int32
         in: query
         name: offset
         required: false
-        type: integer
-      produces:
-      - application/json
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       responses:
         '200':
           description: Returns zero or more equipment
-          schema:
-            items:
-              $ref: '#/definitions/EquipmentWrapped'
-            title: ArrayOfEquipment
-            type: array
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EquipmentWrapped'
+                title: ArrayOfEquipment
+                type: array
         '400':
           description: Invalid Request
         '500':
@@ -83,27 +95,27 @@ paths:
       - equipment
   /equipment/brands:
     get:
-      consumes:
-      - application/json
       parameters:
       - allowEmptyValue: false
-        collectionFormat: csv
         description: The maximum number of records to return. Use '-1' to get all records.
-        format: int32
         in: query
         name: max
         required: false
-        type: integer
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       - allowEmptyValue: false
-        collectionFormat: csv
         description: The offset of the records listing (for pagination).
-        format: int32
         in: query
         name: offset
         required: false
-        type: integer
-      produces:
-      - application/json
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       responses:
         '200':
           description: Returns all available equipment brands
@@ -115,61 +127,69 @@ paths:
       - equipment
   /equipment/bySearch:
     get:
-      consumes:
-      - application/json
       parameters:
       - allowEmptyValue: false
-        collectionFormat: csv
         description: returns zero or more tires based on search query
-        format: ''
         in: query
         name: query
         required: true
-        type: string
-      - $ref: '#/parameters/EquipmentSort'
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
+      - $ref: '#/components/parameters/EquipmentSort'
       - allowEmptyValue: false
-        collectionFormat: csv
-        default: desc
         description: order in which to sort
-        enum:
-        - asc
-        - desc
-        format: ''
         in: query
         name: order
         required: false
-        type: string
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
+          enum:
+          - asc
+          - desc
+          default: desc
       - allowEmptyValue: false
-        collectionFormat: csv
         description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
-        format: ''
         in: query
         name: data
         required: false
-        type: string
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
       - allowEmptyValue: false
-        collectionFormat: csv
         description: 'The maximum number of records to return, upper bound: 50.'
-        format: int32
         in: query
         name: max
         required: false
-        type: integer
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       - allowEmptyValue: false
-        collectionFormat: csv
         description: The offset of the records listing (for pagination).
-        format: int32
         in: query
         name: offset
         required: false
-        type: integer
-      produces:
-      - application/json
+        style: form
+        explode: false
+        schema:
+          type: integer
+          format: int32
       responses:
         '200':
           description: Fuzzy search for a equipment based on manufacturer and mode
-          schema:
-            $ref: '#/definitions/EquipmentWrapped'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EquipmentWrapped'
         '400':
           description: Invalid Request
         '500':
@@ -178,251 +198,256 @@ paths:
       - equipment
   /equipment/{id}:
     get:
-      consumes:
-      - application/json
       parameters:
-      - collectionFormat: csv
-        description: ID of the equipmentDetails
-        format: int64
+      - description: ID of the equipmentDetails
         in: path
         name: id
         required: true
-        type: integer
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
       - allowEmptyValue: false
-        collectionFormat: csv
         description: A comma separated list of data to return (complaints, recalls, investigations, manufacturerCommunications, none, all), defaults to 'all'.
-        format: ''
         in: query
         name: data
         required: false
-        type: string
-      produces:
-      - application/json
+        style: form
+        explode: false
+        schema:
+          type: string
+          format: ''
       responses:
         '200':
           description: Returns a single equipmentDetails with the specified ID
-          schema:
-            $ref: '#/definitions/EquipmentWrapped'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EquipmentWrapped'
         '400':
           description: Invalid Request
         '500':
           description: Internal Server Error
       tags:
       - equipment
-definitions:
-  EquipmentWrapped:
-    properties:
-      meta:
-        $ref: '#/definitions/Meta'
-      results:
-        items:
-          $ref: '#/definitions/Equipment'
-        type: array
-    type: object
-  Recalls:
-    properties:
-      nhtsaCampaignNumber:
+components:
+  schemas:
+    Recalls:
+      properties:
+        nhtsaCampaignNumber:
+          type: string
+        subject:
+          type: string
+      type: object
+    ComplaintAggregate:
+      properties:
+        city:
+          type: string
+        components:
+          items:
+            $ref: '#/components/schemas/Components'
+          type: array
+        crash:
+          type: integer
+        dateFiled:
+          type: string
+        dateOfIncident:
+          type: string
+        description:
+          type: string
+        fire:
+          type: integer
+        nhtsaIdNumber:
+          type: string
+        numberOfDeaths:
+          type: integer
+        numberOfInjuries:
+          type: integer
+        stateAbbreviation:
+          type: string
+        vin:
+          type: string
+      type: object
+    InvestigationAggregate:
+      properties:
+        components:
+          items:
+            $ref: '#/components/schemas/Components'
+          type: array
+        dateClosed:
+          type: string
+        dateOpened:
+          type: string
+        nhtsaCampaignNumber:
+          type: string
+        recalls:
+          items:
+            $ref: '#/components/schemas/Recalls'
+          type: array
+        subject:
+          type: string
+        summary:
+          type: string
+        type:
+          type: string
+      type: object
+    RecallAggregate:
+      properties:
+        components:
+          items:
+            $ref: '#/components/schemas/Components'
+          type: array
+        consequence:
+          type: string
+        correctiveAction:
+          type: string
+        investigations:
+          items:
+            $ref: '#/components/schemas/Investigations'
+          type: array
+        manufacturer:
+          type: string
+        nhtsaCampaignNumber:
+          type: integer
+        notes:
+          type: string
+        potentialNumberOfUnitsAffected:
+          type: string
+        reportsReceivedDate:
+          type: string
+        subject:
+          type: string
+        summary:
+          type: string
+      type: object
+    Equipment:
+      properties:
+        brand:
+          type: string
+        productName:
+          type: string
+        safetyIssues:
+          $ref: '#/components/schemas/SafetyIssueAggregate'
+      type: object
+    Investigations:
+      properties:
+        nhtsaActionNumber:
+          type: string
+        subject:
+          type: string
+      type: object
+    EquipmentWrapped:
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        results:
+          items:
+            $ref: '#/components/schemas/Equipment'
+          type: array
+      type: object
+    Components:
+      properties:
+        name:
+          type: string
+      type: object
+    Message:
+      properties:
+        errorCode:
+          type: string
+        errorDetail:
+          type: string
+        errorMessage:
+          type: string
+        userMessage:
+          type: string
+      type: object
+    MFRCommunicationAggregate:
+      properties:
+        communicationDate:
+          type: string
+        components:
+          items:
+            $ref: '#/components/schemas/Components'
+          type: array
+        manufacturerCommunicationNumber:
+          type: string
+        nhtsaIdNumber:
+          type: string
+        subject:
+          type: string
+        summary:
+          type: string
+      type: object
+    Meta:
+      properties:
+        messages:
+          items:
+            $ref: '#/components/schemas/Message'
+          type: array
+        pagination:
+          items:
+            $ref: '#/components/schemas/Pagination'
+          type: array
+        status:
+          type: integer
+      type: object
+    SafetyIssueAggregate:
+      properties:
+        complaints:
+          items:
+            $ref: '#/components/schemas/ComplaintAggregate'
+          type: array
+        investigation:
+          items:
+            $ref: '#/components/schemas/InvestigationAggregate'
+          type: array
+        manufacturerCommunications:
+          items:
+            $ref: '#/components/schemas/MFRCommunicationAggregate'
+          type: array
+        recalls:
+          items:
+            $ref: '#/components/schemas/RecallAggregate'
+          type: array
+      type: object
+    Pagination:
+      properties:
+        count:
+          type: integer
+        currentUrl:
+          type: string
+        max:
+          type: integer
+        nextUrl:
+          type: string
+        offset:
+          type: integer
+        order:
+          type: string
+        previousUrl:
+          type: string
+        sort:
+          type: string
+        total:
+          type: integer
+      type: object
+  parameters:
+    EquipmentSort:
+      allowEmptyValue: false
+      description: key to sort on
+      in: query
+      name: sort
+      required: false
+      style: form
+      explode: false
+      schema:
         type: string
-      subject:
-        type: string
-    type: object
-  Components:
-    properties:
-      name:
-        type: string
-    type: object
-  Message:
-    properties:
-      errorCode:
-        type: string
-      errorDetail:
-        type: string
-      errorMessage:
-        type: string
-      userMessage:
-        type: string
-    type: object
-  InvestigationAggregate:
-    properties:
-      components:
-        items:
-          $ref: '#/definitions/Components'
-        type: array
-      dateClosed:
-        type: string
-      dateOpened:
-        type: string
-      nhtsaCampaignNumber:
-        type: string
-      recalls:
-        items:
-          $ref: '#/definitions/Recalls'
-        type: array
-      subject:
-        type: string
-      summary:
-        type: string
-      type:
-        type: string
-    type: object
-  Pagination:
-    properties:
-      count:
-        type: integer
-      currentUrl:
-        type: string
-      max:
-        type: integer
-      nextUrl:
-        type: string
-      offset:
-        type: integer
-      order:
-        type: string
-      previousUrl:
-        type: string
-      sort:
-        type: string
-      total:
-        type: integer
-    type: object
-  Equipment:
-    properties:
-      brand:
-        type: string
-      productName:
-        type: string
-      safetyIssues:
-        $ref: '#/definitions/SafetyIssueAggregate'
-    type: object
-  Investigations:
-    properties:
-      nhtsaActionNumber:
-        type: string
-      subject:
-        type: string
-    type: object
-  MFRCommunicationAggregate:
-    properties:
-      communicationDate:
-        type: string
-      components:
-        items:
-          $ref: '#/definitions/Components'
-        type: array
-      manufacturerCommunicationNumber:
-        type: string
-      nhtsaIdNumber:
-        type: string
-      subject:
-        type: string
-      summary:
-        type: string
-    type: object
-  SafetyIssueAggregate:
-    properties:
-      complaints:
-        items:
-          $ref: '#/definitions/ComplaintAggregate'
-        type: array
-      investigation:
-        items:
-          $ref: '#/definitions/InvestigationAggregate'
-        type: array
-      manufacturerCommunications:
-        items:
-          $ref: '#/definitions/MFRCommunicationAggregate'
-        type: array
-      recalls:
-        items:
-          $ref: '#/definitions/RecallAggregate'
-        type: array
-    type: object
-  ComplaintAggregate:
-    properties:
-      city:
-        type: string
-      components:
-        items:
-          $ref: '#/definitions/Components'
-        type: array
-      crash:
-        type: integer
-      dateFiled:
-        type: string
-      dateOfIncident:
-        type: string
-      description:
-        type: string
-      fire:
-        type: integer
-      nhtsaIdNumber:
-        type: string
-      numberOfDeaths:
-        type: integer
-      numberOfInjuries:
-        type: integer
-      stateAbbreviation:
-        type: string
-      vin:
-        type: string
-    type: object
-  Meta:
-    properties:
-      messages:
-        items:
-          $ref: '#/definitions/Message'
-        type: array
-      pagination:
-        items:
-          $ref: '#/definitions/Pagination'
-        type: array
-      status:
-        type: integer
-    type: object
-  RecallAggregate:
-    properties:
-      components:
-        items:
-          $ref: '#/definitions/Components'
-        type: array
-      consequence:
-        type: string
-      correctiveAction:
-        type: string
-      investigations:
-        items:
-          $ref: '#/definitions/Investigations'
-        type: array
-      manufacturer:
-        type: string
-      nhtsaCampaignNumber:
-        type: integer
-      notes:
-        type: string
-      potentialNumberOfUnitsAffected:
-        type: string
-      reportsReceivedDate:
-        type: string
-      subject:
-        type: string
-      summary:
-        type: string
-    type: object
-parameters:
-  EquipmentSort:
-    allowEmptyValue: false
-    collectionFormat: csv
-    default: productName
-    description: key to sort on
-    enum:
-    - productName
-    - recallsCount
-    - investigationsCount
-    - complaintsCount
-    - manufacturerCommunicationsCount
-    format: ''
-    in: query
-    name: sort
-    required: false
-    type: string
+        format: ''
+        enum:
+        - productName
+        - recallsCount
+        - investigationsCount
+        - complaintsCount
+        - manufacturerCommunicationsCount
+        default: productName
